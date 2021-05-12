@@ -3,10 +3,9 @@ import 'package:flutter/widgets.dart';
 import 'package:skycore/constants/assets.dart';
 
 class NetworkConnectionError extends StatelessWidget {
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
-  const NetworkConnectionError({Key? key, required this.onPressed})
-      : super(key: key);
+  const NetworkConnectionError({Key? key, this.onPressed}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(

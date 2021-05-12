@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:skycore/blocs/notify/notify_app_state.dart';
 import 'package:skycore/generated/locale_keys.g.dart';
+import 'package:skycore/routing/app_route.dart';
 import 'package:skycore/screens/base_layout/base_layout_state.dart';
 import 'package:skycore/styles/app_theme.dart';
 import 'package:skycore/styles/styles.dart';
@@ -96,6 +97,13 @@ class _HomeScreenState
             child: Text('Save Message'),
             onPressed: () {
               bloc?.saveMessage('Hello motor =))');
+            },
+          ),
+          Padding(padding: const EdgeInsets.only(top: 20)),
+          OutlinedButton(
+            child: Text('Demo'),
+            onPressed: () {
+              Navigator.of(context).pushNamed(RouteNames.DEMO);
             },
           ),
         ],

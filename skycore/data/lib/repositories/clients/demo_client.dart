@@ -1,3 +1,4 @@
+import 'package:data/data.dart';
 import 'package:data/repositories/clients/base_client.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
@@ -10,4 +11,7 @@ abstract class DemoClient implements IBaseClient {
 
   @GET('/1')
   Future<dynamic> dumpJson();
+
+  @GET('https://jsonplaceholder.typicode.com/posts/1/comments')
+  Future<List<DemoModel>> dumpJson2();
 }

@@ -88,6 +88,7 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
                 child: content,
               )
             : content,
+        bottomNavigationBar: buildBottomBar(context),
       ),
     );
   }
@@ -131,12 +132,6 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
       textTheme: theme.textTheme,
       titleSpacing: 0.0,
       centerTitle: true,
-      bottom: PreferredSize(
-          child: Container(
-            color: Colors.lightBlueAccent,
-            height: 3.0,
-          ),
-          preferredSize: Size.fromHeight(3.0)),
     );
   }
 
@@ -170,6 +165,8 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
   }
 
   Widget buildContent(BuildContext context) => Container();
+
+  Widget buildBottomBar(BuildContext context) => Container();
 
   bool onBlocCondition(St prev, St current) {
     if (prev.refreshing == true && current.refreshing == false) {

@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart';
 import 'package:the_coffee_house/app/screens/home/home_bloc.dart';
@@ -25,10 +27,37 @@ class _HomeScreenState
 
   String? get message => state?.message;
 
-  late String nowMessage;
+  int _selectedIndex = 0;
 
   @override
-  String get title => 'Home App';
+  AppBar? buildAppBar(BuildContext context) {
+    return AppBar(
+      backgroundColor: theme.backgroundColor,
+      toolbarHeight: 70,
+      elevation: 2,
+      title: Image(
+        width: 150,
+        fit: BoxFit.contain,
+        color: theme.colorScheme.onBackground,
+        image: AssetImage(Assets.logoHorizontal),
+      ),
+      actions: buildHeaderActions(context),
+    );
+  }
+
+  @override
+  List<Widget> buildHeaderActions(BuildContext context) {
+    return [
+      Padding(
+        padding: const EdgeInsets.only(right: 13),
+        child: Image.asset(
+          Assets.logoPointCard,
+          width: 35,
+          height: 15,
+        ),
+      ),
+    ];
+  }
 
   @override
   Widget? buildLeadingWidget(BuildContext context) => null;
@@ -87,6 +116,23 @@ class _HomeScreenState
           ),
         ],
       ),
+    );
+  }
+
+  @override
+  BottomNavigationBar buildBottomBar(BuildContext context) {
+    return BottomNavigationBar(
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: 'HOME',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.store),
+          label: 'STORE',
+        )
+      ],
+      selectedItemColor: theme.primaryColor,
     );
   }
 }

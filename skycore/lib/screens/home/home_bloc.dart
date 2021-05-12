@@ -42,8 +42,8 @@ class HomeScreenBloc extends BaseBloc<HomeScreenState> {
   Stream<HomeScreenState> fetchDataState(FetchDataEvent event) async* {
     var message;
     try {
-      // message = await localStorageService.get(_messageKey);
-      message = await demoService?.dumpJson();
+      message = await localStorageService.get(_messageKey);
+      // message = await demoService?.dumpJson();
     } catch (ex) {
       handleException(ex);
       logError(tag, 'fetchDataState getMessage ${ex.toString()}');

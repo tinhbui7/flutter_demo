@@ -1,3 +1,4 @@
+import 'package:data/models/demo_model.dart';
 import 'package:data/repositories/base_repository.dart';
 import 'package:domain/repositories/demo_repository_i.dart';
 
@@ -15,4 +16,9 @@ class DemoRepository extends BaseRepository<DemoClient>
 
   @override
   String get subApi => '';
+
+  @override
+  Future<List<DemoModel>> dumpJson2() async {
+    return await client.dumpJson2();
+  }
 }
