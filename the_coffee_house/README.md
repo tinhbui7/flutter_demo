@@ -15,6 +15,9 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-Build file Release
- - flutter run --release -t lib/app/main.dart
+#Build file Release
+- Run cmd: flutter run --release -t lib/app/main.dart
+ 
+#Generate keys of easy_localization
+- Run cmd: flutter pub run easy_localization:generate -f keys --source-dir=assets/translations -o locale_keys.g.dart
 

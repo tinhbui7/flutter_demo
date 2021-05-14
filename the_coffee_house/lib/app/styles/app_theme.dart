@@ -34,7 +34,7 @@ class AppTheme {
           ..type = t
           ..bg1 = const Color(0xfff3f3f3)
           ..surface1 = Colors.white
-          ..accent1 = const Color(0xffff392b)
+          ..accent1 = const Color(0xffc6581c)
           ..greyWeak = const Color(0xffcccccc)
           ..grey = const Color(0xff999999)
           ..greyMedium = const Color(0xff747474)

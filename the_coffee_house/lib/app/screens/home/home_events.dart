@@ -1,7 +1,9 @@
 import 'package:the_coffee_house/app/base/base_bloc_events.dart';
 
-class SaveMessageEvent extends BaseBlocEvent {
-  final String message;
+import 'home_state.dart';
 
-  SaveMessageEvent(this.message);
+class UpdateHomeTabEvent extends BaseBlocEvent {
+  final HomeTab activeTab;
+
+  UpdateHomeTabEvent(this.activeTab);
 }

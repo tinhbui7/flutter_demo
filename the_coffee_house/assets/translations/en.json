@@ -4,5 +4,12 @@
   },
   "title": {
     "homeScreen": "Home Page"
+  },
+  "button": {
+    "btnHome": "HOME",
+    "btnOrder": "ORDER",
+    "btnStore": "STORE",
+    "btnPoint": "POINT",
+    "btnOther": "OTHER"
   }
 }

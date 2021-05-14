@@ -166,7 +166,7 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
 
   Widget buildContent(BuildContext context) => Container();
 
-  Widget buildBottomBar(BuildContext context) => Container();
+  BottomNavigationBar? buildBottomBar(BuildContext context) => null;
 
   bool onBlocCondition(St prev, St current) {
     if (prev.refreshing == true && current.refreshing == false) {

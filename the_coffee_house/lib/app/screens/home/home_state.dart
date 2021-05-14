@@ -1,14 +1,22 @@
 import 'package:the_coffee_house/app/base/base_bloc_state.dart';
 
 class HomeScreenState extends BaseBlocState {
-  final String? message;
+  final HomeTab? activeTab;
   HomeScreenState({
     HomeScreenState? state,
-    String? message,
     bool? isLoading,
-  })  : message = message ?? state?.message,
+    HomeTab? activeTab,
+  })  : activeTab = activeTab ?? state?.activeTab,
         super(
           isLoading: isLoading ?? state?.isLoading,
           timeStamp: DateTime.now().millisecondsSinceEpoch,
         );
+}
+
+enum HomeTab {
+  Home,
+  Order,
+  Store,
+  Point,
+  Other,
 }

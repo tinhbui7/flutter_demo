@@ -1,65 +1,56 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/app/base/base_bloc.dart';
 import 'package:the_coffee_house/app/base/base_bloc_events.dart';
 import 'package:the_coffee_house/app/screens/home/home_events.dart';
 import 'package:the_coffee_house/app/screens/home/home_state.dart';
-import 'package:the_coffee_house/domain/usecases/product/product_use_case_i.dart';
 
 class HomeScreenBloc extends BaseBloc<HomeScreenState> {
   @override
   String get tag => 'HomeScreenBloc';
 
-  final _messageKey = 'message';
-  IProductUseCase? get demoService => getIt.get<IProductUseCase>();
-
-  HomeScreenBloc() : super(HomeScreenState(isLoading: true));
+  HomeScreenBloc()
+      : super(HomeScreenState(
+          isLoading: false,
+          activeTab: HomeTab.Home,
+        ));
 
   @override
   Stream<HomeScreenState> mapEventToState(BaseBlocEvent event) async* {
-    if (event is SaveMessageEvent) {
-      yield* _saveMessageState(event);
+    if (event is UpdateHomeTabEvent) {
+      yield* _updateTabState(event);
     } else {
       yield* super.mapEventToState(event);
     }
   }
 
-  Stream<HomeScreenState> _saveMessageState(SaveMessageEvent event) async* {
-    await Future.delayed(const Duration(milliseconds: 200));
-    try {
-      await localStorageService.set(_messageKey, event.message);
-    } catch (ex) {
-      handleException(ex);
-      logError(tag, 'saveMessageState: ${ex.toString()}');
-    }
-    yield* fetchData(refresh: true);
-  }
-
-  @protected
-  @override
-  Stream<HomeScreenState> fetchDataState(FetchDataEvent event) async* {
-    var message;
-    try {
-      message = await localStorageService.get(_messageKey);
-    } catch (ex) {
-      handleException(ex);
-      logError(tag, 'fetchDataState getMessage ${ex.toString()}');
-    }
+  Stream<HomeScreenState> _updateTabState(UpdateHomeTabEvent event) async* {
     yield HomeScreenState(
       state: state,
-      message: message?.toString(),
-      isLoading: false,
+      activeTab: event.activeTab,
     );
   }
 
-  @override
-  Stream<HomeScreenState> refreshState(RefreshEvent event) async* {
-    yield HomeScreenState(
-      state: state,
-      isLoading: !(event.refresh == true),
-    );
+  void onItemTab(int index) {
+    switch (index) {
+      case 1:
+        updateTab(HomeTab.Order);
+        break;
+      case 2:
+        updateTab(HomeTab.Store);
+        break;
+      case 3:
+        updateTab(HomeTab.Point);
+        break;
+      case 4:
+        updateTab(HomeTab.Other);
+        break;
+      default:
+        updateTab(HomeTab.Home);
+        break;
+    }
   }
 
-  saveMessage(String message) {
-    add(SaveMessageEvent(message));
+  updateTab(HomeTab activeTab) {
+    add(UpdateHomeTabEvent(activeTab));
   }
 }

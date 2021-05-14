@@ -4,5 +4,12 @@
   },
   "title": {
     "homeScreen": "Trang Chủ"
+  },
+  "button": {
+    "btnHome": "TRANG CHỦ",
+    "btnOrder": "ĐẶT MÓN",
+    "btnStore": "CỬA HÀNG",
+    "btnPoint": "TÍCH ĐIỂM",
+    "btnOther": "KHÁC"
   }
 }

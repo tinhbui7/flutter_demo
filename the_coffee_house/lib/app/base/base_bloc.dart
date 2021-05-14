@@ -22,9 +22,9 @@ abstract class BaseBloc<S extends BaseBlocState>
   ILocalStorageService get localStorageService =>
       getIt.get<ILocalStorageService>();
 
-  Stream<S> fetchDataState(FetchDataEvent event);
+  Stream<S> fetchDataState(FetchDataEvent event) async* {}
 
-  Stream<S> refreshState(RefreshEvent event);
+  Stream<S> refreshState(RefreshEvent event) async* {}
 
   @override
   Stream<S> mapEventToState(BaseBlocEvent event) async* {
