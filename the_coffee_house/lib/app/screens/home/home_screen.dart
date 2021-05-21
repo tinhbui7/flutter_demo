@@ -10,6 +10,7 @@ import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_screen.da
 import 'package:the_coffee_house/app/screens/home/tabs/other/other_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/point/point_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/store/store_tab_screen.dart';
+import 'package:the_coffee_house/app/screens/login/login_dialog_screen.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -56,7 +57,17 @@ class _HomeScreenState
               width: 35,
               height: 15,
             ),
-            onPressed: () => bloc?.onItemTab(3),
+            onPressed: () {
+              showGeneralDialog(
+                  context: context,
+                  barrierDismissible: true,
+                  barrierLabel: MaterialLocalizations.of(context)
+                      .modalBarrierDismissLabel,
+                  pageBuilder: (BuildContext buildContext, Animation first,
+                      Animation second) {
+                    return LoginDialogScreen();
+                  });
+            },
           )),
     ];
   }
@@ -101,7 +112,7 @@ class _HomeScreenState
           label: LocaleKeys.button_btnOther.tr(),
         ),
       ],
-      selectedItemColor: theme.colorScheme.secondaryVariant,
+      selectedItemColor: theme.colorScheme.primary,
       type: BottomNavigationBarType.fixed,
       currentIndex: activeTab.index,
       onTap: (index) {

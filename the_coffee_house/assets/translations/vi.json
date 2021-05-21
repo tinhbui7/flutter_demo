@@ -1,15 +1,21 @@
 {
   "text": {
-    "noContent": "Không tìm thấy dữ liệu"
+    "noContent": "Không tìm thấy dữ liệu",
+    "inputPhoneNumber": "Nhập số điện thoại"
   },
   "title": {
-    "homeScreen": "Trang Chủ"
+    "homeScreen": "Trang Chủ",
+    "tittleLogin": "Chào mừng bạn đến với",
+    "orLine": "HOẶC"
   },
   "button": {
     "btnHome": "TRANG CHỦ",
     "btnOrder": "ĐẶT MÓN",
     "btnStore": "CỬA HÀNG",
     "btnPoint": "TÍCH ĐIỂM",
-    "btnOther": "KHÁC"
+    "btnOther": "KHÁC",
+    "btnLogin": "Đăng nhập",
+    "btnFacebook": "Tiếp tục bằng Facebook",
+    "btnGoogle": "Tiếp tục bằng Google"
   }
 }

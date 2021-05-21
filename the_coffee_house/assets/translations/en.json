@@ -1,15 +1,21 @@
 {
   "text": {
-    "noContent": "No content"
+    "noContent": "No content",
+    "inputPhoneNumber": "Enter your phone number"
   },
   "title": {
-    "homeScreen": "Home Page"
+    "homeScreen": "Home Page",
+    "tittleLogin": "Welcome to",
+    "orLine": "OR"
   },
   "button": {
     "btnHome": "HOME",
     "btnOrder": "ORDER",
     "btnStore": "STORE",
     "btnPoint": "POINT",
-    "btnOther": "OTHER"
+    "btnOther": "OTHER",
+    "btnLogin": "Log in",
+    "btnFacebook": "Continue by Facebook",
+    "btnGoogle": "Continue by Google"
   }
 }

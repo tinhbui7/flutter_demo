@@ -17,6 +17,9 @@ class AppTheme {
   late Color greyMedium;
   late Color greyStrong;
   late Color focus;
+  late Color secondaryColor;
+  late Color bg2;
+  late Color accent2;
 
   /// Darkness adjusted text color. Will be Black in light mode, and White in dark
   late Color mainTextColor;
@@ -39,7 +42,11 @@ class AppTheme {
           ..grey = const Color(0xff999999)
           ..greyMedium = const Color(0xff747474)
           ..greyStrong = const Color(0xff333333)
-          ..focus = const Color(0xffd81e1e);
+          ..focus = const Color(0xffd81e1e)
+          ..secondaryColor = const Color(0xff1976d2)
+          ..bg2 = const Color(0xffffffff)
+          ..accent2 = const Color(0xffc5671b);
+
       case ThemeType.Default:
         return AppTheme(isDark: true)
           ..type = t
@@ -50,7 +57,10 @@ class AppTheme {
           ..grey = const Color(0xff999999)
           ..greyMedium = const Color(0xff747474)
           ..greyStrong = const Color(0xff333333)
-          ..focus = const Color(0xffd81e1e);
+          ..focus = const Color(0xffd81e1e)
+          ..secondaryColor = const Color(0xff1976d2)
+          ..bg2 = Colors.black
+          ..accent2 = const Color(0xffc5671b);
       default:
         break;
     }
@@ -64,17 +74,17 @@ class AppTheme {
       // Use ColorScheme to generate the bulk of the color theme
       colorScheme: ColorScheme(
         brightness: isDark ? Brightness.dark : Brightness.light,
-        primary: accent1,
+        primary: accent2,
         primaryVariant: shift(accent1, .1),
-        secondary: accent1,
-        secondaryVariant: shift(accent1, .1),
-        background: bg1,
+        secondary: secondaryColor,
+        secondaryVariant: shift(secondaryColor, .1),
+        background: bg2,
         surface: surface1,
         onBackground: mainTextColor,
         onSurface: mainTextColor,
         onError: mainTextColor,
         onPrimary: inverseTextColor,
-        onSecondary: inverseTextColor,
+        onSecondary: Colors.white,
         error: focus,
       ),
     );
