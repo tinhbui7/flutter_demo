@@ -17,6 +17,8 @@ class Assets {
 
   static final backgroundLogin = '$_picturesDir/img_background_login.jpg';
 
+  static final bannerHome = '$_picturesDir/banner_home.png';
+
   /// Sliders
   static final _slidersDir = 'assets/images/slider';
 

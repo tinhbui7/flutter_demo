@@ -4,7 +4,10 @@ import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/home/home_tab_bloc.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/home/home_tab_state.dart';
-import 'package:the_coffee_house/app/styled_widgets/home_slider.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/home/sub_screen/home_banner.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/home/sub_screen/home_slider.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/home/sub_screen/list_notifications.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/home/sub_screen/option_order_button.dart';
 import 'package:the_coffee_house/app/styles/app_theme.dart';
 import 'package:the_coffee_house/app/styles/styles.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
@@ -30,11 +33,29 @@ class _HomeTabScreenState extends HomeBaseContentLayoutState<HomeTabScreen,
   @override
   Widget buildContent(BuildContext context) {
     return Container(
-      color: theme.splashColor,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.center,
+          stops: [0.1, 0.8, 1],
+          colors: [
+            Colors.black,
+            Colors.orange,
+            theme.splashColor,
+          ],
+        ),
+      ),
       child: ListView(
         padding: const EdgeInsets.all(15),
         children: [
           HomeSlider(),
+          Padding(padding: const EdgeInsets.only(top: 15)),
+          OptionOrderButton(),
+          Padding(padding: const EdgeInsets.only(top: 15)),
+          HomeBanner(),
+          Padding(padding: const EdgeInsets.only(top: 15)),
+          ListNotifications(),
+          Padding(padding: const EdgeInsets.only(top: 15)),
           ...test(),
         ],
       ),

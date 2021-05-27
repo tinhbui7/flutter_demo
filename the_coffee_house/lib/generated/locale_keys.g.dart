@@ -16,6 +16,8 @@ abstract class  LocaleKeys {
   static const button_btnLogin = 'button.btnLogin';
   static const button_btnFacebook = 'button.btnFacebook';
   static const button_btnGoogle = 'button.btnGoogle';
+  static const button_btnDelivery = 'button.btnDelivery';
+  static const button_btnPickup = 'button.btnPickup';
   static const button = 'button';
 
 }

@@ -16,6 +16,8 @@
     "btnOther": "OTHER",
     "btnLogin": "Log in",
     "btnFacebook": "Continue by Facebook",
-    "btnGoogle": "Continue by Google"
+    "btnGoogle": "Continue by Google",
+    "btnDelivery": "Delivery",
+    "btnPickup": "Pickup"
   }
 }

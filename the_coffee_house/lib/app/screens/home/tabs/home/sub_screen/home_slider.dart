@@ -43,11 +43,10 @@ class HomeSlider extends StatelessWidget {
   ];
 
   final _controller = PageController();
-  late final ThemeData theme;
 
   @override
   Widget build(BuildContext context) {
-    theme = Theme.of(context);
+    ThemeData theme = Theme.of(context);
     _animateSlider();
 
     return Container(
@@ -56,12 +55,12 @@ class HomeSlider extends StatelessWidget {
         borderRadius: BorderRadius.all(
           Radius.circular(10),
         ),
-        child: _buildPageView(),
+        child: _buildPageView(theme),
       ),
     );
   }
 
-  _buildPageView() {
+  _buildPageView(ThemeData theme) {
     return PageIndicatorContainer(
       child: PageView(
         controller: _controller,
