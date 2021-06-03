@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_bloc.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_state.dart';
-import 'package:the_coffee_house/app/styles/styles.dart';
+import 'package:the_coffee_house/app/widgets/icons/custom_icon.dart';
 
 import '../home_base_content_layout.dart';
 
@@ -17,11 +18,119 @@ class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
     OrderTabBloc, OrderTabState> {
   @override
   Widget buildContent(BuildContext context) {
-    return Center(
-      child: Text(
-        'ORDER TAB',
-        style: TextStyles.h2,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+        ),
+        InkWell(
+          onTap: () {
+            _showPopupSelectOrder();
+          },
+          child: Container(
+            height: MediaQuery.of(context).size.height * .075,
+            padding: const EdgeInsets.only(left: 15, right: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CustomIcon(
+                  5,
+                  Color(0xffd8f0f8),
+                  Icons.delivery_dining,
+                  Color(0xff79cce9),
+                ),
+                Padding(padding: const EdgeInsets.only(right: 12)),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Giao đến',
+                          style: theme.textTheme.subtitle1,
+                        ),
+                        Icon(Icons.arrow_drop_down),
+                      ],
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 3)),
+                    Container(
+                      width: MediaQuery.of(context).size.width * .8,
+                      child: Text(
+                        'Các món sẽ được giao đến địa chỉ của bạn',
+                        style: theme.textTheme.bodyText2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        const Divider(
+          thickness: 1,
+          height: 0,
+        ),
+      ],
+    );
+  }
+
+  void _showPopupSelectOrder() {
+    showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: const Radius.circular(10),
+          topRight: const Radius.circular(10),
+        ),
       ),
+      builder: (context) {
+        return Container(
+          height: MediaQuery.of(context).size.height * .31,
+          decoration: BoxDecoration(
+            color: theme.backgroundColor,
+            borderRadius: BorderRadius.only(
+              topLeft: const Radius.circular(10),
+              topRight: const Radius.circular(10),
+            ),
+          ),
+          child: Column(
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height * .07,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Align(
+                      child: Text(
+                        'Chọn phương thức đặt hàng',
+                        style: theme.textTheme.headline6,
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: IconButton(
+                        icon: Icon(Icons.clear_rounded),
+                        iconSize: 27,
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Divider(
+                thickness: 1,
+                height: 0,
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

@@ -11,7 +11,6 @@ import 'package:the_coffee_house/app/screens/home/tabs/other/other_tab_screen.da
 import 'package:the_coffee_house/app/screens/home/tabs/point/point_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/store/store_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/login/login_dialog_screen.dart';
-import 'package:the_coffee_house/app/widgets/icons/custom_icon.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -34,42 +33,10 @@ class _HomeScreenState
   @override
   AppBar? buildAppBar(BuildContext context) {
     return (activeTab == HomeTab.Order)
-        ? AppBar(
-            backgroundColor: theme.backgroundColor,
-            toolbarHeight: 70,
-            elevation: 2,
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CustomIcon(
-                  5,
-                  Color(0xffd8f0f8),
-                  Icons.delivery_dining,
-                  Color(0xff79cce9),
-                ),
-                Padding(padding: const EdgeInsets.only(right: 15)),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Giao đến',
-                      style: theme.textTheme.subtitle1,
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 3)),
-                    Text(
-                      'Các món sẽ được giao đến địa chỉ của bạn',
-                      style: theme.textTheme.bodyText2,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          )
+        ? null
         : AppBar(
             backgroundColor: theme.backgroundColor,
-            toolbarHeight: 70,
+            toolbarHeight: MediaQuery.of(context).size.height * .075,
             elevation: 2,
             title: Image(
               width: 150,

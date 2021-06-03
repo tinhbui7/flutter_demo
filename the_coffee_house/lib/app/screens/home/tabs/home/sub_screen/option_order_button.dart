@@ -19,8 +19,8 @@ class OptionOrderButton extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            child: TextButton(
-              onPressed: () {},
+            child: InkWell(
+              onTap: () {},
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -46,8 +46,8 @@ class OptionOrderButton extends StatelessWidget {
             width: 0,
           ),
           Expanded(
-            child: TextButton(
-              onPressed: () {},
+            child: InkWell(
+              onTap: () {},
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
