@@ -132,6 +132,7 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
       textTheme: theme.textTheme,
       titleSpacing: 0.0,
       centerTitle: true,
+      toolbarHeight: MediaQuery.of(context).size.height * .075,
     );
   }
 

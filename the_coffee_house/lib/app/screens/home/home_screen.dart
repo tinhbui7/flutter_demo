@@ -36,8 +36,7 @@ class _HomeScreenState
         ? null
         : AppBar(
             backgroundColor: theme.backgroundColor,
-            toolbarHeight: MediaQuery.of(context).size.height * .075,
-            elevation: 2,
+            elevation: 1,
             title: Image(
               width: 150,
               fit: BoxFit.contain,

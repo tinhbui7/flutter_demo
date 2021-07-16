@@ -1,4 +1,4 @@
-package com.tinhbui.the_coffee_house
+package io.tinhbui.thecoffeehouse
 
 import io.flutter.embedding.android.FlutterActivity
 

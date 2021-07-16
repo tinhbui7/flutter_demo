@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:the_coffee_house/app/app.dart';
 import 'package:the_coffee_house/app/injections/injections.dart';
@@ -31,6 +32,7 @@ class Initializer {
       throw ArgumentError.value(_flavor, 'flavor', 'must be NOT NULL');
     }
     WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
     await EasyLocalization.ensureInitialized();
     _observer = AppObserver();
 

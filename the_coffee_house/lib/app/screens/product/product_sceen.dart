@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:the_coffee_house/app/data_import/load_data.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart';
 import 'package:the_coffee_house/app/screens/product/product_bloc.dart';
 import 'package:the_coffee_house/app/screens/product/product_state.dart';
@@ -31,7 +32,7 @@ class _ProductScreenState extends BaseLayoutState<ProductScreen,
           Text(
             'Flutter Product',
             style: TextStyles.h2,
-          )
+          ),
         ],
       ),
     );

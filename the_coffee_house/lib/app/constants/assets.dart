@@ -31,4 +31,15 @@ class Assets {
   static final sliderNo4 = '$_slidersDir/slider_no_4.png';
 
   static final sliderNo5 = '$_slidersDir/slider_no_5.png';
+
+  /// Url File Data
+  static final _dataUrl = 'assets/data';
+  static final productsUrl = '$_dataUrl/products.json';
+  static final sectionUrl = '$_dataUrl/section.json';
+}
+
+enum CollectionsDataType {
+  products,
+  section,
+  stores,
 }
