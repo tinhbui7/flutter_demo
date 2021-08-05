@@ -1,26 +1,32 @@
 [
   {
     "id": "1",
-    "name": "Cà phê"
+    "name": "Cà phê",
+    "status": "1"
   },
   {
     "id": "2",
-    "name": "Đá xay - Chocolate - Matcha"
+    "name": "Đá xay - Chocolate - Matcha",
+    "status": "1"
   },
   {
     "id": "3",
-    "name": "Trà Trái Cây - Trà Sữa"
+    "name": "Trà Trái Cây - Trà Sữa",
+    "status": "1"
   },
   {
     "id": "4",
-    "name": "Bánh mặn - Bánh ngọt - Snack"
+    "name": "Bánh mặn - Bánh ngọt - Snack",
+    "status": "1"
   },
   {
     "id": "5",
-    "name": "Cà Phê Gói - Cà Phê Uống Liền"
+    "name": "Cà Phê Gói - Cà Phê Uống Liền",
+    "status": "1"
   },
   {
     "id": "6",
-    "name": "Bộ sưu tập quà tặng"
+    "name": "Bộ sưu tập quà tặng",
+    "status": "1"
   }
 ]

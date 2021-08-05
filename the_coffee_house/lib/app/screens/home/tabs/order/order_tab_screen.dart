@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_bloc.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_state.dart';
-import 'package:the_coffee_house/app/screens/home/tabs/order/sub_screen/popup_select_order.dart';
-import 'package:the_coffee_house/app/widgets/icons/custom_icon.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/order/sub_screen/order_with_search.dart';
 
 import '../home_base_content_layout.dart';
+import 'sub_screen/app_bar_order.dart';
 
 class OrderTabScreen extends StatefulWidget {
   const OrderTabScreen({Key? key}) : super(key: key);
@@ -18,59 +18,73 @@ class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
     OrderTabBloc, OrderTabState> {
   @override
   Widget buildContent(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          InkWell(
-            onTap: () {
-              showPopupSelectOrder(context);
-            },
+          AppBarOrder(size: size, theme: theme),
+          OrderWithSearch(size: size, theme: theme),
+          Divider(
+            height: 0,
+            thickness: 1,
+          ),
+          Expanded(
             child: Container(
-              height: MediaQuery.of(context).size.height * .075,
-              padding: const EdgeInsets.only(left: 15, right: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CustomIcon(
-                    3,
-                    Color(0xffd8f0f8),
-                    Icons.delivery_dining,
-                    Color(0xff79cce9),
-                  ),
-                  Padding(padding: const EdgeInsets.only(right: 12)),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
+              color: theme.selectedRowColor,
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Thực đơn',
+                      style: theme.textTheme.headline6,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 12),
+                    ),
+                    Container(
+                      height: size.height * .135,
+                      width: size.width,
+                      padding: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: theme.backgroundColor,
+                      ),
+                      child: Row(
                         children: [
-                          Text(
-                            'Giao đến',
-                            style: theme.textTheme.subtitle1,
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Cà phê sữa',
+                                  style: theme.textTheme.subtitle1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                Text(
+                                  'Hãy để Cà phê sữa đá Nhà thơm ngon đậm vị đồng hành cùng nhịp sống sôi nổi của tuổi trẻ, cho bạn một ngày làm việc đầy hứng khởi.',
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                Text('32000đ'),
+                              ],
+                            ),
                           ),
-                          Icon(Icons.arrow_drop_down),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 20),
+                          ),
+                          Image.network(
+                            'https://minio.thecoffeehouse.com/image/menufrontend/5b03966a1acd4d5bbd6723a3_cafe-sua-da.jpg',
+                          )
                         ],
                       ),
-                      Padding(padding: EdgeInsets.only(top: 3)),
-                      Container(
-                        width: MediaQuery.of(context).size.width * .8,
-                        child: Text(
-                          'Các món sẽ được giao đến địa chỉ của bạn',
-                          style: theme.textTheme.bodyText2,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          const Divider(
-            thickness: 1,
-            height: 0,
           ),
         ],
       ),
