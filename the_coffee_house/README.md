@@ -21,3 +21,11 @@ samples, guidance on mobile development, and a full API reference.
 #Generate keys of easy_localization
 - Run cmd: flutter pub run easy_localization:generate -f keys --source-dir=assets/translations -o locale_keys.g.dart
 
+#Run build to generate JSON mapping files:
+- Run cmd:  flutter pub run build_runner build
+
+#Watch entities to generate JSON mapping files:
+- Run cmd: flutter pub run build_runner watch
+
+#When things seem to go wrong
+- Add after command line cmd: --delete-conflicting-outputs
