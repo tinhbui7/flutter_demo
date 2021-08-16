@@ -5,9 +5,9 @@ part 'topping_model.g.dart';
 @JsonSerializable(createToJson: true)
 class ToppingModel {
   @JsonKey(name: 'name')
-  final String name;
+  final String? name;
   @JsonKey(name: 'extra_pay')
-  final int extraPay;
+  final int? extraPay;
 
   ToppingModel(
     this.name,

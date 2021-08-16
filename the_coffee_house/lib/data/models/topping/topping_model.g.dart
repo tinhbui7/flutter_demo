@@ -8,8 +8,8 @@ part of 'topping_model.dart';
 
 ToppingModel _$ToppingModelFromJson(Map<String, dynamic> json) {
   return ToppingModel(
-    json['name'] as String,
-    json['extra_pay'] as int,
+    json['name'] as String?,
+    json['extra_pay'] as int?,
   );
 }
 

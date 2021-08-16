@@ -8,8 +8,8 @@ part of 'size_model.dart';
 
 SizeModel _$SizeModelFromJson(Map<String, dynamic> json) {
   return SizeModel(
-    json['name'] as String,
-    json['extra_pay'] as int,
+    json['name'] as String?,
+    json['extra_pay'] as int?,
   );
 }
 

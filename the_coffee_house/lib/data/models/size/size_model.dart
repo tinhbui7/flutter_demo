@@ -5,9 +5,9 @@ part 'size_model.g.dart';
 @JsonSerializable(createToJson: true)
 class SizeModel {
   @JsonKey(name: 'name')
-  final String name;
+  final String? name;
   @JsonKey(name: 'extra_pay')
-  final int extraPay;
+  final int? extraPay;
 
   SizeModel(
     this.name,

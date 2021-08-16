@@ -1,14 +1,13 @@
-import 'package:the_coffee_house/data/models/product/product_model.dart';
-import 'package:the_coffee_house/data/models/size/size_model.dart';
-import 'package:the_coffee_house/data/models/topping/topping_model.dart';
+import 'package:the_coffee_house/domain/entities/size_entity.dart';
+import 'package:the_coffee_house/domain/entities/topping_entity.dart';
 
 class ProductEntity {
   String? sectionId;
   String? name;
   String? imageUrl;
   String? intro;
-  List<SizeModel>? sizes;
-  List<ToppingModel>? toppings;
+  List<SizeEntity>? sizes;
+  List<ToppingEntity>? toppings;
   int? price;
   String? status;
 
@@ -22,17 +21,4 @@ class ProductEntity {
     this.price,
     this.status,
   });
-
-  factory ProductEntity.fromModel(ProductModel? model) {
-    return ProductEntity(
-      sectionId: model?.sectionId,
-      name: model?.name,
-      imageUrl: model?.imageUrl,
-      intro: model?.intro,
-      sizes: model?.sizes,
-      toppings: model?.toppings,
-      price: model?.price,
-      status: model?.status,
-    );
-  }
 }

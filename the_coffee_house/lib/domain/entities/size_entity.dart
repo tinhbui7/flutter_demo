@@ -9,10 +9,10 @@ class SizeEntity {
     this.extraPay,
   });
 
-  factory SizeEntity.fromModel(SizeModel model) {
+  factory SizeEntity.fromModel(SizeModel? model) {
     return SizeEntity(
-      name: model.name,
-      extraPay: model.extraPay,
+      name: model?.name,
+      extraPay: model?.extraPay,
     );
   }
 }

@@ -9,10 +9,10 @@ class ToppingEntity {
     this.extraPay,
   });
 
-  factory ToppingEntity.fromModel(ToppingModel model) {
+  factory ToppingEntity.fromModel(ToppingModel? model) {
     return ToppingEntity(
-      name: model.name,
-      extraPay: model.extraPay,
+      name: model?.name,
+      extraPay: model?.extraPay,
     );
   }
 }

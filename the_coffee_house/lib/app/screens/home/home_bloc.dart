@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/app/base/base_bloc.dart';
 import 'package:the_coffee_house/app/base/base_bloc_events.dart';
 import 'package:the_coffee_house/app/screens/home/home_events.dart';
@@ -7,7 +6,6 @@ import 'package:the_coffee_house/app/screens/home/home_state.dart';
 class HomeScreenBloc extends BaseBloc<HomeScreenState> {
   @override
   String get tag => 'HomeScreenBloc';
-
   HomeScreenBloc()
       : super(HomeScreenState(
           isLoading: false,

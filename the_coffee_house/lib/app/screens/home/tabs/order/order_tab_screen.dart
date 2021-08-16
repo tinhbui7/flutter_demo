@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_bloc.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_state.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/sub_screen/order_with_search.dart';
+import 'package:the_coffee_house/domain/domain.dart';
 
 import '../home_base_content_layout.dart';
 import 'sub_screen/app_bar_order.dart';
@@ -16,6 +17,13 @@ class OrderTabScreen extends StatefulWidget {
 
 class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
     OrderTabBloc, OrderTabState> {
+  _OrderTabScreenState() {
+    bloc = OrderTabBloc();
+    bloc?.loadProduct();
+  }
+
+  List<ProductEntity> get products => state?.products ?? [];
+
   @override
   Widget buildContent(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -31,7 +39,14 @@ class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
           Expanded(
             child: Container(
               color: theme.selectedRowColor,
-              child: SingleChildScrollView(
+              child: ListView.builder(
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  return Text(products[index].name!);
+                },
+              ),
+
+              /*child: SingleChildScrollView(
                 padding: const EdgeInsets.all(15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,13 +92,13 @@ class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
                           ),
                           Image.network(
                             'https://minio.thecoffeehouse.com/image/menufrontend/5b03966a1acd4d5bbd6723a3_cafe-sua-da.jpg',
-                          )
+                          ),
                         ],
                       ),
                     ),
                   ],
                 ),
-              ),
+              ),*/
             ),
           ),
         ],
