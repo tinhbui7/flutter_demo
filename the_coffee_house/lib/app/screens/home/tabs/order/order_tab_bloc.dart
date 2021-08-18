@@ -3,6 +3,7 @@ import 'package:the_coffee_house/app/base/base_bloc.dart';
 import 'package:the_coffee_house/app/base/base_bloc_events.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_events.dart';
 import 'package:the_coffee_house/domain/domain.dart';
+import 'package:the_coffee_house/domain/usecases/section/section_use_case_i.dart';
 
 import 'order_tab_state.dart';
 
@@ -11,6 +12,7 @@ class OrderTabBloc extends BaseBloc<OrderTabState> {
   String get tag => 'OrderTabBloc';
 
   IProductUseCase? get productUseCase => getIt.get<IProductUseCase>();
+  ISectionUseCase? get sectionUseCase => getIt.get<ISectionUseCase>();
 
   OrderTabBloc() : super(OrderTabState(isLoading: true));
 
@@ -18,6 +20,8 @@ class OrderTabBloc extends BaseBloc<OrderTabState> {
   Stream<OrderTabState> mapEventToState(BaseBlocEvent event) async* {
     if (event is LoadProductsDataEvent) {
       yield* _loadProductState(event);
+    } else if (event is LoadSectionDataEvent) {
+      yield* _loadSectionState(event);
     } else {
       yield* super.mapEventToState(event);
     }
@@ -33,6 +37,20 @@ class OrderTabBloc extends BaseBloc<OrderTabState> {
     yield OrderTabState(
       state: state,
       products: products,
+      isLoading: false,
+    );
+  }
+
+  Stream<OrderTabState> _loadSectionState(LoadSectionDataEvent event) async* {
+    List<SectionEntity>? sections;
+    try {
+      sections = await sectionUseCase?.getSection();
+    } catch (ex) {
+      logError(tag, 'loadSectionState: ${ex.toString()}');
+    }
+    yield OrderTabState(
+      state: state,
+      sections: sections,
       isLoading: false,
     );
   }
@@ -56,5 +74,9 @@ class OrderTabBloc extends BaseBloc<OrderTabState> {
 
   loadProduct() {
     add(LoadProductsDataEvent());
+  }
+
+  loadSection() {
+    add(LoadSectionDataEvent());
   }
 }

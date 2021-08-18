@@ -7,6 +7,7 @@ import '../base_use_case.dart';
 
 class ProductUseCase extends BaseUseCase<IProductRepository>
     implements IProductUseCase {
+  @override
   String get tag => 'ProductService';
 
   @override

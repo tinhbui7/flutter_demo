@@ -8,7 +8,7 @@ import 'package:the_coffee_house/domain/repositories/local_storage_repository_i.
 class LocalStorageRepository extends ILocalStorageRepository {
   final _tag = 'LocalStorageRepository';
   late Box _box;
-  GetIt get getIt => GetIt.instance();
+  GetIt get getIt => GetIt.instance;
   ILogger? get _logger => getIt.get<ILogger>();
 
   LocalStorageRepository() {

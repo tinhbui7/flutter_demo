@@ -20,9 +20,12 @@ class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
   _OrderTabScreenState() {
     bloc = OrderTabBloc();
     bloc?.loadProduct();
+    bloc?.loadSection();
   }
 
   List<ProductEntity> get products => state?.products ?? [];
+
+  List<SectionEntity> get sections => state?.sections ?? [];
 
   @override
   Widget buildContent(BuildContext context) {
@@ -40,9 +43,9 @@ class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
             child: Container(
               color: theme.selectedRowColor,
               child: ListView.builder(
-                itemCount: products.length,
+                itemCount: sections.length,
                 itemBuilder: (context, index) {
-                  return Text(products[index].name!);
+                  return Text(sections[index].name!);
                 },
               ),
 

@@ -53,4 +53,21 @@ class EntityMappers {
       List<ProductModel>? models) {
     return models?.map((e) => toProductEntityFromModel(e)).toList();
   }
+
+  static SectionEntity toSectionEntityFromModels(SectionModel? m) {
+    /*var productModel = m?.lstProducts;
+    if (productModel?.isNotEmpty == true) {
+      _lstProducts = toListProductEntityFromModels(productModel);
+    }*/
+    return SectionEntity(
+      id: m?.id,
+      name: m?.name,
+      status: m?.status,
+    );
+  }
+
+  static List<SectionEntity>? toListSectionEntityFromModels(
+      List<SectionModel>? models) {
+    return models?.map((e) => toSectionEntityFromModels(e)).toList();
+  }
 }
