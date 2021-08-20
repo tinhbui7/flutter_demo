@@ -9,7 +9,10 @@ class SectionRepository extends BaseRepository implements ISectionRepository {
   Future<List<SectionModel>?> getSection() async {
     List<SectionModel> _result = [];
     try {
-      QuerySnapshot? _qrSnapshot = await fsInstance.collection('section').get();
+      QuerySnapshot? _qrSnapshot = await fsInstance
+          .collection('section')
+          .orderBy('id', descending: false)
+          .get();
       if (_qrSnapshot.docs.isNotEmpty == true) {
         for (final dynamic element in _qrSnapshot.docs) {
           _result.add(SectionModel.fromJson(element.data()));
