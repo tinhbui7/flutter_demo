@@ -16,58 +16,86 @@ class EntityMappers {
     );
   }
 
-  static ProductEntity toProductEntityFromModel(ProductModel? m) {
-    List<ToppingEntity>? _toppings;
-    List<SizeEntity>? _sizes;
+  static ProductEntity toProductEntityFromModel(
+      ProductModel? m, String? sectionId) {
+    List<ToppingEntity> _toppings = [];
+    List<SizeEntity> _sizes = [];
     var toppingModel = m?.toppings;
     var sizeModel = m?.sizes;
     if (toppingModel?.isNotEmpty == true && sizeModel?.isNotEmpty == true) {
       for (var i = 0; i < toppingModel!.length; i++) {
-        _toppings?.add(toToppingEntityFromModel(toppingModel[i]));
+        _toppings.add(toToppingEntityFromModel(toppingModel[i]));
       }
       for (var i = 0; i < sizeModel!.length; i++) {
-        _sizes?.add(toSizeEntityFromModel(sizeModel[i]));
+        _sizes.add(toSizeEntityFromModel(sizeModel[i]));
       }
     } else if (toppingModel?.isNotEmpty == true) {
       for (var i = 0; i < toppingModel!.length; i++) {
-        _toppings?.add(toToppingEntityFromModel(toppingModel[i]));
+        _toppings.add(toToppingEntityFromModel(toppingModel[i]));
       }
     } else if (sizeModel?.isNotEmpty == true) {
       for (var i = 0; i < sizeModel!.length; i++) {
-        _sizes?.add(toSizeEntityFromModel(sizeModel[i]));
+        _sizes.add(toSizeEntityFromModel(sizeModel[i]));
       }
     }
-    return ProductEntity(
-      sectionId: m?.sectionId,
-      name: m?.name,
-      imageUrl: m?.imageUrl,
-      intro: m?.intro,
-      sizes: _sizes,
-      toppings: _toppings,
-      price: m?.price,
-      status: m?.status,
-    );
+
+    if (sectionId == null) {
+      return ProductEntity(
+        sectionId: m?.sectionId,
+        name: m?.name,
+        imageUrl: m?.imageUrl,
+        intro: m?.intro,
+        sizes: _sizes,
+        toppings: _toppings,
+        price: m?.price,
+        status: m?.status,
+      );
+    } else if (m?.sectionId == sectionId) {
+      return ProductEntity(
+        sectionId: m?.sectionId,
+        name: m?.name,
+        imageUrl: m?.imageUrl,
+        intro: m?.intro,
+        sizes: _sizes,
+        toppings: _toppings,
+        price: m?.price,
+        status: m?.status,
+      );
+    }
+    return ProductEntity();
   }
 
   static List<ProductEntity>? toListProductEntityFromModels(
-      List<ProductModel>? models) {
-    return models?.map((e) => toProductEntityFromModel(e)).toList();
+      List<ProductModel>? models,
+      {String? sectionId}) {
+    return models
+        ?.map((e) => toProductEntityFromModel(e, sectionId ?? null))
+        .where((element) => element.sectionId != null)
+        .toList();
   }
 
-  static SectionEntity toSectionEntityFromModels(SectionModel? m) {
-    /*var productModel = m?.lstProducts;
-    if (productModel?.isNotEmpty == true) {
-      _lstProducts = toListProductEntityFromModels(productModel);
-    }*/
+  static SectionEntity toSectionEntityFromModels(SectionModel? mSection,
+      {List<ProductModel>? mListProduct}) {
+    List<ProductEntity>? _lstProducts =
+        toListProductEntityFromModels(mListProduct, sectionId: mSection?.id);
+
     return SectionEntity(
-      id: m?.id,
-      name: m?.name,
-      status: m?.status,
+      id: mSection?.id,
+      name: mSection?.name,
+      status: mSection?.status,
+      lstProduct: _lstProducts,
     );
   }
 
   static List<SectionEntity>? toListSectionEntityFromModels(
       List<SectionModel>? models) {
     return models?.map((e) => toSectionEntityFromModels(e)).toList();
+  }
+
+  static List<SectionEntity>? toListProductBySectionEntityFromModels(
+      List<ProductModel>? mProduct, List<SectionModel>? mSection) {
+    return mSection
+        ?.map((e) => toSectionEntityFromModels(e, mListProduct: mProduct))
+        .toList();
   }
 }

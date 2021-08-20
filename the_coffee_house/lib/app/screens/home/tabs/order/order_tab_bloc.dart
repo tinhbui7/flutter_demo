@@ -3,7 +3,6 @@ import 'package:the_coffee_house/app/base/base_bloc.dart';
 import 'package:the_coffee_house/app/base/base_bloc_events.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_events.dart';
 import 'package:the_coffee_house/domain/domain.dart';
-import 'package:the_coffee_house/domain/usecases/section/section_use_case_i.dart';
 
 import 'order_tab_state.dart';
 
@@ -28,9 +27,9 @@ class OrderTabBloc extends BaseBloc<OrderTabState> {
   }
 
   Stream<OrderTabState> _loadProductState(LoadProductsDataEvent event) async* {
-    List<ProductEntity>? products;
+    List<SectionEntity>? products;
     try {
-      products = await productUseCase?.getProduct();
+      products = await productUseCase?.getListProductBySection();
     } catch (ex) {
       logError(tag, 'loadProductState: ${ex.toString()}');
     }

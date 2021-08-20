@@ -23,7 +23,7 @@ class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
     bloc?.loadSection();
   }
 
-  List<ProductEntity> get products => state?.products ?? [];
+  List<SectionEntity> get products => state?.products ?? [];
 
   List<SectionEntity> get sections => state?.sections ?? [];
 
@@ -43,9 +43,9 @@ class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
             child: Container(
               color: theme.selectedRowColor,
               child: ListView.builder(
-                itemCount: sections.length,
+                itemCount: products.length,
                 itemBuilder: (context, index) {
-                  return Text(sections[index].name!);
+                  return Text(products[index].name!);
                 },
               ),
 

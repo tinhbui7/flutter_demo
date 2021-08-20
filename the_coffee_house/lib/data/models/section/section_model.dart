@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:the_coffee_house/data/models/product/product_model.dart';
 
 part 'section_model.g.dart';
 
