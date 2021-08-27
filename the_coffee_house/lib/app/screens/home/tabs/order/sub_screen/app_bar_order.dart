@@ -4,17 +4,12 @@ import 'package:the_coffee_house/app/screens/home/tabs/order/sub_screen/popup_se
 import 'package:the_coffee_house/app/widgets/icons/custom_icon.dart';
 
 class AppBarOrder extends StatelessWidget {
-  const AppBarOrder({
-    Key? key,
-    required this.size,
-    required this.theme,
-  }) : super(key: key);
-
-  final Size size;
-  final ThemeData theme;
+  const AppBarOrder({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+    Size size = MediaQuery.of(context).size;
     return InkWell(
       onTap: () {
         showPopupSelectOrder(context);

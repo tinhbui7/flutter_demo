@@ -5,6 +5,8 @@ import 'package:the_coffee_house/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class OptionOrderButton extends StatelessWidget {
+  const OptionOrderButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);

@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class AppElevatedButton extends StatelessWidget {
-  final GestureTapCallback? onPressed;
-  final IconData? icon;
-  final String contentButton;
-  final Color? color;
-  final BorderSide? borderSide;
-
-  AppElevatedButton({
+  const AppElevatedButton({
+    Key? key,
     this.onPressed,
     this.icon,
     required this.contentButton,
     this.color,
     this.borderSide,
-  });
+  }) : super(key: key);
+
+  final GestureTapCallback? onPressed;
+  final IconData? icon;
+  final String contentButton;
+  final Color? color;
+  final BorderSide? borderSide;
 
   @override
   Widget build(BuildContext context) {

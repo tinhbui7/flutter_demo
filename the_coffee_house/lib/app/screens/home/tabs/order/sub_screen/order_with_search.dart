@@ -3,17 +3,12 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class OrderWithSearch extends StatelessWidget {
-  const OrderWithSearch({
-    Key? key,
-    required this.size,
-    required this.theme,
-  }) : super(key: key);
-
-  final Size size;
-  final ThemeData theme;
+  const OrderWithSearch({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    ThemeData theme = Theme.of(context);
     return Container(
       height: size.height * .075,
       padding: const EdgeInsets.only(left: 12, right: 12),

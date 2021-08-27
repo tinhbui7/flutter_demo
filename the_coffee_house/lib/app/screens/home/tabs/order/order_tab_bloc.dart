@@ -11,7 +11,6 @@ class OrderTabBloc extends BaseBloc<OrderTabState> {
   String get tag => 'OrderTabBloc';
 
   IProductUseCase? get productUseCase => getIt.get<IProductUseCase>();
-  ISectionUseCase? get sectionUseCase => getIt.get<ISectionUseCase>();
 
   OrderTabBloc() : super(OrderTabState(isLoading: true));
 
@@ -19,8 +18,6 @@ class OrderTabBloc extends BaseBloc<OrderTabState> {
   Stream<OrderTabState> mapEventToState(BaseBlocEvent event) async* {
     if (event is LoadProductsDataEvent) {
       yield* _loadProductState(event);
-    } else if (event is LoadSectionDataEvent) {
-      yield* _loadSectionState(event);
     } else {
       yield* super.mapEventToState(event);
     }
@@ -36,20 +33,6 @@ class OrderTabBloc extends BaseBloc<OrderTabState> {
     yield OrderTabState(
       state: state,
       products: products,
-      isLoading: false,
-    );
-  }
-
-  Stream<OrderTabState> _loadSectionState(LoadSectionDataEvent event) async* {
-    List<SectionEntity>? sections;
-    try {
-      sections = await sectionUseCase?.getSection();
-    } catch (ex) {
-      logError(tag, 'loadSectionState: ${ex.toString()}');
-    }
-    yield OrderTabState(
-      state: state,
-      sections: sections,
       isLoading: false,
     );
   }
@@ -73,9 +56,5 @@ class OrderTabBloc extends BaseBloc<OrderTabState> {
 
   loadProduct() {
     add(LoadProductsDataEvent());
-  }
-
-  loadSection() {
-    add(LoadSectionDataEvent());
   }
 }

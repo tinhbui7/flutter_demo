@@ -3,6 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 
 class HomeBanner extends StatelessWidget {
+  const HomeBanner({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
