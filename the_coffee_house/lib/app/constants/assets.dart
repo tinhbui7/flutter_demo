@@ -13,11 +13,11 @@ class Assets {
   static final googleStandard = '$_iconsDir/googleg_standard_color_18.png';
 
   /// Backgrounds
-  static final _picturesDir = 'assets/images/backgrounds';
+  static final _backgroundsDir = 'assets/images/backgrounds';
 
-  static final backgroundLogin = '$_picturesDir/img_background_login.jpg';
+  static final backgroundLogin = '$_backgroundsDir/img_background_login.jpg';
 
-  static final bannerHome = '$_picturesDir/banner_home.png';
+  static final bannerHome = '$_backgroundsDir/banner_home.png';
 
   /// Sliders
   static final _slidersDir = 'assets/images/slider';
@@ -31,6 +31,11 @@ class Assets {
   static final sliderNo4 = '$_slidersDir/slider_no_4.png';
 
   static final sliderNo5 = '$_slidersDir/slider_no_5.png';
+
+  /// Pictures
+  static final _picturesDir = 'assets/images/pictures';
+
+  static final picturePlaceHolder = '$_picturesDir/coffee_place.jpg';
 
   /// Url File Data
   static final _dataUrl = 'assets/data';
