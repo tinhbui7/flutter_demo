@@ -45,7 +45,7 @@ class AppTheme {
           ..focus = const Color(0xffd81e1e)
           ..secondaryColor = const Color(0xff1976d2)
           ..bg2 = const Color(0xffffffff)
-          ..accent2 = const Color(0xffc5671b);
+          ..accent2 = const Color(0xffE57905);
 
       case ThemeType.Default:
         return AppTheme(isDark: true)
@@ -60,7 +60,7 @@ class AppTheme {
           ..focus = const Color(0xffd81e1e)
           ..secondaryColor = const Color(0xff1976d2)
           ..bg2 = Colors.black
-          ..accent2 = const Color(0xffc5671b);
+          ..accent2 = const Color(0xffE57905);
       default:
         break;
     }

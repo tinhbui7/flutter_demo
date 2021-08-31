@@ -35,7 +35,7 @@ class Assets {
   /// Pictures
   static final _picturesDir = 'assets/images/pictures';
 
-  static final picturePlaceHolder = '$_picturesDir/coffee_place.jpg';
+  static final picturePlaceHolder = '$_picturesDir/tch_placeholder.jpg';
 
   /// Url File Data
   static final _dataUrl = 'assets/data';

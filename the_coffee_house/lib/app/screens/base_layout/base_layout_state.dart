@@ -15,6 +15,7 @@ import 'package:the_coffee_house/app/styles/styles.dart';
 import 'package:the_coffee_house/app/views/errors/empty_view.dart';
 import 'package:the_coffee_house/app/views/errors/network_connection_error.dart';
 import 'package:the_coffee_house/app/widgets/progress/content_loading_indicator.dart';
+import 'package:flutter/services.dart';
 
 abstract class BaseLayoutState<Sf extends StatefulWidget,
     B extends BaseBloc<St>, St extends BaseBlocState> extends BaseState<Sf> {
@@ -46,6 +47,10 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
     if (isSupportRefresh) {
       refreshCompleter = Completer<void>();
     }
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
   }
 
   @override
@@ -77,6 +82,10 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
             child: buildBaseContent(context),
           )
         : buildBaseContent(context);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: theme.primaryColor,
+    ));
     return Theme(
       data: theme,
       child: Scaffold(

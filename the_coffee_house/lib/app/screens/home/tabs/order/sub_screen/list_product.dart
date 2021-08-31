@@ -2,6 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/widgets/content/content_empty.dart';
 import 'package:the_coffee_house/domain/entities/entities.dart';
@@ -75,53 +77,87 @@ class ListProduct extends StatelessWidget {
 
   Widget _buildProductItems(BuildContext context, ProductEntity item) {
     ThemeData theme = Theme.of(context);
-    return Card(
-      elevation: 0.3,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(9.0),
-      ),
-      color: theme.backgroundColor,
-      clipBehavior: Clip.antiAlias,
-      child: Container(
-        height: MediaQuery.of(context).size.height * .139,
-        padding: const EdgeInsets.all(15.0),
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    item.name!,
-                    style: theme.textTheme.subtitle2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Text(
-                    item.intro!,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Text('${NumberFormat.currency(
-                    locale: 'vi',
-                    symbol: 'đ',
-                  ).format(item.price)}'),
-                ],
-              ),
+    return Slidable(
+      actionPane: SlidableBehindActionPane(),
+      closeOnScroll: true,
+      secondaryActions: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(12.0, 25.0, 5.0, 25.0),
+          child: SlideAction(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  FontAwesomeIcons.heart,
+                  color: theme.backgroundColor,
+                  size: 23.0,
+                ),
+                Padding(padding: const EdgeInsets.only(top: 10.0)),
+                Text(
+                  'YÊU THÍCH',
+                  style: TextStyle(
+                      color: theme.backgroundColor,
+                      fontSize: 9.0,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
-            Padding(padding: const EdgeInsets.only(left: 15.0)),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(5.0),
-              child: CachedNetworkImage(
-                imageUrl: item.imageUrl!,
-                fit: BoxFit.cover,
-                placeholder: (context, url) =>
-                    Image.asset(Assets.picturePlaceHolder),
-                errorWidget: (context, url, error) =>
-                    Image.asset(Assets.picturePlaceHolder),
-              ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              color: Colors.orangeAccent,
             ),
-          ],
+          ),
+        ),
+      ],
+      child: Card(
+        elevation: 0.3,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(9.0),
+        ),
+        color: theme.backgroundColor,
+        clipBehavior: Clip.antiAlias,
+        child: Container(
+          height: MediaQuery.of(context).size.height * .139,
+          padding: const EdgeInsets.all(15.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      item.name!,
+                      style: theme.textTheme.subtitle2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(
+                      item.intro!,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text('${NumberFormat.currency(
+                      locale: 'vi',
+                      symbol: 'đ',
+                    ).format(item.price)}'),
+                  ],
+                ),
+              ),
+              Padding(padding: const EdgeInsets.only(left: 15.0)),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(5.0),
+                child: CachedNetworkImage(
+                  imageUrl: item.imageUrl!,
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) =>
+                      Image.asset(Assets.picturePlaceHolder),
+                  errorWidget: (context, url, error) =>
+                      Image.asset(Assets.picturePlaceHolder),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
