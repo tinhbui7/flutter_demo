@@ -51,6 +51,9 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+    ));
   }
 
   @override
@@ -82,10 +85,6 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
             child: buildBaseContent(context),
           )
         : buildBaseContent(context);
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      systemNavigationBarColor: theme.primaryColor,
-    ));
     return Theme(
       data: theme,
       child: Scaffold(

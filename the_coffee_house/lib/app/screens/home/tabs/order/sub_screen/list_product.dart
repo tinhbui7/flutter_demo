@@ -4,17 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/widgets/content/content_empty.dart';
 import 'package:the_coffee_house/domain/entities/entities.dart';
 
 class ListProduct extends StatelessWidget {
-  const ListProduct({
+  ListProduct({
     Key? key,
     required this.listSection,
   }) : super(key: key);
 
   final List<SectionEntity> listSection;
+  final ItemScrollController itemScrollController = ItemScrollController();
+  final ItemPositionsListener itemPositionsListener =
+      ItemPositionsListener.create();
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +28,19 @@ class ListProduct extends StatelessWidget {
       child: Container(
         color: theme.selectedRowColor,
         child: listSection.isNotEmpty == true
-            ? ListView.builder(
-                shrinkWrap: true,
+            ? ScrollablePositionedList.builder(
+                itemScrollController: itemScrollController,
+                itemPositionsListener: itemPositionsListener,
                 physics: const AlwaysScrollableScrollPhysics(),
                 padding: const EdgeInsets.fromLTRB(12.0, 0.0, 12.0, 7.0),
                 itemCount: listSection.length,
                 itemBuilder: (context, index) {
                   _listProduct = listSection[index].lstProduct!;
                   return _buildSections(
-                      context, listSection[index].name!, _listProduct);
+                    context,
+                    listSection[index].name!,
+                    _listProduct,
+                  );
                 },
               )
             : ContentEmpty(),
@@ -43,7 +51,6 @@ class ListProduct extends StatelessWidget {
   Widget _buildSections(
       BuildContext context, String section, List<ProductEntity> products) {
     ThemeData theme = Theme.of(context);
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

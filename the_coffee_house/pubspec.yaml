@@ -29,7 +29,7 @@ dependencies:
   dio: ^4.0.0
   get_it: ^6.1.1
   equatable: ^2.0.0
-  flutter_bloc: ^7.0.0
+  flutter_bloc: ^7.2.0
   easy_localization: ^3.0.0
   hive: ^2.0.4
   path_provider: ^2.0.1
