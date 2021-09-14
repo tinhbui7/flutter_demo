@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_bloc.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_state.dart';
 
 class OrderWithSearch extends StatelessWidget {
-  const OrderWithSearch({Key? key}) : super(key: key);
+  const OrderWithSearch({
+    Key? key,
+    required this.itemPositionsListener,
+  }) : super(key: key);
+
+  final ItemPositionsListener itemPositionsListener;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     ThemeData theme = Theme.of(context);
+    OrderTabBloc orderTabBloc = BlocProvider.of<OrderTabBloc>(context);
     return Container(
       height: size.height * .075,
       padding: const EdgeInsets.only(left: 12, right: 12),
@@ -28,11 +38,21 @@ class OrderWithSearch extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Text(
-                    'Thực đơn',
-                    style: theme.textTheme.caption,
-                    overflow: TextOverflow.ellipsis,
-                    textScaleFactor: 1.3,
+                  ValueListenableBuilder<Iterable<ItemPosition>>(
+                    valueListenable: itemPositionsListener.itemPositions,
+                    builder: (context, positions, child) {
+                      orderTabBloc.sectionItems(positions);
+                      return BlocBuilder<OrderTabBloc, OrderTabState>(
+                        builder: (context, state) {
+                          return Text(
+                            '${state.itemSection ?? 'Thực đơn'}',
+                            style: theme.textTheme.caption,
+                            overflow: TextOverflow.ellipsis,
+                            textScaleFactor: 1.3,
+                          );
+                        },
+                      );
+                    },
                   ),
                   Spacer(),
                   Icon(Icons.arrow_drop_down),

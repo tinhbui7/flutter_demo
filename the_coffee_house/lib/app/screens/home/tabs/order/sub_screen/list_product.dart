@@ -13,12 +13,13 @@ class ListProduct extends StatelessWidget {
   ListProduct({
     Key? key,
     required this.listSection,
+    required this.itemScrollController,
+    required this.itemPositionsListener,
   }) : super(key: key);
 
   final List<SectionEntity> listSection;
-  final ItemScrollController itemScrollController = ItemScrollController();
-  final ItemPositionsListener itemPositionsListener =
-      ItemPositionsListener.create();
+  final ItemScrollController itemScrollController;
+  final ItemPositionsListener itemPositionsListener;
 
   @override
   Widget build(BuildContext context) {
