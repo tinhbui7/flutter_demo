@@ -3,9 +3,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
+import 'package:the_coffee_house/app/screens/product_detail/product_detail_screen.dart';
 import 'package:the_coffee_house/app/widgets/content/content_empty.dart';
 import 'package:the_coffee_house/domain/entities/entities.dart';
 
@@ -70,7 +70,8 @@ class ListProduct extends StatelessWidget {
                 itemCount: products.length,
                 itemBuilder: (context, index) {
                   return InkWell(
-                    onTap: () {},
+                    onTap: () =>
+                        _showProductDetailPopup(context, products[index]),
                     child: _buildProductItems(
                       context,
                       products[index],
@@ -97,7 +98,7 @@ class ListProduct extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Icon(
-                  FontAwesomeIcons.heart,
+                  Icons.favorite_border,
                   color: theme.backgroundColor,
                   size: 23.0,
                 ),
@@ -143,6 +144,7 @@ class ListProduct extends StatelessWidget {
                     Text(
                       item.intro!,
                       maxLines: 2,
+                      style: theme.textTheme.caption?.copyWith(fontSize: 13.5),
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text('${NumberFormat.currency(
@@ -167,6 +169,44 @@ class ListProduct extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Future _showProductDetailPopup(
+      BuildContext context, ProductEntity contentScreen) {
+    var topPadding = 1 -
+        MediaQueryData.fromWindow(WidgetsBinding.instance!.window).padding.top /
+            1000;
+    return showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: const BorderRadius.vertical(
+          top: const Radius.circular(20.0),
+        ),
+      ),
+      builder: (context) => DraggableScrollableSheet(
+        initialChildSize: topPadding,
+        maxChildSize: topPadding,
+        minChildSize: 0,
+        expand: false,
+        builder: (BuildContext context, ScrollController scrollController) {
+          return Container(
+            clipBehavior: Clip.hardEdge,
+            decoration: const BoxDecoration(
+              borderRadius: const BorderRadius.vertical(
+                top: const Radius.circular(20.0),
+              ),
+            ),
+            child: ProductDetailScreen(
+              orderEntity: OrderEntity(
+                  orderId: DateTime.now().millisecondsSinceEpoch,
+                  product: contentScreen),
+              scrollControl: scrollController,
+            ),
+          );
+        },
       ),
     );
   }

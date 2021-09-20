@@ -7,9 +7,8 @@ void showPopupSelectOrder(context) {
   showModalBottomSheet(
     context: context,
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.only(
-        topLeft: const Radius.circular(10),
-        topRight: const Radius.circular(10),
+      borderRadius: const BorderRadius.vertical(
+        top: const Radius.circular(10),
       ),
     ),
     builder: (context) {
@@ -17,9 +16,8 @@ void showPopupSelectOrder(context) {
         height: MediaQuery.of(context).size.height * .31,
         decoration: BoxDecoration(
           color: theme.backgroundColor,
-          borderRadius: BorderRadius.only(
-            topLeft: const Radius.circular(10),
-            topRight: const Radius.circular(10),
+          borderRadius: BorderRadius.vertical(
+            top: const Radius.circular(10),
           ),
         ),
         child: Column(

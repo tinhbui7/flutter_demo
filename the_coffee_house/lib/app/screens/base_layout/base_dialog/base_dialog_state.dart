@@ -20,12 +20,12 @@ abstract class BaseDialogState<
           buildDialogContent(context),
           Positioned(
             right: 10,
-            top: 11,
+            top: 10,
             child: IconButton(
               icon: Icon(Icons.cancel_rounded),
               iconSize: 33,
-              color: theme.selectedRowColor,
-              onPressed: actionButton,
+              color: theme.disabledColor,
+              onPressed: () => Navigator.of(context).pop(),
             ),
           ),
         ],
@@ -34,6 +34,4 @@ abstract class BaseDialogState<
   }
 
   Widget buildDialogContent(BuildContext context);
-
-  VoidCallback? actionButton();
 }

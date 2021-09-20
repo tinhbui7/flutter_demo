@@ -10,7 +10,7 @@ class RouteNames {
   static const HOME = '/Home';
   static const PRODUCT = '/Product';
   static const DELIVERY = '/Delivery';
-  static const MAP = 'MapDelivery';
+  static const MAP = '/MapDelivery';
 }
 
 Route onAppGenerateRoute(RouteSettings routeSettings) {

@@ -124,9 +124,4 @@ class _LoginDialogState extends BaseDialogState<LoginDialogScreen,
       ],
     );
   }
-
-  @override
-  VoidCallback? actionButton() {
-    Navigator.of(context).pop();
-  }
 }

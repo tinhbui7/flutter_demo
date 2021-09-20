@@ -184,7 +184,7 @@ packages:
     source: hosted
     version: "3.7.0"
   collection:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: collection
       url: "https://pub.dartlang.org"
@@ -377,7 +377,7 @@ packages:
       name: font_awesome_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "9.0.0"
+    version: "9.1.0"
   get_it:
     dependency: "direct main"
     description:
@@ -644,6 +644,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.1"
+  readmore:
+    dependency: "direct main"
+    description:
+      name: readmore
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   retrofit:
     dependency: "direct main"
     description:
