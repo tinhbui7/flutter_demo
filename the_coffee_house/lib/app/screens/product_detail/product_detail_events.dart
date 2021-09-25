@@ -12,3 +12,17 @@ class SelectedToppingEvent extends BaseBlocEvent {
 
   SelectedToppingEvent(this.itemTopping);
 }
+
+class NoteProductEvent extends BaseBlocEvent {
+  final String? noteProduct;
+
+  NoteProductEvent(this.noteProduct);
+}
+
+class IncrementQuantityEvent extends BaseBlocEvent {}
+
+class DecrementQuantityEvent extends BaseBlocEvent {
+  final bool isOrder;
+
+  DecrementQuantityEvent(this.isOrder);
+}

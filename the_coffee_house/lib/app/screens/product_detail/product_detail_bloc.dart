@@ -22,30 +22,38 @@ class ProductDetailBloc extends BaseBloc<ProductDetailState> {
                 : orderEntity.size,
             selectedTopping:
                 (orderEntity.topping != null) ? orderEntity.topping : null,
+            noteProduct: orderEntity.note != null ? orderEntity.note : null,
+            quantity: orderEntity.quantity ?? 1,
           ),
         );
 
   @override
   Stream<ProductDetailState> mapEventToState(BaseBlocEvent event) async* {
     if (event is SelectedSizeEvent) {
-      yield* _setSizeSelected(event);
+      yield* _setSizeSelectedState(event);
     } else if (event is SelectedToppingEvent) {
-      yield* _setToppingSelected(event);
+      yield* _setToppingSelectedState(event);
+    } else if (event is NoteProductEvent) {
+      yield* _setNoteProductState(event);
+    } else if (event is IncrementQuantityEvent) {
+      yield* _incrementQuantityState(event);
+    } else if (event is DecrementQuantityEvent) {
+      yield* _decrementQuantityState(event);
     } else {
       yield* super.mapEventToState(event);
     }
   }
 
-  Stream<ProductDetailState> _setSizeSelected(SelectedSizeEvent event) async* {
+  Stream<ProductDetailState> _setSizeSelectedState(
+      SelectedSizeEvent event) async* {
     yield ProductDetailState(
       state: state,
       isLoading: false,
       selectedSize: event.itemSize,
-      selectedTopping: state.selectedTopping,
     );
   }
 
-  Stream<ProductDetailState> _setToppingSelected(
+  Stream<ProductDetailState> _setToppingSelectedState(
       SelectedToppingEvent event) async* {
     List<ToppingEntity> listTopping = state.selectedTopping ?? [];
     ToppingEntity? toppingEntity =
@@ -58,8 +66,60 @@ class ProductDetailBloc extends BaseBloc<ProductDetailState> {
     yield ProductDetailState(
       state: state,
       isLoading: false,
-      selectedSize: state.selectedSize,
       selectedTopping: listTopping,
+    );
+  }
+
+  Stream<ProductDetailState> _setNoteProductState(
+      NoteProductEvent event) async* {
+    String? note = event.noteProduct;
+    if (event.noteProduct?.isNotEmpty == true) {
+      note = event.noteProduct?.trim().replaceAll(RegExp(r'\s+'), ' ');
+    }
+    yield ProductDetailState(
+      state: state,
+      isLoading: false,
+      noteProduct: note,
+    );
+  }
+
+  Stream<ProductDetailState> _incrementQuantityState(
+      IncrementQuantityEvent event) async* {
+    yield ProductDetailState(
+      state: state,
+      isLoading: false,
+      quantity: (state.quantity ?? 0) + 1,
+    );
+  }
+
+  Stream<ProductDetailState> _decrementQuantityState(
+      DecrementQuantityEvent event) async* {
+    int quantity = state.quantity ?? 1;
+    if (event.isOrder) {
+      if (quantity > 0) {
+        quantity--;
+      }
+    } else if (quantity > 1) {
+      quantity--;
+    }
+
+    yield ProductDetailState(
+      state: state,
+      isLoading: false,
+      quantity: quantity,
+    );
+  }
+
+  OrderEntity get orderItem {
+    return OrderEntity(
+      orderId: orderEntity.orderId,
+      product: orderEntity.product,
+      size: (state.selectedSize != null)
+          ? state.selectedSize
+          : SizeEntity(name: 'Vừa'),
+      topping: state.selectedTopping,
+      note: state.noteProduct,
+      quantity: state.quantity,
     );
   }
 
@@ -69,5 +129,17 @@ class ProductDetailBloc extends BaseBloc<ProductDetailState> {
 
   void setToppingSelected(ToppingEntity? itemTopping) {
     add(SelectedToppingEvent(itemTopping));
+  }
+
+  void setNoteProduct(String noteProduct) {
+    add(NoteProductEvent(noteProduct));
+  }
+
+  void incrementQuantity() {
+    add(IncrementQuantityEvent());
+  }
+
+  void decrementQuantity(bool isOrder) {
+    add(DecrementQuantityEvent(isOrder));
   }
 }
