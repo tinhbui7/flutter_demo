@@ -177,7 +177,7 @@ class ListProduct extends StatelessWidget {
       BuildContext context, ProductEntity contentScreen) {
     var topPadding = 1 -
         MediaQueryData.fromWindow(WidgetsBinding.instance!.window).padding.top /
-            1000;
+            900;
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,

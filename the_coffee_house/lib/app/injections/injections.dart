@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:the_coffee_house/app/blocs/app/app_bloc.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
 import 'package:the_coffee_house/app/blocs/notify/notify_app_bloc.dart';
 import 'package:the_coffee_house/core/constants/global.dart';
 import 'package:the_coffee_house/core/helpers/logger/logger.dart';
@@ -23,4 +24,5 @@ configureDependencies({required Flavor flavor}) async {
 
   getIt.registerSingleton<AppBloc>(AppBloc());
   getIt.registerSingleton<NotifyAppBloc>(NotifyAppBloc());
+  getIt.registerSingleton<CartBloc>(CartBloc());
 }

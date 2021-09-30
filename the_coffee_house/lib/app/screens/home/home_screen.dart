@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart';
 import 'package:the_coffee_house/app/screens/home/home_bloc.dart';
 import 'package:the_coffee_house/app/screens/home/home_state.dart';
+import 'package:the_coffee_house/app/screens/home/sub_screen/cart_card.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/home/home_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/other/other_tab_screen.dart';
@@ -51,39 +51,45 @@ class _HomeScreenState
   List<Widget> buildHeaderActions(BuildContext context) {
     return [
       Padding(
-          padding: const EdgeInsets.only(right: 13),
-          child: IconButton(
-            icon: Image.asset(
-              Assets.logoPointCard,
-              width: 35,
-              height: 15,
-            ),
-            onPressed: () {
-              showGeneralDialog(
-                  context: context,
-                  barrierDismissible: true,
-                  barrierLabel: MaterialLocalizations.of(context)
-                      .modalBarrierDismissLabel,
-                  pageBuilder: (BuildContext buildContext, Animation first,
-                      Animation second) {
-                    return LoginDialogScreen();
-                  });
-            },
-          )),
+        padding: const EdgeInsets.only(right: 13),
+        child: IconButton(
+          icon: Image.asset(
+            Assets.logoPointCard,
+            width: 35,
+            height: 15,
+          ),
+          onPressed: () {
+            showGeneralDialog(
+                context: context,
+                barrierDismissible: true,
+                barrierLabel:
+                    MaterialLocalizations.of(context).modalBarrierDismissLabel,
+                pageBuilder: (BuildContext buildContext, Animation first,
+                    Animation second) {
+                  return LoginDialogScreen();
+                });
+          },
+        ),
+      ),
     ];
   }
 
   @override
   Widget buildContent(BuildContext context) {
-    return PageView(
-      physics: NeverScrollableScrollPhysics(),
-      controller: pageController,
-      children: const [
-        HomeTabScreen(),
-        OrderTabScreen(),
-        StoreTabScreen(),
-        PointTabScreen(),
-        OtherTabScreen(),
+    return Stack(
+      children: [
+        PageView(
+          physics: NeverScrollableScrollPhysics(),
+          controller: pageController,
+          children: const [
+            HomeTabScreen(),
+            OrderTabScreen(),
+            StoreTabScreen(),
+            PointTabScreen(),
+            OtherTabScreen(),
+          ],
+        ),
+        if (activeTab == HomeTab.Home || activeTab == HomeTab.Order) CartCard(),
       ],
     );
   }

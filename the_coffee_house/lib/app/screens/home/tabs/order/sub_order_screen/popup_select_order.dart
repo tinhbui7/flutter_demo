@@ -16,7 +16,7 @@ void showPopupSelectOrder(context) {
         height: MediaQuery.of(context).size.height * .31,
         decoration: BoxDecoration(
           color: theme.backgroundColor,
-          borderRadius: BorderRadius.vertical(
+          borderRadius: const BorderRadius.vertical(
             top: const Radius.circular(10),
           ),
         ),

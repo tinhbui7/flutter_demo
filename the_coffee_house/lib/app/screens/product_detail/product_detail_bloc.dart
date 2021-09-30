@@ -114,9 +114,7 @@ class ProductDetailBloc extends BaseBloc<ProductDetailState> {
     return OrderEntity(
       orderId: orderEntity.orderId,
       product: orderEntity.product,
-      size: (state.selectedSize != null)
-          ? state.selectedSize
-          : SizeEntity(name: 'Vừa'),
+      size: (state.selectedSize != null) ? state.selectedSize : null,
       topping: state.selectedTopping,
       note: state.noteProduct,
       quantity: state.quantity,

@@ -4,12 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_bloc.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_state.dart';
-import 'package:the_coffee_house/app/screens/home/tabs/order/sub_screen/list_product.dart';
-import 'package:the_coffee_house/app/screens/home/tabs/order/sub_screen/order_with_search.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/order/sub_order_screen/list_product.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/order/sub_order_screen/order_with_search.dart';
 import 'package:the_coffee_house/domain/domain.dart';
 
 import '../home_base_content_layout.dart';
-import 'sub_screen/app_bar_order.dart';
+import 'sub_order_screen/app_bar_order.dart';
 
 class OrderTabScreen extends StatefulWidget {
   const OrderTabScreen({Key? key}) : super(key: key);
@@ -40,6 +40,7 @@ class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
             AppBarOrder(),
             OrderWithSearch(
               itemPositionsListener: itemPositionsListener,
+              listSection: products,
             ),
             Divider(
               height: 0,

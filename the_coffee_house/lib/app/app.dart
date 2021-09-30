@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:the_coffee_house/app/app_initializer.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
 import 'package:the_coffee_house/app/blocs/notify/notify_app_bloc.dart';
 import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_state.dart';
@@ -21,6 +22,7 @@ class _TchAppState extends BaseState<TchApp> {
   GetIt get getIt => GetIt.instance;
   AppBloc get _appBloc => getIt.get<AppBloc>();
   NotifyAppBloc get _notifyAppBloc => getIt.get<NotifyAppBloc>();
+  CartBloc get _cartBloc => getIt.get<CartBloc>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class _TchAppState extends BaseState<TchApp> {
           providers: [
             BlocProvider<AppBloc>.value(value: _appBloc),
             BlocProvider<NotifyAppBloc>.value(value: _notifyAppBloc),
+            BlocProvider<CartBloc>.value(value: _cartBloc),
           ],
           child: MaterialApp(
             title: 'The Coffee House',
