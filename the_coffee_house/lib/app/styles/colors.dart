@@ -35,11 +35,13 @@ const kColorGrayLight = const Color(0xFFdedede);
 const kColorGrayLight1 = const Color(0xFFF6F7F9);
 const kColorGrayLight2 = const Color(0xFFE1E2E8);
 const kColorGrayLight3 = const Color(0xFFF5F5F5);
+const kColorGray1 = const Color(0xFF777777);
 
 const kColorOrange = const Color(0xFFff8a65);
 const kColorOrangeDark = const Color(0xFFc75b39);
 const kColorOrangeLight = const Color(0xFFffbb93);
 const kColorOrangeLighter = const Color(0x5FFFBF46);
+const kColorOrangeDark1 = const Color(0xFFE57905);
 
 const kColorPurple = const Color(0xFF981CEB);
 const kColorPurpleDark = const Color(0xFF6000FF);

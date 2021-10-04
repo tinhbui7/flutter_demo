@@ -39,7 +39,7 @@ class HeaderProductDetail extends StatelessWidget {
                     child: Text(
                       products.name!,
                       style:
-                          theme.textTheme.headline6?.copyWith(fontSize: 25.0),
+                          theme.textTheme.subtitle2?.copyWith(fontSize: 23.0),
                     ),
                   ),
                   Padding(
@@ -59,8 +59,8 @@ class HeaderProductDetail extends StatelessWidget {
                     locale: 'vi',
                     symbol: 'đ',
                   ).format(products.price)}',
-                  style: theme.textTheme.caption?.copyWith(
-                    fontSize: 17.0,
+                  style: theme.primaryTextTheme.caption?.copyWith(
+                    fontSize: 16.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -72,7 +72,7 @@ class HeaderProductDetail extends StatelessWidget {
                 colorClickableText: theme.primaryColor,
                 trimCollapsedText: 'Xem thêm',
                 trimExpandedText: 'Rút gọn',
-                style: theme.textTheme.caption?.copyWith(fontSize: 14.0),
+                style: theme.primaryTextTheme.caption,
               ),
             ],
           ),

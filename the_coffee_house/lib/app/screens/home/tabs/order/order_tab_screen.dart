@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_bloc.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_cubit.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_state.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/sub_order_screen/list_product.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/sub_order_screen/order_with_search.dart';
@@ -33,12 +34,13 @@ class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
   @override
   Widget buildContent(BuildContext context) {
     return SafeArea(
-      child: BlocProvider<OrderTabBloc>.value(
-        value: bloc!,
+      child: BlocProvider(
+        create: (_) => OrderTabCubit(),
         child: Column(
           children: [
             AppBarOrder(),
             OrderWithSearch(
+              itemScrollController: itemScrollController,
               itemPositionsListener: itemPositionsListener,
               listSection: products,
             ),

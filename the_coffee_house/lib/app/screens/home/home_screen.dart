@@ -99,7 +99,7 @@ class _HomeScreenState
     return BottomNavigationBar(
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(Icons.home_outlined),
           label: LocaleKeys.button_btnHome.tr(),
         ),
         BottomNavigationBarItem(
@@ -107,7 +107,7 @@ class _HomeScreenState
           label: LocaleKeys.button_btnOrder.tr(),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.restaurant),
+          icon: Icon(Icons.storefront),
           label: LocaleKeys.button_btnStore.tr(),
         ),
         BottomNavigationBarItem(
@@ -119,7 +119,8 @@ class _HomeScreenState
           label: LocaleKeys.button_btnOther.tr(),
         ),
       ],
-      selectedItemColor: theme.colorScheme.primary,
+      fixedColor: theme.colorScheme.primary,
+      backgroundColor: theme.colorScheme.background,
       type: BottomNavigationBarType.fixed,
       currentIndex: activeTab.index,
       onTap: (index) {

@@ -78,15 +78,17 @@ class CartCard extends StatelessWidget {
                         ),
                         title: Text(
                           'Giỏ hàng hiện tại ->',
-                          style: theme.textTheme.bodyText1
-                              ?.copyWith(fontSize: 16.0),
+                          style: theme.primaryTextTheme.caption?.copyWith(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         subtitle: Text(
                           '${NumberFormat.currency(
                             locale: 'vi',
                             symbol: 'đ',
                           ).format(cartBloc.totalPayment)} . ${cartBloc.productOrders}',
-                          style: theme.textTheme.caption?.copyWith(
+                          style: theme.primaryTextTheme.caption?.copyWith(
                             fontWeight: FontWeight.w500,
                             fontSize: 13.0,
                           ),

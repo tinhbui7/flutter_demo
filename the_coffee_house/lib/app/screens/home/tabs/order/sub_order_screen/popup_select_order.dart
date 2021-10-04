@@ -30,13 +30,16 @@ void showPopupSelectOrder(context) {
                   Align(
                     child: Text(
                       'Chọn phương thức đặt hàng',
-                      style: theme.textTheme.headline6,
+                      style: theme.textTheme.subtitle1,
                     ),
                   ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: IconButton(
-                      icon: Icon(Icons.clear_rounded),
+                      icon: Icon(
+                        Icons.clear_rounded,
+                        color: theme.colorScheme.onBackground,
+                      ),
                       iconSize: 27,
                       onPressed: () {
                         Navigator.of(context).pop();
@@ -67,14 +70,14 @@ void showPopupSelectOrder(context) {
                 ),
                 title: Text(
                   'Giao tận nơi',
-                  style: theme.textTheme.bodyText1,
+                  style: theme.textTheme.bodyText2,
                 ),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Các món sẽ được giao đến địa chỉ của bạn',
-                      style: theme.textTheme.subtitle1,
+                      'Các sản phẩm sẽ được giao đến địa chỉ của bạn',
+                      style: theme.textTheme.bodyText2,
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text('Sun Life 19001001')
@@ -110,14 +113,14 @@ void showPopupSelectOrder(context) {
                 ),
                 title: Text(
                   'Tự đến lấy',
-                  style: theme.textTheme.bodyText1,
+                  style: theme.textTheme.bodyText2,
                 ),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Bạn sẽ đến quầy nhận món tại cửa hàng',
-                      style: theme.textTheme.subtitle1,
+                      style: theme.textTheme.bodyText2,
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text('0.75km'),

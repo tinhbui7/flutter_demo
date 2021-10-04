@@ -36,7 +36,8 @@ class AppBarOrder extends StatelessWidget {
                   children: [
                     Text(
                       'Giao đến',
-                      style: theme.textTheme.bodyText1,
+                      style:
+                          theme.textTheme.subtitle1?.copyWith(fontSize: 13.0),
                     ),
                     Icon(Icons.arrow_drop_down),
                   ],
@@ -45,8 +46,8 @@ class AppBarOrder extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width * .8,
                   child: Text(
-                    'Các món sẽ được giao đến địa chỉ của bạn',
-                    style: theme.textTheme.bodyText2,
+                    'Các sản phẩm sẽ được giao đến địa chỉ của bạn',
+                    style: theme.primaryTextTheme.caption,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),

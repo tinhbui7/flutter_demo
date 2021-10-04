@@ -9,7 +9,6 @@ import 'package:the_coffee_house/app/screens/home/tabs/home/sub_home_screen/home
 import 'package:the_coffee_house/app/screens/home/tabs/home/sub_home_screen/list_notifications.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/home/sub_home_screen/option_order_button.dart';
 import 'package:the_coffee_house/app/styles/app_theme.dart';
-import 'package:the_coffee_house/app/styles/styles.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
 import '../home_base_content_layout.dart';
@@ -66,12 +65,12 @@ class _HomeTabScreenState extends HomeBaseContentLayoutState<HomeTabScreen,
     return [
       Text(
         LocaleKeys.title_homeScreen.tr(),
-        style: TextStyles.h2,
+        style: theme.textTheme.headline2,
       ),
       Padding(padding: const EdgeInsets.only(top: 20)),
       Text(
         message ?? '',
-        style: TextStyles.h3,
+        style: theme.textTheme.headline3,
       ),
       Padding(padding: const EdgeInsets.only(top: 20)),
       OutlinedButton(
@@ -85,9 +84,7 @@ class _HomeTabScreenState extends HomeBaseContentLayoutState<HomeTabScreen,
         child: Text('Change Theme'),
         onPressed: () {
           appBloc?.changeAppTheme(
-            appTheme?.type == ThemeType.Default
-                ? ThemeType.Orange_light
-                : ThemeType.Default,
+            appTheme == ThemeType.Dark ? ThemeType.Light : ThemeType.Dark,
           );
         },
       ),

@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -27,7 +26,7 @@ class ListProduct extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     return Expanded(
       child: Container(
-        color: theme.selectedRowColor,
+        color: theme.splashColor,
         child: listSection.isNotEmpty == true
             ? ScrollablePositionedList.builder(
                 itemScrollController: itemScrollController,
@@ -59,7 +58,7 @@ class ListProduct extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(3.0, 19.0, 3.0, 10.0),
           child: Text(
             section,
-            style: theme.textTheme.headline6,
+            style: theme.textTheme.subtitle2?.copyWith(fontSize: 18.0),
             overflow: TextOverflow.ellipsis,
           ),
         ),
@@ -138,19 +137,18 @@ class ListProduct extends StatelessWidget {
                   children: [
                     Text(
                       item.name!,
-                      style: theme.textTheme.subtitle2,
+                      style:
+                          theme.textTheme.subtitle2?.copyWith(fontSize: 15.0),
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
                       item.intro!,
                       maxLines: 2,
-                      style: theme.textTheme.caption?.copyWith(fontSize: 13.5),
+                      style: theme.primaryTextTheme.caption
+                          ?.copyWith(fontSize: 13.5),
                       overflow: TextOverflow.ellipsis,
                     ),
-                    Text('${NumberFormat.currency(
-                      locale: 'vi',
-                      symbol: 'đ',
-                    ).format(item.price)}'),
+                    Text('${item.price}'),
                   ],
                 ),
               ),

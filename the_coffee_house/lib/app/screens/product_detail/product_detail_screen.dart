@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_dialog/base_dialog_state.dart';
@@ -9,6 +10,7 @@ import 'package:the_coffee_house/app/screens/product_detail/product_detail_state
 import 'package:the_coffee_house/app/screens/product_detail/sub_product_detail/body_product_detail.dart';
 import 'package:the_coffee_house/app/screens/product_detail/sub_product_detail/footer_product_detail.dart';
 import 'package:the_coffee_house/app/screens/product_detail/sub_product_detail/header_product_detail.dart';
+import 'package:the_coffee_house/app/styles/app_theme.dart';
 import 'package:the_coffee_house/domain/entities/entities.dart';
 
 class ProductDetailScreen extends StatefulWidget {
@@ -44,6 +46,11 @@ class _ProductDetailScreenState extends BaseDialogState<ProductDetailScreen,
 
   @override
   Widget buildDialogContent(BuildContext context) {
+    if (appTheme == ThemeType.Dark) {
+      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+    } else {
+      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+    }
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -96,7 +103,7 @@ class _ProductDetailScreenState extends BaseDialogState<ProductDetailScreen,
                           height: 35,
                           width: 35,
                           decoration: BoxDecoration(
-                            color: theme.selectedRowColor,
+                            color: theme.splashColor,
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Icon(Icons.remove),
@@ -117,7 +124,7 @@ class _ProductDetailScreenState extends BaseDialogState<ProductDetailScreen,
                           height: 35,
                           width: 35,
                           decoration: BoxDecoration(
-                            color: theme.selectedRowColor,
+                            color: theme.splashColor,
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Icon(Icons.add),

@@ -16,7 +16,7 @@ class FooterProductDetail extends StatelessWidget {
       children: [
         Divider(
           thickness: 7.5,
-          color: theme.selectedRowColor,
+          color: theme.splashColor,
           height: 0,
         ),
         Padding(
@@ -27,11 +27,12 @@ class FooterProductDetail extends StatelessWidget {
             children: [
               Text(
                 'Yều cầu khác',
-                style: theme.textTheme.headline6,
+                style: theme.textTheme.subtitle2,
               ),
+              Padding(padding: const EdgeInsets.only(top: 3.0)),
               Text(
                 'Những tuỳ chọn khác',
-                style: theme.textTheme.caption?.copyWith(fontSize: 14.0),
+                style: theme.primaryTextTheme.caption,
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 15.0),
@@ -47,18 +48,16 @@ class FooterProductDetail extends StatelessWidget {
                       child: (state.noteProduct?.isNotEmpty == true)
                           ? Text(
                               state.noteProduct!,
-                              style: theme.textTheme.caption
-                                  ?.copyWith(fontSize: 14.0),
+                              style: theme.primaryTextTheme.caption,
                             )
                           : Text(
                               'Thêm ghi chú',
-                              style: theme.textTheme.caption
-                                  ?.copyWith(fontSize: 14.0),
+                              style: theme.primaryTextTheme.caption,
                             ),
                     ),
                     style: OutlinedButton.styleFrom(
                       padding: const EdgeInsets.all(13.0),
-                      primary: theme.backgroundColor,
+                      primary: theme.selectedRowColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
@@ -81,6 +80,7 @@ class FooterProductDetail extends StatelessWidget {
     note.text = noteProduct ?? '';
     return showModalBottomSheet(
       context: context,
+      backgroundColor: theme.colorScheme.background,
       shape: RoundedRectangleBorder(
         borderRadius: const BorderRadius.vertical(
           top: Radius.circular(15.0),
@@ -106,7 +106,10 @@ class FooterProductDetail extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: IconButton(
-                      icon: Icon(Icons.clear_rounded),
+                      icon: Icon(
+                        Icons.clear_rounded,
+                        color: theme.colorScheme.onBackground,
+                      ),
                       onPressed: () => Navigator.of(context).pop(),
                     ),
                   ),
@@ -127,13 +130,14 @@ class FooterProductDetail extends StatelessWidget {
                 maxLines: 2,
                 decoration: InputDecoration(
                   hintText: 'Thêm ghi chú',
+                  hintStyle: theme.primaryTextTheme.caption,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(color: theme.buttonColor),
+                    borderSide: BorderSide(color: theme.selectedRowColor),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(color: theme.buttonColor),
+                    borderSide: BorderSide(color: theme.selectedRowColor),
                   ),
                 ),
               ),
@@ -158,8 +162,10 @@ class FooterProductDetail extends StatelessWidget {
                   ),
                   child: Text(
                     'Xong',
-                    style: theme.textTheme.subtitle2
-                        ?.copyWith(color: theme.accentColor),
+                    style: theme.textTheme.subtitle2?.copyWith(
+                      fontSize: 15.0,
+                      color: theme.colorScheme.secondary,
+                    ),
                   ),
                 ),
               ),

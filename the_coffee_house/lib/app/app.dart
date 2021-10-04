@@ -9,6 +9,7 @@ import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_state.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:the_coffee_house/app/screens/splash/splash_screen.dart';
+import 'package:the_coffee_house/app/styles/app_theme.dart';
 
 import 'blocs/app/app_bloc.dart';
 import 'blocs/app/app_state.dart';
@@ -44,7 +45,7 @@ class _TchAppState extends BaseState<TchApp> {
             navigatorObservers: [
               Initializer.self.observer,
             ],
-            theme: _state.appTheme?.themeData,
+            theme: AppTheme.build(context, theme: _state.appTheme),
             home: SplashScreen(),
           ),
         );

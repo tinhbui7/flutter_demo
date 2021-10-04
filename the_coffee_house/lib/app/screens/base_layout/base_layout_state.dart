@@ -11,7 +11,6 @@ import 'package:the_coffee_house/app/blocs/notify/notify_app_bloc.dart';
 import 'package:the_coffee_house/app/constants/global.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_state.dart';
 import 'package:the_coffee_house/app/styles/app_theme.dart';
-import 'package:the_coffee_house/app/styles/styles.dart';
 import 'package:the_coffee_house/app/views/errors/empty_view.dart';
 import 'package:the_coffee_house/app/views/errors/network_connection_error.dart';
 import 'package:the_coffee_house/app/widgets/progress/content_loading_indicator.dart';
@@ -37,7 +36,7 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
 
   AppBloc? get appBloc => BlocProvider.of<AppBloc>(context);
   AppState? get appState => appBloc?.state;
-  AppTheme? get appTheme => appState?.appTheme;
+  ThemeType? get appTheme => appState?.appTheme;
 
   NotifyAppBloc get notifyAppBloc => BlocProvider.of<NotifyAppBloc>(context);
 
@@ -115,7 +114,7 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
   Widget buildTitle(BuildContext context) {
     return Text(
       title,
-      style: TextStyles.title1,
+      style: theme.textTheme.headline6,
     );
   }
 

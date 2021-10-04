@@ -28,7 +28,7 @@ class BodyProductDetail extends StatelessWidget {
             if (products.sizes?.isNotEmpty == true) ...[
               Divider(
                 thickness: 7.5,
-                color: theme.selectedRowColor,
+                color: theme.splashColor,
                 height: 0,
               ),
               Padding(
@@ -40,7 +40,7 @@ class BodyProductDetail extends StatelessWidget {
                     RichText(
                       text: TextSpan(
                         text: 'Size',
-                        style: theme.textTheme.headline6,
+                        style: theme.textTheme.subtitle2,
                         children: [
                           TextSpan(
                             text: '*',
@@ -53,9 +53,7 @@ class BodyProductDetail extends StatelessWidget {
                     Padding(padding: const EdgeInsets.only(top: 3.0)),
                     Text(
                       'Chọn 1 loại size',
-                      style: theme.textTheme.caption?.copyWith(
-                        fontSize: 14.0,
-                      ),
+                      style: theme.primaryTextTheme.caption,
                     ),
                   ],
                 ),
@@ -70,7 +68,7 @@ class BodyProductDetail extends StatelessWidget {
             if (products.toppings?.isNotEmpty == true) ...[
               Divider(
                 thickness: 7.5,
-                color: theme.selectedRowColor,
+                color: theme.splashColor,
                 height: 0,
               ),
               Padding(
@@ -81,14 +79,12 @@ class BodyProductDetail extends StatelessWidget {
                   children: [
                     Text(
                       'Topping',
-                      style: theme.textTheme.headline6,
+                      style: theme.textTheme.subtitle2,
                     ),
                     Padding(padding: const EdgeInsets.only(top: 3.0)),
                     Text(
                       'Chọn tối đa 2 loại',
-                      style: theme.textTheme.caption?.copyWith(
-                        fontSize: 14.0,
-                      ),
+                      style: theme.primaryTextTheme.caption,
                     ),
                   ],
                 ),
@@ -133,14 +129,15 @@ class BodyProductDetail extends StatelessWidget {
               ),
               Text(
                 itemSize.name!,
-                style: theme.textTheme.subtitle1,
+                style: theme.textTheme.bodyText2?.copyWith(fontSize: 16.0),
               ),
               Spacer(),
               Padding(
                 padding: const EdgeInsets.only(right: 15.0),
                 child: Text(
                   '${itemSize.extraPay}',
-                  style: theme.textTheme.caption?.copyWith(fontSize: 15.0),
+                  style:
+                      theme.primaryTextTheme.caption?.copyWith(fontSize: 15.0),
                 ),
               ),
             ],
@@ -182,14 +179,15 @@ class BodyProductDetail extends StatelessWidget {
               ),
               Text(
                 itemTopping.name!,
-                style: theme.textTheme.subtitle1,
+                style: theme.textTheme.bodyText2?.copyWith(fontSize: 16.0),
               ),
               Spacer(),
               Padding(
                 padding: const EdgeInsets.only(right: 15.0),
                 child: Text(
                   '${itemTopping.extraPay}',
-                  style: theme.textTheme.caption?.copyWith(fontSize: 15.0),
+                  style:
+                      theme.primaryTextTheme.caption?.copyWith(fontSize: 15.0),
                 ),
               ),
             ],

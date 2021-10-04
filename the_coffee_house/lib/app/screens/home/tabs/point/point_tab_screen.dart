@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/home_base_content_layout.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/point/point_tab_bloc.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/point/point_tab_state.dart';
-import 'package:the_coffee_house/app/styles/styles.dart';
 
 class PointTabScreen extends StatefulWidget {
   const PointTabScreen({Key? key}) : super(key: key);
@@ -18,7 +17,7 @@ class _PointTabScreenState extends HomeBaseContentLayoutState<PointTabScreen,
     return Center(
       child: Text(
         'POINT TAB',
-        style: TextStyles.h2,
+        style: theme.textTheme.headline2,
       ),
     );
   }

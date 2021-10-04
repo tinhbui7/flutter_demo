@@ -12,7 +12,7 @@ class AppBloc extends BaseBloc<AppState> {
   AppBloc()
       : super(AppState(
           isLoading: false,
-          appTheme: AppTheme.fromType(ThemeType.Orange_light),
+          appTheme: ThemeType.Light,
         ));
 
   @override
@@ -27,7 +27,7 @@ class AppBloc extends BaseBloc<AppState> {
   Stream<AppState> _changeAppThemeState(ChangeAppThemeEvent event) async* {
     yield AppState(
       state: state,
-      appTheme: AppTheme.fromType(event.type),
+      appTheme: event.type,
     );
   }
 
