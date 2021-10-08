@@ -262,7 +262,7 @@ abstract class BaseAppTheme extends ThemeByViewPort {
         caption: theme.primaryTextTheme.caption?.copyWith(
           color: kColorGray1,
           fontWeight: FontWeight.w400,
-          fontSize: 13.8,
+          fontSize: 14.0,
         ),
 
         // MD-button

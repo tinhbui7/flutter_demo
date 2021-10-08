@@ -122,6 +122,14 @@ class _HomeScreenState
       fixedColor: theme.colorScheme.primary,
       backgroundColor: theme.colorScheme.background,
       type: BottomNavigationBarType.fixed,
+      selectedLabelStyle: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 12.0,
+      ),
+      unselectedLabelStyle: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 11.0,
+      ),
       currentIndex: activeTab.index,
       onTap: (index) {
         bloc?.onItemTab(index);

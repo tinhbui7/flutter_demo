@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/app/base/base_bloc.dart';
 import 'package:the_coffee_house/app/base/base_bloc_events.dart';
@@ -31,6 +32,15 @@ class CartBloc extends BaseBloc<CartState> {
         : '';
   }
 
+  int get totalQuantity {
+    return (state.orderEntities != null)
+        ? (state.orderEntities!.fold(
+            0,
+            (previousValue, element) =>
+                previousValue + (element.quantity ?? 0)))
+        : 0;
+  }
+
   @override
   Stream<CartState> mapEventToState(BaseBlocEvent event) async* {
     if (event is AddNewBillEvent) {
@@ -49,21 +59,26 @@ class CartBloc extends BaseBloc<CartState> {
   Stream<CartState> _addNewBillState(AddNewBillEvent event) async* {
     List<OrderEntity> _result;
     _result = state.orderEntities ?? [];
+    bool isUpdate = false;
+    Function eq = const ListEquality().equals;
     try {
       if (event.orderEntity != null) {
         if (_result.isEmpty == true) {
           _result.add(event.orderEntity!);
         } else {
           for (var element in _result) {
-            if ((event.orderEntity!.product == element.product) &&
-                (event.orderEntity!.size == element.size) &&
-                (event.orderEntity!.topping == element.topping) &&
-                (event.orderEntity!.note == element.note)) {
+            if ((event.orderEntity?.product?.name == element.product?.name) &&
+                (event.orderEntity?.size?.name == element.size?.name) &&
+                eq(event.orderEntity?.topping, element.topping) &&
+                (event.orderEntity?.note == element.note)) {
               element.quantity =
                   (element.quantity ?? 0) + (event.orderEntity!.quantity ?? 0);
-            } else {
-              _result.add(event.orderEntity!);
+              isUpdate = true;
+              break;
             }
+          }
+          if (isUpdate == false) {
+            _result.add(event.orderEntity!);
           }
         }
       }

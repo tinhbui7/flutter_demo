@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_state.dart';
+import 'package:the_coffee_house/app/screens/cart_detail/cart_screen.dart';
 import 'package:the_coffee_house/app/widgets/icons/custom_icon.dart';
 
 class CartCard extends StatelessWidget {
@@ -59,40 +60,52 @@ class CartCard extends StatelessWidget {
                       ),
                     ),
                   ],
-                  child: Card(
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(9.0),
-                    ),
-                    color: Color(0xFFFFF7E6),
-                    clipBehavior: Clip.antiAlias,
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * .09,
-                      padding: const EdgeInsets.only(top: 3.0),
-                      child: ListTile(
-                        leading: CustomIcon(
-                          9,
-                          Color(0xFFFFE7BA),
-                          Icons.card_travel_outlined,
-                          theme.primaryColor,
-                        ),
-                        title: Text(
-                          'Giỏ hàng hiện tại ->',
-                          style: theme.primaryTextTheme.caption?.copyWith(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
+                  child: InkWell(
+                    onTap: () => _showCartDetail(context),
+                    child: Card(
+                      elevation: 3,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(9.0),
+                      ),
+                      color: Color(0xFFFFF7E6),
+                      clipBehavior: Clip.antiAlias,
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * .09,
+                        padding: const EdgeInsets.only(top: 3.0),
+                        child: ListTile(
+                          leading: CustomIcon(
+                            9,
+                            Color(0xFFFFE7BA),
+                            Icons.card_travel_outlined,
+                            theme.primaryColor,
                           ),
-                        ),
-                        subtitle: Text(
-                          '${NumberFormat.currency(
-                            locale: 'vi',
-                            symbol: 'đ',
-                          ).format(cartBloc.totalPayment)} . ${cartBloc.productOrders}',
-                          style: theme.primaryTextTheme.caption?.copyWith(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 13.0,
+                          title: Row(
+                            children: [
+                              Text(
+                                'Giỏ hàng hiện tại ',
+                                style:
+                                    theme.primaryTextTheme.subtitle2?.copyWith(
+                                  fontSize: 16.0,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_outlined,
+                                size: 16.0,
+                              ),
+                            ],
                           ),
-                          overflow: TextOverflow.ellipsis,
+                          subtitle: Text(
+                            '${NumberFormat.currency(
+                              locale: 'vi',
+                              symbol: 'đ',
+                            ).format(cartBloc.totalPayment)} . ${cartBloc.productOrders}',
+                            style: theme.primaryTextTheme.caption?.copyWith(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12.0,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
                       ),
                     ),
@@ -101,6 +114,40 @@ class CartCard extends StatelessWidget {
               )
             : Container();
       },
+    );
+  }
+
+  Future _showCartDetail(BuildContext context) {
+    var topPadding = 1 -
+        (MediaQueryData.fromWindow(WidgetsBinding.instance!.window)
+                .padding
+                .top /
+            MediaQuery.of(context).size.height);
+    return showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: const BorderRadius.vertical(
+          top: const Radius.circular(20.0),
+        ),
+      ),
+      builder: (context) => DraggableScrollableSheet(
+        initialChildSize: topPadding,
+        maxChildSize: topPadding,
+        minChildSize: 0.0,
+        expand: false,
+        builder: (context, scrollController) => Container(
+          clipBehavior: Clip.hardEdge,
+          decoration: const BoxDecoration(
+            borderRadius: const BorderRadius.vertical(
+              top: const Radius.circular(20.0),
+            ),
+          ),
+          child: CartScreen(
+            scrollControl: scrollController,
+          ),
+        ),
+      ),
     );
   }
 }

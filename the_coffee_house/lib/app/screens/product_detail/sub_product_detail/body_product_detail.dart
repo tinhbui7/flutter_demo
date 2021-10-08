@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -135,7 +136,10 @@ class BodyProductDetail extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 15.0),
                 child: Text(
-                  '${itemSize.extraPay}',
+                  '+ ${NumberFormat.currency(
+                    locale: 'vi',
+                    symbol: 'đ',
+                  ).format(itemSize.extraPay)}',
                   style:
                       theme.primaryTextTheme.caption?.copyWith(fontSize: 15.0),
                 ),
@@ -185,7 +189,10 @@ class BodyProductDetail extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 15.0),
                 child: Text(
-                  '${itemTopping.extraPay}',
+                  '+ ${NumberFormat.currency(
+                    locale: 'vi',
+                    symbol: 'đ',
+                  ).format(itemTopping.extraPay)}',
                   style:
                       theme.primaryTextTheme.caption?.copyWith(fontSize: 15.0),
                 ),

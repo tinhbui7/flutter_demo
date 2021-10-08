@@ -7,8 +7,8 @@ import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_cubit.dar
 import 'package:the_coffee_house/domain/entities/section_entity.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 
-class OrderWithSearch extends StatelessWidget {
-  const OrderWithSearch({
+class ProductToolbar extends StatelessWidget {
+  ProductToolbar({
     Key? key,
     required this.itemScrollController,
     required this.itemPositionsListener,
@@ -18,6 +18,7 @@ class OrderWithSearch extends StatelessWidget {
   final ItemScrollController itemScrollController;
   final ItemPositionsListener itemPositionsListener;
   final List<SectionEntity> listSection;
+  final OrderTabCubit orderTabCubit = OrderTabCubit(0);
 
   @override
   Widget build(BuildContext context) {
@@ -45,12 +46,11 @@ class OrderWithSearch extends StatelessWidget {
                   ValueListenableBuilder<Iterable<ItemPosition>>(
                     valueListenable: itemPositionsListener.itemPositions,
                     builder: (context, positions, child) {
-                      context
-                          .read<OrderTabCubit>()
-                          .sectionItem(positions, listSection);
-                      return BlocBuilder<OrderTabCubit, String?>(
-                        builder: (context, itemSection) => Text(
-                          '${itemSection ?? 'Thực đơn'}',
+                      orderTabCubit.sectionItem(positions);
+                      return BlocBuilder<OrderTabCubit, int>(
+                        bloc: orderTabCubit,
+                        builder: (context, index) => Text(
+                          '${listSection.isNotEmpty == true ? listSection[index].name : 'Thực đơn'}',
                           style: theme.primaryTextTheme.caption
                               ?.copyWith(fontSize: 12.0),
                           overflow: TextOverflow.ellipsis,

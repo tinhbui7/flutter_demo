@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:the_coffee_house/app/screens/home/tabs/home_base_content_layout.dart';
+import 'package:the_coffee_house/app/screens/base_layout/base_content/home_base_content_layout.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/other/other_tab_bloc.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/other/other_tab_state.dart';
 

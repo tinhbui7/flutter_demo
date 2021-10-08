@@ -11,7 +11,7 @@ import 'package:the_coffee_house/app/screens/home/tabs/home/sub_home_screen/opti
 import 'package:the_coffee_house/app/styles/app_theme.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
-import '../home_base_content_layout.dart';
+import '../../../base_layout/base_content/home_base_content_layout.dart';
 
 class HomeTabScreen extends StatefulWidget {
   const HomeTabScreen({Key? key}) : super(key: key);

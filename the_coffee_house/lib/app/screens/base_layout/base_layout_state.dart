@@ -7,6 +7,7 @@ import 'package:the_coffee_house/app/base/base_bloc.dart';
 import 'package:the_coffee_house/app/base/base_bloc_state.dart';
 import 'package:the_coffee_house/app/blocs/app/app_bloc.dart';
 import 'package:the_coffee_house/app/blocs/app/app_state.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
 import 'package:the_coffee_house/app/blocs/notify/notify_app_bloc.dart';
 import 'package:the_coffee_house/app/constants/global.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_state.dart';
@@ -39,6 +40,8 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
   ThemeType? get appTheme => appState?.appTheme;
 
   NotifyAppBloc get notifyAppBloc => BlocProvider.of<NotifyAppBloc>(context);
+
+  CartBloc? get cartBloc => BlocProvider.of<CartBloc>(context);
 
   @override
   void initState() {

@@ -35,6 +35,7 @@ class _ProductDetailScreenState extends BaseDialogState<ProductDetailScreen,
   _ProductDetailScreenState(
       this.orderEntity, this.scrollControl, this.isOrder) {
     bloc = ProductDetailBloc(orderEntity: orderEntity);
+    bloc?.fetchData();
   }
 
   final OrderEntity orderEntity;
@@ -82,98 +83,101 @@ class _ProductDetailScreenState extends BaseDialogState<ProductDetailScreen,
         ),
         Flexible(
           flex: 2,
-          child: SingleChildScrollView(
-            controller: scrollControl,
-            physics: NeverScrollableScrollPhysics(),
-            child: Column(
-              children: [
-                Divider(
-                  height: 0,
-                  thickness: 1,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: () => bloc?.decrementQuantity(isOrder),
-                        splashColor: Colors.transparent,
-                        child: Container(
-                          height: 35,
-                          width: 35,
-                          decoration: BoxDecoration(
-                            color: theme.splashColor,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Icon(Icons.remove),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                        child: Text(
-                          '$_quantity',
-                          style: theme.textTheme.subtitle2
-                              ?.copyWith(fontSize: 17.0),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () => bloc?.incrementQuantity(),
-                        splashColor: Colors.transparent,
-                        child: Container(
-                          height: 35,
-                          width: 35,
-                          decoration: BoxDecoration(
-                            color: theme.splashColor,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Icon(Icons.add),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(17.0, 3.0, 17.0, 17.0),
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (isOrder == true && _quantity == 0) {
-                          cartBloc.deleteAllBill();
-                        } else if (isOrder == true) {
-                          cartBloc.updateOrderItem(bloc?.orderItem);
-                        } else {
-                          cartBloc.addNewBillItem(bloc?.orderItem);
-                        }
-                        Navigator.pop(context);
-                      },
-                      child: (isOrder == true && _quantity == 0)
-                          ? Text(
-                              'Bỏ chọn sản phẩm này',
-                              style: theme.textTheme.subtitle2?.copyWith(
-                                  color: theme.backgroundColor, fontSize: 16.0),
-                            )
-                          : Text(
-                              'Chọn sản phẩm - ${NumberFormat.currency(
-                                locale: 'vi',
-                                symbol: 'đ',
-                              ).format(bloc?.orderItem.totalPayment)}',
-                              style: theme.textTheme.subtitle2?.copyWith(
-                                  color: theme.backgroundColor, fontSize: 16.0),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border(top: BorderSide(color: theme.splashColor)),
+            ),
+            child: SingleChildScrollView(
+              controller: scrollControl,
+              physics: NeverScrollableScrollPhysics(),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () => bloc?.decrementQuantity(isOrder),
+                          splashColor: Colors.transparent,
+                          child: Container(
+                            height: 35,
+                            width: 35,
+                            decoration: BoxDecoration(
+                              color: theme.splashColor,
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
-                      style: OutlinedButton.styleFrom(
-                        elevation: 0,
-                        padding: const EdgeInsets.all(15.0),
-                        primary: theme.primaryColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
+                            child: Icon(Icons.remove),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                          child: Text(
+                            '$_quantity',
+                            style: theme.textTheme.subtitle2
+                                ?.copyWith(fontSize: 17.0),
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () => bloc?.incrementQuantity(),
+                          splashColor: Colors.transparent,
+                          child: Container(
+                            height: 35,
+                            width: 35,
+                            decoration: BoxDecoration(
+                              color: theme.splashColor,
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            child: Icon(Icons.add),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(17.0, 3.0, 17.0, 17.0),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (isOrder == true && _quantity == 0) {
+                            cartBloc.deleteOrderItem(bloc?.orderItem);
+                          } else if (isOrder == true) {
+                            cartBloc.updateOrderItem(bloc?.orderItem);
+                          } else {
+                            cartBloc.addNewBillItem(bloc?.orderItem);
+                          }
+                          Navigator.pop(context);
+                        },
+                        child: (isOrder == true && _quantity == 0)
+                            ? Text(
+                                'Bỏ chọn sản phẩm này',
+                                style: theme.textTheme.subtitle2?.copyWith(
+                                    color: theme.backgroundColor,
+                                    fontSize: 16.0),
+                              )
+                            : Text(
+                                'Chọn sản phẩm - ${NumberFormat.currency(
+                                  locale: 'vi',
+                                  symbol: 'đ',
+                                ).format(bloc?.orderItem.totalPayment)}',
+                                style: theme.textTheme.subtitle2?.copyWith(
+                                    color: theme.backgroundColor,
+                                    fontSize: 16.0),
+                              ),
+                        style: OutlinedButton.styleFrom(
+                          elevation: 0,
+                          padding: const EdgeInsets.all(15.0),
+                          primary: theme.primaryColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

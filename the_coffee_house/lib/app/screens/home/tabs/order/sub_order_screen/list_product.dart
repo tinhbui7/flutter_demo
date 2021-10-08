@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -148,7 +149,10 @@ class ListProduct extends StatelessWidget {
                           ?.copyWith(fontSize: 13.5),
                       overflow: TextOverflow.ellipsis,
                     ),
-                    Text('${item.price}'),
+                    Text('${NumberFormat.currency(
+                      locale: 'vi',
+                      symbol: 'đ',
+                    ).format(item.price)}'),
                   ],
                 ),
               ),
@@ -174,8 +178,10 @@ class ListProduct extends StatelessWidget {
   Future _showProductDetailPopup(
       BuildContext context, ProductEntity contentScreen) {
     var topPadding = 1 -
-        MediaQueryData.fromWindow(WidgetsBinding.instance!.window).padding.top /
-            900;
+        (MediaQueryData.fromWindow(WidgetsBinding.instance!.window)
+                .padding
+                .top /
+            MediaQuery.of(context).size.height);
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
