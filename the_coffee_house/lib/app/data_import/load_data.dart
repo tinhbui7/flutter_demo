@@ -28,7 +28,7 @@ class LoadData extends StatelessWidget {
   Future<String> _loadFromAsset(CollectionsDataType type) async {
     var content;
     switch (type) {
-      case CollectionsDataType.products:
+      /*case CollectionsDataType.products:
         try {
           content = await rootBundle.loadString(Assets.productsUrl);
         } catch (ex) {
@@ -38,6 +38,13 @@ class LoadData extends StatelessWidget {
       case CollectionsDataType.section:
         try {
           content = await rootBundle.loadString(Assets.sectionUrl);
+        } catch (ex) {
+          debugPrint('${ex.toString()}');
+        }
+        return content;*/
+      case CollectionsDataType.stores:
+        try {
+          content = await rootBundle.loadString(Assets.storesUrl);
         } catch (ex) {
           debugPrint('${ex.toString()}');
         }
@@ -54,7 +61,7 @@ class LoadData extends StatelessWidget {
 
   Future<void> _loadData() async {
     final _fireStore = FirebaseFirestore.instance;
-    List<dynamic> _values = await parseJson(CollectionsDataType.products);
+/*    List<dynamic> _values = await parseJson(CollectionsDataType.products);
     if (_values.isNotEmpty) {
       for (var i = 0; i < _values.length; i++) {
         await _fireStore.collection('products').add(_values[i]);
@@ -64,6 +71,12 @@ class LoadData extends StatelessWidget {
     if (_section.isNotEmpty) {
       for (var i = 0; i < _section.length; i++) {
         await _fireStore.collection('section').add(_section[i]);
+      }
+    }*/
+    List<dynamic> _stores = await parseJson(CollectionsDataType.stores);
+    if (_stores.isNotEmpty) {
+      for (var i = 0; i < _stores.length; i++) {
+        await _fireStore.collection('stores').add(_stores[i]);
       }
     }
   }

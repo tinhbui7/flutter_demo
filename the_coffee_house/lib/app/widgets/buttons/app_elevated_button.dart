@@ -30,14 +30,14 @@ class AppElevatedButton extends StatelessWidget {
             if (icon != null) ...[
               Icon(
                 icon,
-                color: Theme.of(context).iconTheme.color,
+                color: theme.iconTheme.color,
                 size: 17,
               ),
               Padding(padding: const EdgeInsets.only(right: 9)),
             ],
             Text(
               contentButton,
-              style: Theme.of(context).textTheme.button,
+              style: theme.textTheme.button,
             ),
           ],
         ),
@@ -47,7 +47,7 @@ class AppElevatedButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: theme.backgroundColor,
         side: borderSide,
       ),
     );

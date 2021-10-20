@@ -226,12 +226,6 @@
     "name": "Espresso Đá",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5b03966a1acd4d5bbd67237f_Cafe-den-da.jpg",
     "introduction": "Cà phê máy sử dụng tỷ lệ trộn 70% Arabica và 30% Robusta, cà phê nguyện chất chiết suất từ máy dưới áp suất cao, hương thơm mạnh và chua nhẹ từ hạt, vị đậm đà của hạt robusta, hàm lượng cafein thấp do tính chất của hạt Arabica.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "topping": [
       {
         "name": "Espresso (1shot)",
@@ -434,12 +428,6 @@
     "name": "Cà Phê Đen Nóng",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5b03966a1acd4d5bbd6723a0_cafe-den-nong.jpg",
     "introduction": "Một tách cà phê đen thơm ngào ngạt, phảng phất mùi cacao là món quà tự thưởng tuyệt vời nhất cho những ai mê đắm tinh chất nguyên bản nhất của cà phê. Một tách cà phê trầm lắng, thi vị giữa dòng đời vồn vã.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 35000,
     "status": "1"
   },
@@ -448,12 +436,6 @@
     "name": "Cà Phê Sữa Nóng",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5b03966a1acd4d5bbd6723a2_cafe-sua-nong.jpg",
     "introduction": "Cà phê phin kết hợp cũng sữa đặc là một sáng tạo đầy tự hào của người Việt, được xem món uống thương hiệu của Việt Nam.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 35000,
     "status": "1"
   },
@@ -462,12 +444,6 @@
     "name": "Bạc Xỉu Nóng",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5cdbd6e8696fb3792a389754_Bac-siu-nong.jpg",
     "introduction": "Theo chân những người gốc Hoa đến định cư tại Sài Gòn, Bạc sỉu là cách gọi tắt của \"Bạc tẩy sỉu phé\" trong tiếng Quảng Đông, chính là: Ly sữa trắng kèm một chút cà phê.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 35000,
     "status": "1"
   },
@@ -512,12 +488,6 @@
     "name": "Sinh Tố Việt Quất",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5b03966a1acd4d5bbd672375_Sinh-to-viet-quoc.jpg",
     "introduction": "Mứt Việt Quất chua thanh, ngòn ngọt, phối hợp nhịp nhàng với dòng sữa chua bổ dưỡng. Là món sinh tố thơm ngon mà cả đầu lưỡi và làn da đều thích.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 59000,
     "status": "1"
   },
@@ -586,12 +556,6 @@
     "name": "Trà Matcha Latte Đá",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5b03966a1acd4d5bbd672395_Matcha.jpg",
     "introduction": "Với màu xanh mát mắt của bột trà Matcha, vị ngọt nhẹ nhàng, pha trộn cùng sữa tươi, Matcha Latte là thức uống yêu thích của tất cả mọi người khi ghé The Coffee House.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 59000,
     "status": "1"
   },
@@ -600,12 +564,6 @@
     "name": "Đào Việt Quất Đá Xay",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5d2bdfa5acf0d30ba264432b_Dao-viet-quat-da-xay.jpg",
     "introduction": "Vẫn vị đào quen thuộc nhưng được khoác lên mình một vẻ đầy thanh mát và giải khát hơn.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 59000,
     "status": "1"
   },
@@ -614,12 +572,6 @@
     "name": "Socola Đá",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5b03966a1acd4d5bbd67239d_Socola.jpg",
     "introduction": "Cacao nguyên chất hoà cùng sữa tươi béo ngậy. Vị ngọt tự nhiên, không gắt cổ, để lại một chút đắng nhẹ, cay cay trên đầu lưỡi.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "topping": [
       {
         "name": "Sauce Chocolate",
@@ -634,12 +586,6 @@
     "name": "Trà Matcha Latte Nóng",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5b03966a1acd4d5bbd672394_Matcha-latte-nong.jpg",
     "introduction": "Với màu xanh mát mắt của bột trà Matcha, vị ngọt nhẹ nhàng, pha trộn cùng sữa tươi và lớp foam mềm mịn, Matcha Latte là thức uống yêu thích của tất cả mọi người khi ghé The Coffee House.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 59000,
     "status": "1"
   },
@@ -648,12 +594,6 @@
     "name": "Socola Nóng",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5b4c2f58a9d0590cb37cdade_Chocola-nong.jpg",
     "introduction": "Socola nguyên chất hoà cùng sữa tươi béo ngậy. Vị ngọt tự nhiên, không gắt cổ, để lại một chút đắng nhẹ, cay cay trên đầu lưỡi.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "topping": [
       {
         "name": "Sauce Chocolate",
@@ -686,12 +626,6 @@
     "name": "Yogurt Dưa Lưới phát tài",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5ffbb2671327f700184f54d4_YOGURT-DUA-LUOI_ko-topping.jpg",
     "introduction": "Vị yogurt chua ngọt, mát lạnh tái tê, quyện cùng dưa lưới thơm lừng thử là mê ngay Giải nhiệt đón Tết thiệt healthy với Yogurt Dưa lưới chua chua ngọt ngọt, thơm lừng đặc trưng, thêm sẵn topping dưa lưới vàng tươi, cho bạn nhâm nhi vui miệng, để chuyện hẹn hò rôm rả thiệt vui. Thưởng thức ngay!",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 59000,
     "status": "1"
   },
@@ -700,12 +634,6 @@
     "name": "Trà sữa Oolong Nướng - Nóng",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/60c62c8215234d0011ede4a1_605da09f717e5d00114a3cdb_oolong-nong-new.jpg",
     "introduction": "Đậm đà chuẩn gu và ấm nóng - bởi lớp trà oolong nướng đậm vị hoà cùng lớp sữa thơm béo. Hương vị chân ái đúng gu đậm đà - trà oolong được \"sao\" (nướng) lâu hơn cho vị đậm đà, hoà quyện với sữa thơm ngậy. Cho từng ngụm ấm áp, lưu luyến vị trà sữa đậm đà mãi nơi cuống họng.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 50000,
     "status": "1"
   },
@@ -738,12 +666,6 @@
     "name": "Trà Long Nhãn Hạt Chia - Nóng",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/605da09f717e5d00114a3cd9_2021-04-01_2007.48.17.jpg",
     "introduction": "Ấm nóng, ngọt dịu cùng vị nhãn đặc trưng quyện cùng trà và hạt chia. Nền trà oolong ấm áp hảo hạng kết hợp với vị nhãn vạn người mê. Nhâm nhi và cảm nhận trọn vẹn hương vị nhãn đặc trưng, cùng trà ngọt thanh và hạt chia bổ dưỡng.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "topping": [
       {
         "name": "Nhãn ngâm",
@@ -974,12 +896,6 @@
     "name": "Trà Đào Cam Sả - Nóng",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5bfb492bacf0d31fd9646728_Tra-dao-cam-sa-nong.jpg",
     "introduction": "Vị thanh ngọt của đào Hy Lạp, vị chua dịu của Cam Vàng nguyên vỏ, vị chát của trà đen tươi được ủ mới mỗi 4 tiếng, cùng hương thơm nồng đặc trưng của sả.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "topping": [
       {
         "name": "Đào ngâm",
@@ -994,12 +910,6 @@
     "name": "Trà Hạt Sen - Nóng",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5c3ff3c5acf0d338d22adbaa_Tra-sen-nong.jpg",
     "introduction": "Trà Sen nóng sẽ dậy hơn mùi thơm của trà và hạt sen. Trà có vị ngọt dịu nhẹ, rất tốt cho sức khoẻ và giúp giữ ấm cơ thể. Sản phẩm có vị trà nhẹ nhàng vừa phải, có thể dùng được cả cho buổi sáng và chiều tối.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "topping": [
       {
         "name": "Sen ngâm",
@@ -1014,12 +924,6 @@
     "name": "Hồng Trà Sữa - Nóng",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/6014df0e540c0c001894d83d_hong-tra-sua-nong-new.jpg",
     "introduction": "Từng ngụm trà chuẩn gu ấm áp, đậm đà beo béo bởi lớp sữa tươi chân ái hoà quyện. Trà đen nguyên lá âm ấm dịu nhẹ, quyện cùng lớp sữa thơm béo khó lẫn - hương vị ấm áp chuẩn gu trà, cho từng ngụm nhẹ nhàng, ngọt dịu lưu luyến mãi nơi cuống họng.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 50000,
     "status": "1"
   },
@@ -1028,12 +932,6 @@
     "name": "Mochi Kem Việt Quất",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/6051cdb617a9cf0011ee6d90_MOCHI_viet_20quat.jpg",
     "introduction": "Sản phẩm phải bảo quản mát và dùng ngon trong 2h sau khi nhận hàng.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 19000,
     "status": "1"
   },
@@ -1042,12 +940,6 @@
     "name": "Mochi Kem Phúc Bồn Tử",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/6051cdb617a9cf0011ee6d8f_MOCHI_phuc_20bon_20tu-min.jpg",
     "introduction": "Sản phẩm phải bảo quản mát và dùng ngon trong 2h sau khi nhận hàng.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 19000,
     "status": "1"
   },
@@ -1056,12 +948,6 @@
     "name": "Mochi Kem Dừa Dứa",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/6051cdb617a9cf0011ee6d8e_MOCHI_dua_20dua.jpg",
     "introduction": "Sản phẩm phải bảo quản mát và dùng ngon trong 2h sau khi nhận hàng.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 19000,
     "status": "1"
   },
@@ -1070,12 +956,6 @@
     "name": "Mochi Kem Xoài",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5f60224ae31aed001153f816_Mochi-xoai.jpg",
     "introduction": "Bạn sẽ thích thú với hương vị chua chua ngọt ngọt từ sự kết hợp giữa nhân kem lạnh và sốt xoài. Bao bọc bởi lớp vỏ nếp mềm dẻo. Gọi Mochi Kem Xoài cho ngày dài thiệt tươi. Sản phẩm phải bảo quản mát và dùng ngon trong 2h sau khi nhận hàng.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 19000,
     "status": "1"
   },
@@ -1084,12 +964,6 @@
     "name": "Mochi Kem Matcha",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5f60224ae31aed001153f814_mochi-matcha.jpg",
     "introduction": "Vừa quen vừa lạ từ vỏ bánh mềm dẻo, đến lớp kem lạnh và nhân trà xanh đậm vị, gọi 1 chiếc Mochi cho ngày thiệt tươi nha Sản phẩm phải bảo quản mát và dùng ngon trong 2h sau khi nhận hàng.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 19000,
     "status": "1"
   },
@@ -1098,12 +972,6 @@
     "name": "Mochi Kem Chocolate",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5f60224ae31aed001153f815_Mochi-choco.jpg",
     "introduction": "Cảm nhận hương vị Á Âu từ lớp vỏ nếp sô cô la ngọt dẻo, đến lớp kem lạnh và sốt sô cô la bên trong. Cắn 1 miếng là mê ngay. Sản phẩm phải bảo quản mát và dùng ngon trong 2h sau khi nhận hàng.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 19000,
     "status": "1"
   },
@@ -1112,12 +980,6 @@
     "name": "Đậu Phộng Tỏi Ớt",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5c8abfcaacf0d34ef273cfe5_Dau-phong-toi-ot.jpg",
     "introduction": "Là món \"ăn chơi nhưng ngọt thiệt\" mới nhất của The Coffee House, đậu phộng béo được áo thêm lớp tỏi ớt mặn mặn, ngọt ngọt và chút cay cay. Vừa nhâm nhi với trà hay món nước mát lạnh nữa là đúng bài, ăn hoài không ngán nhé!.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 15000,
     "status": "1"
   },
@@ -1126,12 +988,6 @@
     "name": "Điều Vàng Mật Ong",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5f9ed01fdd6543001295531a_Hat-dieu-mat-ong.jpg",
     "introduction": "Ăn vặt cũng phải \"healthy\". Hạt điều nhiều dinh dưỡng, phủ lớp mật ong ngọt ngọt mặn mặn, ăn hoài ngon hoài, hứa luôn!",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 30000,
     "status": "1"
   },
@@ -1140,12 +996,6 @@
     "name": "Gà Xé Lá Chanh",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5f8b1ec4ab869b001881abf7_Ga-xe-la-chanh.jpg",
     "introduction": "Thịt gà được xé tơi, vị mặn, ngọt và cay quyện nhau vừa chuẩn, thêm chút thơm thơm từ lá chanh sấy khô giòn giòn nữa thì cơn buồn miệng nào cũng sẽ bị xua tan.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 25000,
     "status": "1"
   },
@@ -1154,12 +1004,6 @@
     "name": "Cam Tươi Sấy Dẻo",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5f60224ae31aed001153f817_cam-say-deo.jpg",
     "introduction": "Cam tươi được sấy với độ ẩm vừa phải, vị chua thanh. thích hợp cho các bạn thích ăn vặt healthy.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 35000,
     "status": "1"
   },
@@ -1168,12 +1012,6 @@
     "name": "Mít Sấy",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5d2c4af1696fb3281b3f4ab9_mit-say-kho-gion.jpg",
     "introduction": "Khi \"ăn vặt\" đã trở thành xu thế, thì sao có thể bỏ qua mít sấy cực ngon của Nhà. Mít sấy khô vàng ươm giòn rụm, khi ăn vẫn giữ nguyên được vị ngọt lịm của mít tươi. Đến Nhà trò chuyện rôm rã và thưởng thức mít sấy để cho câu chuyện thêm giòn thêm vui ngay thôi!",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 20000,
     "status": "1"
   },
@@ -1182,12 +1020,6 @@
     "name": "Chà Bông Phô Mai",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5d92fbc79e12b47db8cabbcf_Bmi-cha-bong-pho-mai.jpg",
     "introduction": "Bạn không thể bỏ lỡ chiếc bánh với lớp phô mai vàng sánh mịn bên trong, được bọc ngoài lớp vỏ xốp mềm thơm lừng. Thêm lớp chà bông mằn mặn hấp dẫn bên trên.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 32000,
     "status": "1"
   },
@@ -1196,12 +1028,6 @@
     "name": "Bánh Mì Que Pate",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5cdb9699696fb3793d4025ab_Banh-mi-que.jpg",
     "introduction": "Bánh mì giòn thơm, cùng pate béo.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 12000,
     "status": "1"
   },
@@ -1210,12 +1036,6 @@
     "name": "Thùng 24 Lon Cà Phê Sữa Đá",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/60dbe43f5775f50018c71ea8_Th_C3_B9ng-24-lon-CF.jpg",
     "introduction": "Hãy để Cà phê sữa đá Nhà thơm ngon đậm vị đồng hành cùng nhịp sống sôi nổi của tuổi trẻ, cho bạn một ngày làm việc đầy hứng khởi.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 336000,
     "status": "1"
   },
@@ -1224,12 +1044,6 @@
     "name": "Cà Phê Sữa Đá Hòa Tan",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/60c62c8215234d0011ede49e_1._20CF_203in1.jpg",
     "introduction": "Ưu đãi Cà Phê Sữa Đá Hoà Tan giá 35K khi nhập mã: CPHT0721 (Áp dụng Giao Tận Nơi & Tự Đến Lấy). Hãy bắt đầu ngày mới với ly cà phê sữa đá sóng sánh, thơm ngon như cà phê pha phin, hoà quyện với vị ngọt béo của sữa, giúp bạn luôn tỉnh táo và hứng khởi cho ngày làm việc thật hiệu quả. 01 hộp gồm 10 gói cà phê.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 44000,
     "status": "1"
   },
@@ -1238,12 +1052,6 @@
     "name": "Cà Phê Peak Flavor - Hương Thơm Đỉnh Cao (350G)",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/60c62c8215234d0011ede49f_3._20CF_20Peak_20Flavor.jpg",
     "introduction": "Ưu đãi Cà Phê Peak Flavor giá 79K khi nhập mã: CPG0721 (Áp dụng Giao Tận Nơi & Tự Đến Lấy), Được rang dưới nhiệt độ vàng, Cà phê Peak Flavor lưu giữ trọn vẹn hương thơm tinh tế đặc trưng của cà phê Robusta Đăk Nông và Arabica Cầu Đất. Hương thơm đỉnh cao nhiều cung bậc lan tỏa cho bạn đầy cảm hứng.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 90000,
     "status": "1"
   },
@@ -1252,12 +1060,6 @@
     "name": "Cà Phê Rich Finish - Gu Đậm Tinh Tế (350G)",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/60c62c8215234d0011ede4a0_4._20CF_20Rich_20Finish.jpg",
     "introduction": "Ưu đãi Cà Phê Rich Finish giá 79K khi nhập mã: CPG0721 (Áp dụng Giao Tận Nơi & Tự Đến Lấy), Được rang dưới nhiệt độ vàng, Cà phê Peak Flavor lưu giữ trọn vẹn hương thơm tinh tế đặc trưng của cà phê Robusta Đăk Nông và Arabica Cầu Đất. Hương thơm đỉnh cao nhiều cung bậc lan tỏa cho bạn đầy cảm hứng.Nhà hiểu rằng ly cà phê ngon phải đậm đà rõ vị từ cái chạm đầu tiên đến hậu vị vương vấn. Cà phê Rich Finish đem đến những ly cà phê đậm, thơm, hương vị tinh tế giúp bạn bắt đầu ngày mới đầy hứng khởi.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 90000,
     "status": "1"
   },
@@ -1266,12 +1068,6 @@
     "name": "Combo 4 Lon Cà Phê Sữa Đá",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/60cc775f15234d0011edee7a_2._20CF_20RTD_20-_20_C4_90_E1_BB_A9ng.jpg",
     "introduction": "Ưu đãi Combo 4 Lon Cà Phê Sữa Đá giá còn 49K. Nhập mã: CPSD0721 (Áp dụng Giao Tận Nơi & Tự Đến Lấy). Hãy để Cà phê sữa đá Nhà thơm ngon đậm vị đồng hành cùng nhịp sống sôi nổi của tuổi trẻ, cho bạn một ngày làm việc đầy hứng khởi. Sản phẩm được bán theo pack 4 lon.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 56000,
     "status": "1"
   },
@@ -1280,12 +1076,6 @@
     "name": "Ly Inox Ống Hút Xanh Biển",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5eb92ae1ee4dc00012633b2c_Binh-inox-ong-hut-xanh-bien.jpg",
     "introduction": "Màu xanh \"chốt\" gì cũng nhanh - Chiếc ly inbox kèm ống hút mang sắc xanh này sẽ là người bạn đồng hành may mắn mỗi ngày bên bạn, nước ngon hơn, nhiều cảm hứng hơn. Dung tích: 500 ml Chất liệu: Inox, nhựa.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 280000,
     "status": "1"
   },
@@ -1294,12 +1084,6 @@
     "name": "Ly Inox Ống Hút Hồng Xanh",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5eb92ae1ee4dc00012633b2d_Binh-inox-ong-hut-xanh-hong.jpg",
     "introduction": "Màu hồng xanh may mắn tới nhanh - Chiếc ly inbox kèm ống hút mang sắc xanh này sẽ là người bạn đồng hành may mắn mỗi ngày bên bạn, nước ngon hơn, nhiều cảm hứng hơn. Dung tích: 500 ml Chất liệu: Inox, nhựa.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 280000,
     "status": "1"
   },
@@ -1308,12 +1092,6 @@
     "name": "Ly Farm to Cup - Cao",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5ef00e2b91ab1a0012840421_Ly-Farm-to-cup-cao.jpg",
     "introduction": "Lấy cảm hứng từ vùng đất cà phê Việt Nam, ly sứ Farm To Cup sẽ cho bạn trải nghiệm đầy cảm hứng với món yêu thích tại nhà, tại nơi làm việc mỗi ngày. Dung tích ly: 400ml Thành phần: Cao lanh, đất sét, tráng thạch, men màu.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 150000,
     "status": "1"
   },
@@ -1322,12 +1100,6 @@
     "name": "Ly Farm to Cup - Thấp",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5ef00e2b91ab1a0012840422_Ly-Farm-to-cup-thap.jpg",
     "introduction": "Lấy cảm hứng từ vùng đất cà phê Việt Nam, ly sứ Farm To Cup sẽ cho bạn trải nghiệm đầy cảm hứng với món yêu thích tại nhà, tại nơi làm việc mỗi ngày. Dung tích ly: 300ml Thành phần: Cao lanh, đất sét, tráng thạch, men màu.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 120000,
     "status": "1"
   },
@@ -1336,12 +1108,6 @@
     "name": "Bình giữ nhiệt Inox Quả Dứa",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5ee30512e852ce0011e71b07_Binh-inox-qua-dua.jpg",
     "introduction": "Xách bình đi khắp thế gian, với thiết kế xịn sò, màu sắc nổi bật, người bạn mới này sẽ nhắc bạn uống nước mỗi ngày ngon hơn, đều đặn hơn nha. Dung tích: 500ml Chất liệu: Inox.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 300000,
     "status": "1"
   },
@@ -1350,12 +1116,6 @@
     "name": "Bình giữ nhiệt Inox Con Thuyền",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5ee30512e852ce0011e71b08_Binh-inox-thuyen.jpg",
     "introduction": "Xách bình đi khắp thế gian, với thiết kế xịn sò, màu sắc nổi bật, người bạn mới này sẽ nhắc bạn uống nước mỗi ngày ngon hơn, đều đặn hơn nha. Dung tích: 500ml Chất liệu: Inox.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 300000,
     "status": "1"
   },
@@ -1364,12 +1124,6 @@
     "name": "Ly inox ống hút đen nhám",
     "image_url": "https://minio.thecoffeehouse.com/image/menufrontend/5eb92ae0ee4dc00012633b2b_Binh-inox-ong-hut-den-nham.jpg",
     "introduction": "Màu đen ngày nào cũng được khen- Chiếc ly inbox kèm ống hút mang sắc đen ngầu này sẽ là người bạn đồng hành may mắn mỗi ngày bên bạn, nước ngon hơn, nhiều cảm hứng hơn. Dung tích: 500 ml Chất liệu: Inox, nhựa.",
-    "size": [
-      {
-        "name": "Vừa",
-        "extra_pay": 0
-      }
-    ],
     "price": 280000,
     "status": "1"
   }

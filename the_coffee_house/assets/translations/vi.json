@@ -9,11 +9,11 @@
     "orLine": "HOẶC"
   },
   "button": {
-    "btnHome": "TRANG CHỦ",
-    "btnOrder": "ĐẶT MÓN",
-    "btnStore": "CỬA HÀNG",
-    "btnPoint": "TÍCH ĐIỂM",
-    "btnOther": "KHÁC",
+    "btnHome": "Trang chủ",
+    "btnOrder": "Đặt hàng",
+    "btnStore": "Cửa hàng",
+    "btnPoint": "Tích điểm",
+    "btnOther": "Khác",
     "btnLogin": "Đăng nhập",
     "btnFacebook": "Tiếp tục bằng Facebook",
     "btnGoogle": "Tiếp tục bằng Google",

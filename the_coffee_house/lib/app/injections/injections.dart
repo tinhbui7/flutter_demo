@@ -17,10 +17,12 @@ configureDependencies({required Flavor flavor}) async {
   getIt.registerSingleton<IProductRepository>(ProductRepository());
   getIt.registerSingleton<ILocalStorageRepository>(LocalStorageRepository());
   getIt.registerSingleton<ISectionRepository>(SectionRepository());
+  getIt.registerSingleton<IStoreRepository>(StoreRepository());
 
   getIt.registerFactory<IProductUseCase>(() => ProductUseCase());
   getIt.registerFactory<ILocalStorageService>(() => LocalStorageService());
   getIt.registerFactory<ISectionUseCase>(() => SectionUseCase());
+  getIt.registerFactory<IStoreUseCase>(() => StoreUseCase());
 
   getIt.registerSingleton<AppBloc>(AppBloc());
   getIt.registerSingleton<NotifyAppBloc>(NotifyAppBloc());

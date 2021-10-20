@@ -9,11 +9,11 @@
     "orLine": "OR"
   },
   "button": {
-    "btnHome": "HOME",
-    "btnOrder": "ORDER",
-    "btnStore": "STORE",
-    "btnPoint": "POINT",
-    "btnOther": "OTHER",
+    "btnHome": "Home",
+    "btnOrder": "Order",
+    "btnStore": "Store",
+    "btnPoint": "Point",
+    "btnOther": "Other",
     "btnLogin": "Log in",
     "btnFacebook": "Continue by Facebook",
     "btnGoogle": "Continue by Google",

@@ -7,10 +7,12 @@ import 'package:the_coffee_house/app/screens/home/home_state.dart';
 import 'package:the_coffee_house/app/screens/home/sub_screen/cart_card.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/home/home_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_screen.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/order/sub_order_screen/popup_order_method.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/other/other_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/point/point_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/store/store_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/login/login_dialog_screen.dart';
+import 'package:the_coffee_house/app/widgets/icons/custom_icon.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -33,10 +35,58 @@ class _HomeScreenState
   @override
   AppBar? buildAppBar(BuildContext context) {
     return (activeTab == HomeTab.Order)
-        ? null
+        ? AppBar(
+            backgroundColor: theme.colorScheme.background,
+            elevation: 0,
+            title: InkWell(
+              onTap: () {
+                showPopupSelectOrder(context);
+              },
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CustomIcon(
+                      3,
+                      Color(0xffd8f0f8),
+                      Icons.delivery_dining,
+                      Color(0xff79cce9),
+                    ),
+                    Padding(padding: const EdgeInsets.only(right: 12)),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              'Giao đến',
+                              style: theme.textTheme.subtitle1
+                                  ?.copyWith(fontSize: 13.0),
+                            ),
+                            Icon(Icons.arrow_drop_down),
+                          ],
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 1.5)),
+                        Container(
+                          width: MediaQuery.of(context).size.width * .8,
+                          child: Text(
+                            'Các sản phẩm sẽ được giao đến địa chỉ của bạn',
+                            style: theme.primaryTextTheme.caption,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          )
         : AppBar(
             backgroundColor: theme.backgroundColor,
-            elevation: 1,
+            elevation: 0,
             title: Image(
               width: 150,
               fit: BoxFit.contain,
@@ -123,11 +173,11 @@ class _HomeScreenState
       backgroundColor: theme.colorScheme.background,
       type: BottomNavigationBarType.fixed,
       selectedLabelStyle: TextStyle(
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w700,
         fontSize: 12.0,
       ),
       unselectedLabelStyle: TextStyle(
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w700,
         fontSize: 11.0,
       ),
       currentIndex: activeTab.index,

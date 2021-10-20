@@ -98,4 +98,32 @@ class EntityMappers {
         ?.map((e) => toSectionEntityFromModels(e, mListProduct: mProduct))
         .toList();
   }
+
+  static LocationEntity toLocationEntityFromModel(LocationModel? m) {
+    return LocationEntity(
+      latitude: m?.latitude,
+      longitude: m?.longitude,
+    );
+  }
+
+  static StoreEntity toStoreEntityFromModel(StoreModel? m) {
+    return StoreEntity(
+      id: m?.id,
+      puCity: m?.puCity,
+      name: m?.name,
+      openTime: m?.openTime,
+      image: m?.image,
+      phone: m?.phone,
+      location: toLocationEntityFromModel(m?.location),
+      fullAddress: m?.fullAddress,
+    );
+  }
+
+  static List<StoreEntity>? toListStoreEntityFromModels(
+      List<StoreModel>? models) {
+    return models
+        ?.map((e) => toStoreEntityFromModel(e))
+        .where((element) => element.id != null)
+        .toList();
+  }
 }

@@ -21,6 +21,7 @@ abstract class BaseAppTheme extends ThemeByViewPort {
   Color get placeholderColor => kColorGrayLight1;
   Color get placeholderHighlightColor => kColorGrayLight2;
   Color get cardBackground => kColorGrayLight3;
+  Color get accentColor1 => kColorBlueFace;
 
   /// Status Colors
   Color get onGoingStatusColor => kColorTealLight;
@@ -66,7 +67,7 @@ abstract class BaseAppTheme extends ThemeByViewPort {
       platform: defaultTargetPlatform == TargetPlatform.iOS
           ? TargetPlatform.iOS
           : TargetPlatform.android,
-      accentColor: accentColor,
+      accentColor: accentColor1,
       accentColorBrightness: Brightness.dark,
       scaffoldBackgroundColor: backgroundColor,
       backgroundColor: backgroundColor,

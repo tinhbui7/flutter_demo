@@ -8,7 +8,6 @@ import 'package:the_coffee_house/app/screens/home/tabs/order/sub_order_screen/pr
 import 'package:the_coffee_house/domain/domain.dart';
 
 import '../../../base_layout/base_content/home_base_content_layout.dart';
-import 'sub_order_screen/app_bar_order.dart';
 
 class OrderTabScreen extends StatefulWidget {
   const OrderTabScreen({Key? key}) : super(key: key);
@@ -34,7 +33,6 @@ class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
     return SafeArea(
       child: Column(
         children: [
-          AppBarOrder(),
           ProductToolbar(
             itemScrollController: itemScrollController,
             itemPositionsListener: itemPositionsListener,

@@ -12,6 +12,10 @@ class Assets {
 
   static final googleStandard = '$_iconsDir/googleg_standard_color_18.png';
 
+  static final storeTCH = '$_iconsDir/storetch-icon.png';
+
+  static final markerIcon = '$_iconsDir/marker-icon.png';
+
   /// Backgrounds
   static final _backgroundsDir = 'assets/images/backgrounds';
 
@@ -41,6 +45,7 @@ class Assets {
   static final _dataUrl = 'assets/data';
   static final productsUrl = '$_dataUrl/products.json';
   static final sectionUrl = '$_dataUrl/section.json';
+  static final storesUrl = '$_dataUrl/stores.json';
 }
 
 enum CollectionsDataType {

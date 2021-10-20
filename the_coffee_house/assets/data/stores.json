@@ -1,0 +1,1900 @@
+[
+  {
+    "id": 7,
+    "pu_city": "Hà Nội",
+    "name": "259 Kim Mã",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668d8_5b21f8cb1acd4d02032668d8_kim_20ma.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.031198,
+      "long": 105.822061
+    },
+    "full_address": "259 Kim Mã, Ba Đình, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 175,
+    "pu_city": "Hà Nội",
+    "name": "3 Trung Hòa",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668da_5b21f8cb1acd4d02032668da_trung_20hoa.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.014423,
+      "long": 105.801632
+    },
+    "full_address": "3 Trung Hòa, Cầu Giấy, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 39,
+    "pu_city": "Hà Nội",
+    "name": "160 Nguyễn Khánh Toàn",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668dd_nguyen_20khanh_20toan.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.037728,
+      "long": 105.801082
+    },
+    "full_address": "160 Nguyễn Khánh Toàn, Cầu Giấy, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 445,
+    "pu_city": "Hà Nội",
+    "name": "207 Trung Kính",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668df_5b21f8cb1acd4d02032668df_trung_20kinh.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.018894,
+      "long": 105.792511
+    },
+    "full_address": "207 Trung Kính, Cầu Giấy, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 436,
+    "pu_city": "Hà Nội",
+    "name": "2 Hồ Tùng Mậu",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668e0_5b21f8cb1acd4d02032668e0_ho_20tung_20mau.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.037220,
+      "long": 105.779767
+    },
+    "full_address": "2 Hồ Tùng Mậu, Cầu Giấy, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 371,
+    "pu_city": "Hà Nội",
+    "name": "Chung cư Victoria Văn phú Tòa V2 Khu đô thị Văn Phú",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668e2_van_20phu.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.959236,
+      "long": 105.768069
+    },
+    "full_address": "Chung cư Victoria Văn phú Tòa V2 Khu đô thị Văn Phú, Hà Đông, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 38,
+    "pu_city": "Hà Nội",
+    "name": " 458 Minh Khai",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668e3_times.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.993436,
+      "long": 105.869589
+    },
+    "full_address": " 458 Minh Khai, Hai Bà Trưng, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 21,
+    "pu_city": "Hà Nội",
+    "name": "122 Bùi Thị Xuân",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668e4_bui_20thi_20xuan.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.013310,
+      "long": 105.849816
+    },
+    "full_address": "122 Bùi Thị Xuân, Hai Bà Trưng, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 132,
+    "pu_city": "Hà Nội",
+    "name": "159 Trần Đại Nghĩa",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668e5_tran_20dai_20nghia.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.001154,
+      "long": 105.845362
+    },
+    "full_address": "159 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 422,
+    "pu_city": "Hà Nội",
+    "name": "72 Trần Nguyên Đán",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668e6_tran_20nguyen_20dan.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.988724,
+      "long": 105.830788
+    },
+    "full_address": "72 Trần Nguyên Đán, Hoàng Mai, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 59,
+    "pu_city": "Hà Nội",
+    "name": "Rice City Linh Đàm",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668e7_rice.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.963392,
+      "long": 105.822909
+    },
+    "full_address": "Rice City Linh Đàm, Hoàng Mai, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 16,
+    "pu_city": "Hà Nội",
+    "name": "23M Hai Bà Trưng",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668e8_hai_20ba_20trung.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.024067,
+      "long": 105.853087
+    },
+    "full_address": "23M Hai Bà Trưng, Hoàn Kiếm, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 117,
+    "pu_city": "Hồ Chí Minh",
+    "name": "114 Đường 9A Khu Dân cư Trung Sơn",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668ea_trung_20son_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.736472,
+      "long": 106.689785
+    },
+    "full_address": "114 Đường 9A Khu Dân cư Trung Sơn, Huyện Bình Chánh, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 129,
+    "pu_city": "Hồ Chí Minh",
+    "name": "93/5 Nguyễn Ảnh Thủ",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668eb_nguyen_20anh_20thu_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.865326,
+      "long": 106.613966
+    },
+    "full_address": "93/5 Nguyễn Ảnh Thủ, Huyện Hóc Môn, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 18,
+    "pu_city": "Hồ Chí Minh",
+    "name": "141 Nguyễn Thái Bình",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cb1acd4d02032668ee_5b21f8cb1acd4d02032668ee_nguyen_20thai_20binh_201_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.768345,
+      "long": 106.698828
+    },
+    "full_address": "141 Nguyễn Thái Bình, Quận 1, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 32,
+    "pu_city": "Hồ Chí Minh",
+    "name": "572 Ba Tháng Hai",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d02032668f1_Ba_20thang_20hai_20sg_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.766085,
+      "long": 106.664049
+    },
+    "full_address": "572 Ba Tháng Hai, Quận 10, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 13,
+    "pu_city": "Hồ Chí Minh",
+    "name": "798 Sư Vạn Hạnh",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d02032668f3_svh_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.774076,
+      "long": 106.668496
+    },
+    "full_address": "798 Sư Vạn Hạnh, Quận 10, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 127,
+    "pu_city": "Hồ Chí Minh",
+    "name": "45 Đường Số 5 - Cư xá Bình Thới",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d02032668f4_cxbt_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.761853,
+      "long": 106.648537
+    },
+    "full_address": "45 Đường Số 5 - Cư xá Bình Thới, Quận 11, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 23,
+    "pu_city": "Hồ Chí Minh",
+    "name": "403 Lê Đại Hành",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d02032668f5_5b21f8cc1acd4d02032668f5_le_20dai_20hanh_202.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.767479,
+      "long": 106.653151
+    },
+    "full_address": "403A-405A Lê Đại Hành, Quận 11, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 126,
+    "pu_city": "Hồ Chí Minh",
+    "name": "44 Hòa Bình",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d02032668f6_hoa_20binh_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.767337,
+      "long": 106.641046
+    },
+    "full_address": "44 Hòa Bình, Quận 11, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 382,
+    "pu_city": "Hồ Chí Minh",
+    "name": "57 Xuân Thủy",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d02032668f9_5b21f8cc1acd4d02032668f9_xuan_20thuy_201_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.803691,
+      "long": 106.733104
+    },
+    "full_address": "57 Xuân Thủy, Quận 2, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 114,
+    "pu_city": "Hồ Chí Minh",
+    "name": "223 Võ Văn Tần",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d02032668fe_5b21f8cc1acd4d02032668fe_Screen2020-05-16at22.21.18.png",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.773043,
+      "long": 106.687147
+    },
+    "full_address": "223 Võ Văn Tần, Quận 3, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 11,
+    "pu_city": "Hồ Chí Minh",
+    "name": "86 Cao Thắng",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d02032668ff_5b21f8cc1acd4d02032668ff_cao_20thang_201_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.771063,
+      "long": 106.681110
+    },
+    "full_address": "86 Cao Thắng, Quận 3, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 47,
+    "pu_city": "Hồ Chí Minh",
+    "name": "6A Ngô Thời Nhiệm",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266900_ngo_20thoi_20nhiem_201_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.780716,
+      "long": 106.690051
+    },
+    "full_address": "6A Ngô Thời Nhiệm, Quận 3, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 332,
+    "pu_city": "Hồ Chí Minh",
+    "name": "35-37 Đuờng 41",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266901_D41_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.758672,
+      "long": 106.700742
+    },
+    "full_address": "35-37 Đuờng 41, Quận 4, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 115,
+    "pu_city": "Hồ Chí Minh",
+    "name": "1056 Hậu Giang",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266902_hau_20giang_20PL_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.745787,
+      "long": 106.625096
+    },
+    "full_address": "1056 Hậu Giang, Quận 6, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 120,
+    "pu_city": "Hồ Chí Minh",
+    "name": "111-113 Bình Phú",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266903_Screen_Shot_2020-05-16_at_22.37.19.png",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.743525,
+      "long": 106.63032
+    },
+    "full_address": "111-113 Bình Phú, Quận 6, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 71,
+    "pu_city": "Hồ Chí Minh",
+    "name": "178 Hậu Giang",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266904_hau_20giang_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.750304,
+      "long": 106.643576
+    },
+    "full_address": "178 Hậu Giang, Quận 6, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 170,
+    "pu_city": "Hồ Chí Minh",
+    "name": "400A Huỳnh Tấn Phát",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266905_huynh_20tan_20phat_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.746808,
+      "long": 106.728837
+    },
+    "full_address": "400A Huỳnh Tấn Phát, Quận 7, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 20,
+    "pu_city": "Hồ Chí Minh",
+    "name": "313 Nguyễn Thị Thập",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266906_5b21f8cc1acd4d0203266906_NTT1_202.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7380569,
+      "long": 106.71520280000004
+    },
+    "full_address": "313 Nguyễn Thị Thập, Quận 7, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 381,
+    "pu_city": "Hồ Chí Minh",
+    "name": "19 - 21 Đường 22",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266907_D22.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7522248,
+      "long": 106.6129846
+    },
+    "full_address": "19 - 21 Đường 22, Quận Bình Tân, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 121,
+    "pu_city": "Hồ Chí Minh",
+    "name": "157 Đường D2",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326690a_5b21f8cc1acd4d020326690a_D2_20bih_20thanh.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.8052558,
+      "long": 106.7157514
+    },
+    "full_address": "157 Đường D2, Quận Bình Thạnh, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 193,
+    "pu_city": "Hồ Chí Minh",
+    "name": "355A Lê Quang Định",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326690b_5b21f8cc1acd4d020326690b_le_20quang_20dinh.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.812216,
+      "long": 106.690267
+    },
+    "full_address": "355A Lê Quang Định, Quận Bình Thạnh, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 19,
+    "pu_city": "Hồ Chí Minh",
+    "name": "469 Điện Biên Phủ",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326690c_5b21f8cc1acd4d020326690c_Dien_20bien_20phu_20hcm.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.801503,
+      "long": 106.714002
+    },
+    "full_address": "469 Điện Biên Phủ, Quận Bình Thạnh, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 36,
+    "pu_city": "Hồ Chí Minh",
+    "name": "14 Ngô Tất Tố",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326690d_5b21f8cc1acd4d020326690d_ngo_20tat_20to_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.793107,
+      "long": 106.709944
+    },
+    "full_address": "14 Ngô Tất Tố, Quận Bình Thạnh, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 105,
+    "pu_city": "Hồ Chí Minh",
+    "name": "270 Bùi Hữu Nghĩa",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326690e_5b21f8cc1acd4d020326690e_bui_20huu_20ngha.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.798994,
+      "long": 106.699508
+    },
+    "full_address": "270 Bùi Hữu Nghĩa, Quận Bình Thạnh, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 33,
+    "pu_city": "Hồ Chí Minh",
+    "name": "8 Hoàng Hoa Thám",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326690f_5b21f8cc1acd4d020326690f_HHT_20Binh_20Thanh.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.804513,
+      "long": 106.691872
+    },
+    "full_address": "8 Hoàng Hoa Thám, Quận Bình Thạnh, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 274,
+    "pu_city": "Hồ Chí Minh",
+    "name": "355 Thống Nhất",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266910_thong_20nhat.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.841511,
+      "long": 106.664689
+    },
+    "full_address": "355 Thống Nhất, Quận Gò Vấp, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 397,
+    "pu_city": "Hồ Chí Minh",
+    "name": "403 Phan Huy Ích",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266914_5b21f8cc1acd4d0203266914_phan_20huy_20ich.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.8441741,
+      "long": 106.6399272
+    },
+    "full_address": "403 Phan Huy Ích, Quận Gò Vấp, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 44,
+    "pu_city": "Hồ Chí Minh",
+    "name": "258 Nguyễn Văn Lượng",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266915_nguyen_20van_20luong_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.838814,
+      "long": 106.67138
+    },
+    "full_address": "258 Nguyễn Văn Lượng, Quận Gò Vấp, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 99,
+    "pu_city": "Hồ Chí Minh",
+    "name": "771 Phan Văn Trị",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266916_phan_20van_20tri_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.828194,
+      "long": 106.685314
+    },
+    "full_address": "771 Phan Văn Trị, Quận Gò Vấp, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 6,
+    "pu_city": "Hồ Chí Minh",
+    "name": "293 Quang Trung",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266917_5b21f8cc1acd4d0203266917_quang_20trung_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.829091,
+      "long": 106.672053
+    },
+    "full_address": "293 Quang Trung, Quận Gò Vấp, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 145,
+    "pu_city": "Đà Nẵng",
+    "name": "80A Nguyễn Chí Thanh",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266919_nguyen_chi_thanh.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 16.072854,
+      "long": 108.220832
+    },
+    "full_address": "80A Nguyễn Chí Thanh, Quận Hải Châu, Đà Nẵng, Việt Nam"
+  },
+  {
+    "id": 110,
+    "pu_city": "Đà Nẵng",
+    "name": "A4-2 Nguyễn Văn Linh",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326691a_5b21f8cc1acd4d020326691a_5b21f8cc1acd4d020326691a_NVL.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 16.060842,
+      "long": 108.22345
+    },
+    "full_address": "A4-2 Nguyễn Văn Linh, Quận Hải Châu, Đà Nẵng, Việt Nam"
+  },
+  {
+    "id": 2,
+    "pu_city": "Hồ Chí Minh",
+    "name": "43 Hoa Hồng",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326691c_5b21f8cc1acd4d020326691c_hoa_20hong_202.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.796429,
+      "long": 106.690869
+    },
+    "full_address": "43 Hoa Hồng, Quận Phú Nhuận, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 48,
+    "pu_city": "Hồ Chí Minh",
+    "name": "68 Huỳnh Văn Bánh",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326691e_5b21f8cc1acd4d020326691e_huynh_20van_20banh.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.794424,
+      "long": 106.680929
+    },
+    "full_address": "68 Huỳnh Văn Bánh, Quận Phú Nhuận, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 333,
+    "pu_city": "Đà Nẵng",
+    "name": "461 Trần Hưng Đạo",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266920_TCHdan_20Tran_20hung_20dao.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 16.064342,
+      "long": 108.23012
+    },
+    "full_address": "461 Trần Hưng Đạo, Quận Sơn Trà, Đà Nẵng, Việt Nam"
+  },
+  {
+    "id": 40,
+    "pu_city": "Hồ Chí Minh",
+    "name": "2 Đống Đa",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266921_dong_20da_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.808394,
+      "long": 106.66561
+    },
+    "full_address": "2 Đống Đa, Quận Tân Bình, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 90,
+    "pu_city": "Hồ Chí Minh",
+    "name": "51 Thăng Long",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266923_thang_20long_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.8029528,
+      "long": 106.6604517
+    },
+    "full_address": "51 Thăng Long, Quận Tân Bình, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 418,
+    "pu_city": "Hồ Chí Minh",
+    "name": "51 Lê Trung Nghĩa",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266924_le_20trung_20ngua.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.800469,
+      "long": 106.650897
+    },
+    "full_address": "51 Lê Trung Nghĩa, Quận Tân Bình, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 4,
+    "pu_city": "Hồ Chí Minh",
+    "name": "17 Út Tịch",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266927_hoang_20viet_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.796347,
+      "long": 106.658738
+    },
+    "full_address": "17 Út Tịch, Quận Tân Bình, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 58,
+    "pu_city": "Hồ Chí Minh",
+    "name": "18 Hồng Hà",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266928_hong_20ha.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.813243,
+      "long": 106.667071
+    },
+    "full_address": "18 Hồng Hà, Quận Tân Bình, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 218,
+    "pu_city": "Hồ Chí Minh",
+    "name": "4-6 Ấp Bắc",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326692a_ap_20bac.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.80057,
+      "long": 106.641502
+    },
+    "full_address": "4-6 Ấp Bắc, Quận Tân Bình, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 3,
+    "pu_city": "Hồ Chí Minh",
+    "name": "281 Lê Văn Sỹ",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326692b_le_20van_20sy.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.794411,
+      "long": 106.668022
+    },
+    "full_address": "281 Lê Văn Sỹ, Quận Tân Bình, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 83,
+    "pu_city": "Hồ Chí Minh",
+    "name": "685 Âu Cơ",
+    "open_time": "8:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326692c_Bic_20C_202.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.78965,
+      "long": 106.6393798
+    },
+    "full_address": "685 Âu Cơ, Quận Tân Phú, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 444,
+    "pu_city": "Hồ Chí Minh",
+    "name": "46 Lê Thiệt",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326692d_le_20thiet.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.785543,
+      "long": 106.622947
+    },
+    "full_address": "46 Lê Thiệt, Quận Tân Phú, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 419,
+    "pu_city": "Hồ Chí Minh",
+    "name": "141 Tân Sơn Nhì",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326692e_tan_20son_20nhi.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.800568,
+      "long": 106.63303
+    },
+    "full_address": "141 Tân Sơn Nhì, Quận Tân Phú, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 432,
+    "pu_city": "Hồ Chí Minh",
+    "name": "184 Tô Hiệu",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326692f_5b21f8cc1acd4d020326692f_to_20hieu_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.773278,
+      "long": 106.627584
+    },
+    "full_address": "184 Tô Hiệu, Quận Tân Phú, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 62,
+    "pu_city": "Hồ Chí Minh",
+    "name": "787 Lũy Bán Bích",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266930_luy_20ban_20bich.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.78657,
+      "long": 106.636715
+    },
+    "full_address": "787 Lũy Bán Bích, Quận Tân Phú, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 437,
+    "pu_city": "Hồ Chí Minh",
+    "name": "66E Hoàng Diệu 2",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266933_hoang_20dieu_202.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.856859,
+      "long": 106.764418
+    },
+    "full_address": "66E Hoàng Diệu 2, Quận Thủ Đức, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 270,
+    "pu_city": "Hồ Chí Minh",
+    "name": "201 Đặng Văn Bi",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266935_5b21f8cc1acd4d0203266935_dang_20van_20bi_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.848561,
+      "long": 106.759263
+    },
+    "full_address": "201 Đặng Văn Bi, Quận Thủ Đức, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 239,
+    "pu_city": "Đồng Nai",
+    "name": "R132 Võ Thị Sáu",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266936_5b21f8cc1acd4d0203266936_vo_20thi_20sau_20dong_20nai.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.947462,
+      "long": 106.830116
+    },
+    "full_address": "R132 Võ Thị Sáu, Thành Phố Biên Hòa, Đồng Nai, Việt Nam"
+  },
+  {
+    "id": 150,
+    "pu_city": "Bà Rịa Vũng Tàu",
+    "name": "5 Ba Cu",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d0203266938_5b21f8cc1acd4d0203266938_ba_20cu.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.348242,
+      "long": 107.074153
+    },
+    "full_address": "5 Ba Cu, Thành phố Vũng Tàu, Bà Rịa Vũng Tàu, Việt Nam"
+  },
+  {
+    "id": 467,
+    "pu_city": "Hà Nội",
+    "name": "1 Thái Hà",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b3b04d5fbc68621f3385252_thai_20ha.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0094533,
+      "long": 105.8236592
+    },
+    "full_address": "1 Thái Hà, Đống Đa, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 463,
+    "pu_city": "Hồ Chí Minh",
+    "name": "670 Nguyễn Duy Trinh",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b3b04d5fbc68621f3385253_5b3b04d5fbc68621f3385253_nguyen_20duy_20trinh.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.788908,
+      "long": 106.778416
+    },
+    "full_address": "670 Nguyễn Duy Trinh, Quận 2, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 489,
+    "pu_city": "Hồ Chí Minh",
+    "name": "63 Rạch Bùng Binh",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b46b2d6fbc686139f4d1bf2_rach_20bung_20binh_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.782484,
+      "long": 106.6801536
+    },
+    "full_address": "63 Rạch Bùng Binh, Quận 3, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 488,
+    "pu_city": "Hồ Chí Minh",
+    "name": "492 Nguyễn Thị Thập",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b46b2d6fbc686139f4d1bf3_5b46b2d6fbc686139f4d1bf3_NTT2_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7397457,
+      "long": 106.70537539999998
+    },
+    "full_address": "492 Nguyễn Thị Thập, Quận 7, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 464,
+    "pu_city": "Bà Rịa Vũng Tàu",
+    "name": "76 Nguyễn Hữu Thọ",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b46b2d6fbc686139f4d1bf5_nguyen_20huu_20tho.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.491757,
+      "long": 107.173676
+    },
+    "full_address": "76 Nguyễn Hữu Thọ, Thành phố Bà Rịa, Bà Rịa Vũng Tàu, Việt Nam"
+  },
+  {
+    "id": 466,
+    "pu_city": "Hà Nội",
+    "name": "Discovery Complex 302 Cầu Giấy",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b693704fbc68618ad24f8a6_5b693704fbc68618ad24f8a6_discovery.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0356483,
+      "long": 105.7939914
+    },
+    "full_address": "Discovery Complex 302 Cầu Giấy, Cầu Giấy, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 497,
+    "pu_city": "Cần Thơ",
+    "name": "8 Hòa Bình",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b693704fbc68618ad24f8a7_hoa_20binh_20ct.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.0344448,
+      "long": 105.78539860000001
+    },
+    "full_address": "8 Hòa Bình, Ninh Kiều, Cần Thơ, Việt Nam"
+  },
+  {
+    "id": 500,
+    "pu_city": "Hồ Chí Minh",
+    "name": "1 Song Hành",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b693704fbc68618ad24f8a8_cantabil_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.8014522,
+      "long": 106.7469614
+    },
+    "full_address": "1 Song Hành, Quận 2, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 496,
+    "pu_city": "Thanh Hóa",
+    "name": "27 Lê Lợi",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b693704fbc68618ad24f8ab_le_20loi.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 19.8066662,
+      "long": 105.78399000000002
+    },
+    "full_address": "27 Lê Lợi, Thành phố Thanh Hóa, Thanh Hóa, Việt Nam"
+  },
+  {
+    "id": 499,
+    "pu_city": "Bình Dương",
+    "name": "Hikari Bình Dương",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b693704fbc68618ad24f8ac_hikari.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 11.058663,
+      "long": 106.683493
+    },
+    "full_address": "Hikari Bình Dương, Thành phố Thủ Dầu Một, Bình Dương, Việt Nam"
+  },
+  {
+    "id": 506,
+    "pu_city": "Hồ Chí Minh",
+    "name": "175B Cao Thắng",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b6d0c17fbc6860a6f541dac_5b6d0c17fbc6860a6f541dac_CT_20no_CC_82_CC_81i_20da_CC_80i_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7746462,
+      "long": 106.6757624
+    },
+    "full_address": "175B Cao Thắng, Quận 10, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 507,
+    "pu_city": "Hải Phòng",
+    "name": "86 Điện Biên Phủ",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b7a3521fbc6863aba588922_dien_bien_phuhp.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.8616586,
+      "long": 106.6813528
+    },
+    "full_address": "86 Điện Biên Phủ, Hồng Bàng, Hải Phòng, Việt Nam"
+  },
+  {
+    "id": 505,
+    "pu_city": "Đà Nẵng",
+    "name": "9 Triệu Nữ Vương",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b7e78b9fbc6866d9e05d734_trieu_nu_vương.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 16.067233,
+      "long": 108.215798
+    },
+    "full_address": "9 Triệu Nữ Vương, Quận Hải Châu, Đà Nẵng, Việt Nam"
+  },
+  {
+    "id": 504,
+    "pu_city": "Hồ Chí Minh",
+    "name": "187 Trần Não",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b86089ffbc6867f143453b3_5b86089ffbc6867f143453b3_tran_20nao_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7879255,
+      "long": 106.73003100000005
+    },
+    "full_address": "187 Trần Não, Quận 2, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 511,
+    "pu_city": "Nghệ An",
+    "name": "Trường Thi",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b86089ffbc6867f143453b5_truong_20thi.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 18.6656153,
+      "long": 105.69015460000003
+    },
+    "full_address": "02 Trường Thi, Thành Phố Vinh, Nghệ An, Việt Nam"
+  },
+  {
+    "id": 516,
+    "pu_city": "Hà Nội",
+    "name": "38 Nguyễn Khuyến",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b91e0e5fbc68604c565a9b6_nguyen_20khuyen.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.9774378,
+      "long": 105.7877487
+    },
+    "full_address": "38 Nguyễn Khuyến, Hà Đông, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 503,
+    "pu_city": "Hồ Chí Minh",
+    "name": "359 Đỗ Xuân Hợp",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b939f8efbc6861b956b2af2_do_20xuan_20hop_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.820911,
+      "long": 106.772414
+    },
+    "full_address": "359 Đỗ Xuân Hợp, Quận 9, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 517,
+    "pu_city": "Hồ Chí Minh",
+    "name": "184 Nguyễn Xí",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5b99ec9cfbc68671c15d82a4_5b99ec9cfbc68671c15d82a4_nguyen_20xi.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.8152937,
+      "long": 106.7079154
+    },
+    "full_address": "184 Nguyễn Xí, Quận Bình Thạnh, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 528,
+    "pu_city": "Hải Phòng",
+    "name": "119 Cầu Đất",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bc6aa23fbc686224a6726f8_5bc6aa23fbc686224a6726f8_5bc6aa23fbc686224a6726f8_cau_20dat_201.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.853846,
+      "long": 106.68426590000001
+    },
+    "full_address": "119 Cầu Đất, Ngô Quyền, Hải Phòng, Việt Nam"
+  },
+  {
+    "id": 524,
+    "pu_city": "Hồ Chí Minh",
+    "name": "58 Lâm Văn Bền",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bc6aa23fbc686224a6726f9_lam_20van_20ben_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7502583,
+      "long": 106.7158548
+    },
+    "full_address": "58 Lâm Văn Bền, Quận 7, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 526,
+    "pu_city": "Hồ Chí Minh",
+    "name": "1 Hoa Sứ",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bc6aa23fbc686224a6726fb_5bc6aa23fbc686224a6726fb_hoa_20su.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7987648,
+      "long": 106.6886909
+    },
+    "full_address": "1 Hoa Sứ, Quận Phú Nhuận, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 521,
+    "pu_city": "Hồ Chí Minh",
+    "name": "291 Hồng Lạc",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bc6aa23fbc686224a6726fc_5bc6aa23fbc686224a6726fc_hong_20lac.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7868509,
+      "long": 106.64374069999997
+    },
+    "full_address": "291 Hồng Lạc, Quận Tân Bình, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 529,
+    "pu_city": "Nghệ An",
+    "name": "07 Quang Trung",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bc6aa23fbc686224a6726fd_5bc6aa23fbc686224a6726fd_quang_20trung_20_20vinh.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 18.6674416,
+      "long": 105.6735603
+    },
+    "full_address": "07 Quang Trung, Thành Phố Vinh, Nghệ An, Việt Nam"
+  },
+  {
+    "id": 522,
+    "pu_city": "Nghệ An",
+    "name": "87A Nguyễn Văn Cừ",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bc6aa23fbc686224a6726fe_nguyen_20van_20cu_20nghe_20an.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 18.6755058,
+      "long": 105.6864886
+    },
+    "full_address": "87A Nguyễn Văn Cừ, Thành Phố Vinh, Nghệ An, Việt Nam"
+  },
+  {
+    "id": 533,
+    "pu_city": "Hà Nội",
+    "name": "40 Xuân La",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bda6dcffbc68614df6e1995_xuan_20la.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0685674,
+      "long": 105.803252
+    },
+    "full_address": "40 Xuân La, Tây Hồ, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 534,
+    "pu_city": "Hà Nội",
+    "name": "30 Hào Nam",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bda6dcffbc68614df6e1996_hao_20nam.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0216243,
+      "long": 105.826334
+    },
+    "full_address": "30 Hào Nam, Đống Đa, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 531,
+    "pu_city": "Bắc Ninh",
+    "name": "01 Nguyễn Gia Thiều",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bda6dcffbc68614df6e1997_nguyen_gia_thieu.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.1880773,
+      "long": 106.076
+    },
+    "full_address": "01 Nguyễn Gia Thiều, Thành phố Bắc Ninh, Bắc Ninh, Việt Nam"
+  },
+  {
+    "id": 535,
+    "pu_city": "Hưng Yên",
+    "name": "B65 Phố Trúc Ecopark",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bf373e4fbc686250c46510c_5bf373e4fbc686250c46510c_phu_20truc.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.9731712,
+      "long": 105.9213567
+    },
+    "full_address": "B65 Phố Trúc Ecopark,, Văn Giang, Hưng Yên, Việt Nam"
+  },
+  {
+    "id": 540,
+    "pu_city": "Hà Nội",
+    "name": "60 Vũ Phạm Hàm",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bfe084efbc6865eac59c987_vu_20pham_20ham.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0158985,
+      "long": 105.79791180000007
+    },
+    "full_address": "60 Vũ Phạm Hàm, Cầu Giấy, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 537,
+    "pu_city": "Hồ Chí Minh",
+    "name": "240 Phạm Văn Chiêu",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bfe084efbc6865eac59c988_pham_20van_20chieu.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.8482626,
+      "long": 106.64905679999993
+    },
+    "full_address": "240 Phạm Văn Chiêu, Quận Gò Vấp, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 541,
+    "pu_city": "Hồ Chí Minh",
+    "name": "116 Tô Ngọc Vân",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bfe084efbc6865eac59c98a_to_20ngoc_20van.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.8532025,
+      "long": 106.75190320000002
+    },
+    "full_address": "116 Tô Ngọc Vân, Quận Thủ Đức, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 538,
+    "pu_city": "Thừa Thiên Huế",
+    "name": "11 Võ Thị Sáu",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5bfe084efbc6865eac59c98b_vo_thi_sau_hue.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 16.4705504,
+      "long": 107.59601220000002
+    },
+    "full_address": "61 Võ Thị Sáu, Thành phố Huế, Thừa Thiên Huế, Việt Nam"
+  },
+  {
+    "id": 542,
+    "pu_city": "Hồ Chí Minh",
+    "name": "Lô T2-1.2, Đường D1, Quận 9",
+    "open_time": "07:00 - 18:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5c0de0e81acd4d35f4394c84_D1_20TGDD.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.8518345,
+      "long": 106.7971156
+    },
+    "full_address": "Lô T2-1.2, Đường D1, Quận 9, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 543,
+    "pu_city": "Bắc Ninh",
+    "name": "98 Huyền Quang",
+    "open_time": "7:00 - 20:30",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5c0de0e91acd4d35f4394c85_huyen_quang.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.1756261,
+      "long": 106.0642475
+    },
+    "full_address": "98 Huyền Quang, Thành phố Bắc Ninh, Bắc Ninh, Việt Nam"
+  },
+  {
+    "id": 545,
+    "pu_city": "Hải Phòng",
+    "name": "2-4 Cầu Đất",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5c244ba5fbc686393b0994cc_photo_2020-12-23_17-22-42.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.8558138,
+      "long": 106.6816582
+    },
+    "full_address": "2-4 Cầu Đất, Ngô Quyền, Hải Phòng, Việt Nam"
+  },
+  {
+    "id": 546,
+    "pu_city": "Đà Nẵng",
+    "name": "1 Núi Thành",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5c244ba5fbc686393b0994cd_5c244ba5fbc686393b0994cd_5c244ba5fbc686393b0994cd_nui_20thanh.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 16.0546008,
+      "long": 108.220399
+    },
+    "full_address": "1 Núi Thành, Quận Hải Châu, Đà Nẵng, Việt Nam"
+  },
+  {
+    "id": 547,
+    "pu_city": "Cần Thơ",
+    "name": "170 Nguyễn Văn Cừ",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5c299552fbc6862bb315fec7.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.0345654,
+      "long": 105.7563619
+    },
+    "full_address": "170 Nguyễn Văn Cừ, Ninh Kiều, Cần Thơ, Việt Nam"
+  },
+  {
+    "id": 551,
+    "pu_city": "Hà Nội",
+    "name": "11 Vương Thừa Vũ",
+    "open_time": "9:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5cadc5b6696fb35468487a36_vuong_20thua_20vi.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0011467,
+      "long": 105.8225377
+    },
+    "full_address": "11 Vương Thừa Vũ, Thanh Xuân, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 554,
+    "pu_city": "Hồ Chí Minh",
+    "name": "25A Đồng Nai",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5cda29e8696fb37239351ca7_dong_20nai_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7805604,
+      "long": 106.6616961
+    },
+    "full_address": "25A Đồng Nai, Quận 10, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 553,
+    "pu_city": "Hà Nội",
+    "name": "47 Nguyễn Tuân",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5cda29e8696fb37239351ca8_Screen_20Shot_202020-05-16_20at_2023.58.44.png",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.9953766,
+      "long": 105.8033951
+    },
+    "full_address": "47 Nguyễn Tuân, Thanh Xuân, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1153,
+    "pu_city": "Hồ Chí Minh",
+    "name": "75 Đường D1",
+    "open_time": "07:00 - 22:00",
+    "image": "https: //minio.thecoffeehouse.com/image/admin/store/5b21f8cc1acd4d020326690a_5b21f8cc1acd4d020326690a_D2_20bih_20thanh.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.8021283,
+      "long": 106.7183698
+    },
+    "full_address": "75 Đường D1, Quận Bình Thạnh, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 1155,
+    "pu_city": "Hà Nội",
+    "name": "Leadvisor Tower 641 Phạm Văn Đồng",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5cfdd798696fb361044bf24a_5cfdd798696fb361044bf24a_pham_20van_20dong_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0501446,
+      "long": 105.78171369999995
+    },
+    "full_address": "641 Phạm Văn Đồng, Bắc Từ Liêm, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1156,
+    "pu_city": "Hồ Chí Minh",
+    "name": "180 Trần Quang Khải",
+    "open_time": "07:00 - 22:30",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5d147678696fb3596835615b_tran_quang_khai.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.791775,
+      "long": 106.689753
+    },
+    "full_address": "180 Trần Quang Khải, Quận 1, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 1157,
+    "pu_city": "Hồ Chí Minh",
+    "name": "17 Mai Chí Thọ",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5d147678696fb3596835615c_new_20city_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7810084,
+      "long": 106.7358
+    },
+    "full_address": "17 Mai Chí Thọ, Quận 2, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 1159,
+    "pu_city": "Cần Thơ",
+    "name": "68 Ba Tháng Hai",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5d1973af696fb3411e5ad775_3_20thang_202_20can_20tho.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.030913,
+      "long": 105.77324
+    },
+    "full_address": "68 Ba Tháng Hai, Ninh Kiều, Cần Thơ, Việt Nam"
+  },
+  {
+    "id": 1160,
+    "pu_city": "Hồ Chí Minh",
+    "name": "190B1 Phan Văn Trị",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5d1973b0696fb3411e5ad776_5d1973b0696fb3411e5ad776_PVT_203.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.8131347,
+      "long": 106.695399
+    },
+    "full_address": "190B1 Phan Văn Trị, Quận Bình Thạnh, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 1161,
+    "pu_city": "Nha Trang",
+    "name": "AB Tower, 44 Trần Phú",
+    "open_time": "9:30 - 21:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5d1973b0696fb3411e5ad777_Screen_20Shot_202020-05-17_20at_2000.12.34.png",
+    "phone": "02871087088",
+    "location": {
+      "lat": 12.2406634,
+      "long": 109.1963733
+    },
+    "full_address": "44 Trần Phú, Thành phố Nha Trang, Khánh Hòa, Việt Nam"
+  },
+  {
+    "id": 1162,
+    "pu_city": "Hà Nội",
+    "name": "B3-01 Vinhomes Gardenia Hàm Nghi",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5d2ea9ec696fb35b294ae43b_5d2ea9ec696fb35b294ae43b_ham_20nghi.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0359483,
+      "long": 105.762039
+    },
+    "full_address": "B3-01, Gardenia Hàm Nghi, Nam Từ Liêm, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1163,
+    "pu_city": "Hồ Chí Minh",
+    "name": "VNG Campus",
+    "open_time": "07:00 - 20:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5d9c45a445de4716d451b4b2_VNG_203_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7582292,
+      "long": 106.7436264
+    },
+    "full_address": "VNG Campus, Quận 7, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 1164,
+    "pu_city": "Hồ Chí Minh",
+    "name": "682 Trần Hưng Đạo",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5de0d7c576c4c404b752d032_Screen_20Shot_202020-05-16_20at_2022.35.22.png",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7546916,
+      "long": 106.6781839
+    },
+    "full_address": "682 Trần Hưng Đạo, Quận 5, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 1165,
+    "pu_city": "Hà Nội",
+    "name": "Aeon Mall Hà Đông",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5de7916b0dd53402362b19b3_Screen_20Shot_202020-05-16_20at_2023.50.17.png",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.9898055,
+      "long": 105.7509153
+    },
+    "full_address": "Khu Dân Cư, Hà Đông, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1166,
+    "pu_city": "Hà Nội",
+    "name": "BT16B5-06 Làng Việt Kiều Châu Âu",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5dfc90e380ae3703fb7f3dd3_Screen_20Shot_202020-05-16_20at_2023.53.27.png",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.9840438,
+      "long": 105.7876547
+    },
+    "full_address": "Số BT16B5-06 Làng Việt Kiều Châu Âu, khu ĐTM Mỗ Lao, Hà Đông, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1167,
+    "pu_city": "Hà Nội",
+    "name": "Tầng 1 tòa nhà CT5A",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5e01e3293417a104f920b5c3_Screen_20Shot_202020-05-16_20at_2023.54.01.png",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.9733083,
+      "long": 105.7629288
+    },
+    "full_address": "Tầng 1 tòa nhà CT5A thuộc dự án văn Khê, Hà Đông, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1170,
+    "pu_city": "Hải Phòng",
+    "name": "Cát Bi Plaza",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5e202d4fd546314fa82cb115_Screen_Shot_2020-05-17_at_00.05.07.png",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.8607902,
+      "long": 106.6967231
+    },
+    "full_address": "Số 1 Lê Hồng Phong, Ngô Quyền, Hải Phòng, Việt Nam"
+  },
+  {
+    "id": 1172,
+    "pu_city": "Khánh Hòa",
+    "name": "Gold Coast, 1 Trần Hưng Đạo",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5ebcf0d083e8ce1f790c69c5_Screen_20Shot_202020-05-17_20at_2000.13.19.png",
+    "phone": "02871087088",
+    "location": {
+      "lat": 12.2476863,
+      "long": 109.1943065
+    },
+    "full_address": "1 Trần Hưng Đạo, Thành phố Nha Trang, Khánh Hòa, Việt Nam"
+  },
+  {
+    "id": 1175,
+    "pu_city": "Hà Nội",
+    "name": "Chelsea Residence Trần Kim Xuyến",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5f640bcda69ed46dae2c97e3_Chelsea_201_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0194519,
+      "long": 105.7937638
+    },
+    "full_address": "Ô số 01A1, Tầng 1, Chung cư E2-Chelsea Residences, Khu ĐTM Yên Hòa, Cầu Giấy, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1177,
+    "pu_city": "Hà Nội",
+    "name": "17T3 Hoàng Đạo Thúy",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5f742f48da71401dfa739b62_Hoang_20dao_20thuy_201.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0087770656814,
+      "long": 105.801493092575
+    },
+    "full_address": "17T3 Hoàng Đạo Thúy, Cầu Giấy, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1176,
+    "pu_city": "Hồ Chí Minh",
+    "name": "116-118 đường 51",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5f742f48da71401dfa739b64_5f742f48da71401dfa739b64_Sun_20avenue_201_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7846892,
+      "long": 106.7476841
+    },
+    "full_address": "114-116 Đường 51, Quận 2, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 1180,
+    "pu_city": "Hà Nội",
+    "name": "18T1 Le Van Luong",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5f9675dd66fac5495f3a1b12_le_20van_20luong_203_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0059277,
+      "long": 105.8050802
+    },
+    "full_address": "18T1 Lê Văn Lương, Cầu Giấy, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1179,
+    "pu_city": "Hồ Chí Minh",
+    "name": "Homyland Q2",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5f9675dd66fac5495f3a1b13_Homyland_201.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7896957,
+      "long": 106.7687803
+    },
+    "full_address": "SH2, Tầng 1 Dự án Chung cư cao cấp Homyland Riverside, Nguyễn Duy Trinh, Quận 2, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 1182,
+    "pu_city": "Hà Nội",
+    "name": "Vincom Mega Mall Ocean Park",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5fc9953bb329b245b25709e2_Vincom_20ocean_20park_203_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.99342,
+      "long": 105.9605
+    },
+    "full_address": "Lô L1-23 TTTM Vincom Mega Mall Ocean Park, Gia Lâm, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1184,
+    "pu_city": "Hà Nội",
+    "name": "Gamuda Gardens",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5fc9953bb329b245b25709e3_Gamuda_201.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.9717259,
+      "long": 105.8794701
+    },
+    "full_address": "Lô CT1-A-01, Dự án Gamuda Gardens, Hoàng Mai, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1183,
+    "pu_city": "Hồ Chí Minh",
+    "name": "Vinhomes Central Park",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5fc9953bb329b245b25709e4_Vinhome_20landmark_201.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7931339,
+      "long": 106.7222278
+    },
+    "full_address": "Số 02 Tòa Park 5 Vinhomes Central Park, 720A Điện Biên Phủ, Quận Bình Thạnh, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 1181,
+    "pu_city": "Hải Phòng",
+    "name": "Aeonmall Lê Chân Hải Phòng",
+    "open_time": "8:00 - 20:45",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5fc9953bb329b245b25709e5_AM_20Le_20chan_20hai_20phong_202.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.83299,
+      "long": 106.6822578
+    },
+    "full_address": "Lô số T109, Tầng Một TTTM Aeonmall Hải Phòng Lê Chân, Đường Hồ Sen – Cầu Rào 2, Quận Lê Chân, Hải Phòng, Việt Nam"
+  },
+  {
+    "id": 1185,
+    "pu_city": "Hà Nội",
+    "name": "Vu Tong Phan",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5fcee274abc032653714b6e5_V_C5_A9_20T_C3_B4ng_20Phan_201.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.9910047,
+      "long": 105.8139523
+    },
+    "full_address": "349 Vũ Tông Phan, Thanh Xuân, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1186,
+    "pu_city": "Kiên Giang",
+    "name": "Sun World Hon Thom Nature Park",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5fd47114e09665122d2441d2_5fd47114e09665122d2441d2_Hon_20Thom_201_20.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 9.9553503,
+      "long": 104.0157138
+    },
+    "full_address": "B27-B29, Khu Vùng Lõi, KDL Sun World Hon Thom Nature Park, Phú Quốc, Kiên Giang, Việt Nam"
+  },
+  {
+    "id": 1187,
+    "pu_city": "Tây Ninh",
+    "name": "Duong 30/4 TNH",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5fe054bdae11f43fed122fa2_132614790_2866911833582824_7523604498900453457_o.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 11.3165704,
+      "long": 106.0979379
+    },
+    "full_address": "295 Đường 30/4, KP1, , Tây Ninh, Việt Nam"
+  },
+  {
+    "id": 1190,
+    "pu_city": "Hà Nội",
+    "name": "Ha Noi Tower",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5fe4a79537c294506b30be83_HN_20tower_201_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0257620101149,
+      "long": 105.84605115388
+    },
+    "full_address": "49 Hai Bà Trưng, Hoàn Kiếm, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1188,
+    "pu_city": "Kiên Giang",
+    "name": "VinWonders Bãi Dài S-5B&6B",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5fd47114e09665122d2441d2_5fd47114e09665122d2441d2_hon_20thom_203.jpeg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.340296,
+      "long": 103.8537588
+    },
+    "full_address": "Gian hàng số S-5B&6B, VinWonders Phú Quốc, Khu Bãi Dài, Phú Quốc, Kiên Giang, Việt Nam"
+  },
+  {
+    "id": 1191,
+    "pu_city": "Nha Trang",
+    "name": "BigC GO Nha Trang",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5fe922d860fd1541d13e5ce5_Big_20c_20Go_20Nha_20TRang_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 12.2561914,
+      "long": 109.1699505
+    },
+    "full_address": "Lô số 4, Đường 19/5, Thành phố Nha Trang, Khánh Hòa, Việt Nam"
+  },
+  {
+    "id": 1192,
+    "pu_city": "Hà Nội",
+    "name": "Aeon Mall Him Lam",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/5feab7e3b5dc0f4d14797542_Aeon_20Mall_20long_20bien_203_20.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0268577,
+      "long": 105.9000861
+    },
+    "full_address": "Tầng 3, Số 27 đường Cổ Linh, Long Biên, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1194,
+    "pu_city": "Hồ Chí Minh",
+    "name": "Sky Garden",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/6006813852da7a45cd2c5d62_photo_2021-01-20_16-44-40.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.7307662,
+      "long": 106.7068108
+    },
+    "full_address": "Lô R1-72, R4-71 Khu R20, Quận 7, Hồ Chí Minh, Việt Nam"
+  },
+  {
+    "id": 1195,
+    "pu_city": "Tây Ninh",
+    "name": "Sun World Nui Ba Den",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/6006813852da7a45cd2c5d62_photo_2021-01-20_16-39-00.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 11.3635466,
+      "long": 106.173138
+    },
+    "full_address": "Tầng 1, Nhà ga 1 & 3, Núi Bà Đen, Tp Tây Ninh, Tây Ninh, Việt Nam"
+  },
+  {
+    "id": 1196,
+    "pu_city": "Hà Nội",
+    "name": "Peakview Tower HN",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/601a0ff87adfeb16df74d6d2_TAMDONGCUA_20_281_29.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0197215,
+      "long": 105.8232369
+    },
+    "full_address": "36 Hoàng Cầu, Đống Đa, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1198,
+    "pu_city": "Hải Phòng",
+    "name": "172A Ngô Quyền",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/601a0ff87adfeb16df74d6d2_TAMDONGCUA_20_281_29.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.8362497,
+      "long": 106.70145
+    },
+    "full_address": "Thửa đất số 172A Khu quy hoạch dân cư, Ngô Quyền, Hải Phòng, Việt Nam"
+  },
+  {
+    "id": 1200,
+    "pu_city": "Hải Phòng",
+    "name": "Trần Quang Khải Hải Phòng",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/6077e0b52fb98b269f2855b2_tqk-hp.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.8595824,
+      "long": 106.6840863
+    },
+    "full_address": "17 Trần Quang Khải, Hồng Bàng, Hải Phòng, Việt Nam"
+  },
+  {
+    "id": 1199,
+    "pu_city": "Kiên Giang",
+    "name": "Khu du lịch sinh thái Bãi Dài",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/601a0ff87adfeb16df74d6d2_TAMDONGCUA_20_281_29.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.326608,
+      "long": 103.8591235
+    },
+    "full_address": "Shop số TM-04A-10-11 Khu du lịch sinh thái Bãi Dài, Phú Quốc, Kiên Giang, Việt Nam"
+  },
+  {
+    "id": 1201,
+    "pu_city": "Hà Tĩnh",
+    "name": "56 Hàm Nghi, Hà Tĩnh",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/Close-GIAOHANG_858456.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 18.3366958,
+      "long": 105.8934983
+    },
+    "full_address": "Tổ dân phố 8, Đường Hàm Nghi, , Hà Tĩnh, Việt Nam"
+  },
+  {
+    "id": 1202,
+    "pu_city": "Hà Nội",
+    "name": "209 Lê Duẩn, Hai Bà Trưng",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/601a0ff87adfeb16df74d6d2_TAMDONGCUA_20_281_29.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.01880140054176,
+      "long": 105.84146872713507
+    },
+    "full_address": "209 Lê Duẩn, Hai Bà Trưng, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1203,
+    "pu_city": "Thanh Hóa",
+    "name": "Hac Thanh Time Square",
+    "open_time": "7:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/60ad9bf29b221249fa207253_thanhhoa.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 19.812584,
+      "long": 105.7721788
+    },
+    "full_address": "Thửa đất 124, đường Hạc Thành, Thành phố Thanh Hóa, Thanh Hóa, Việt Nam"
+  },
+  {
+    "id": 1205,
+    "pu_city": "Hải Phòng",
+    "name": "TCHHP Lạch Tray",
+    "open_time": "07:00 - 21:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/photo_2021-06-17_10-35-06_643296.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 20.8324556,
+      "long": 106.6974068
+    },
+    "full_address": "382-384 Lạch Tray, Ngô Quyền, Hải Phòng, Việt Nam"
+  },
+  {
+    "id": 1206,
+    "pu_city": "Hà Nội",
+    "name": "Doi Can",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/store/601a0ff87adfeb16df74d6d2_TAMDONGCUA_20_281_29.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 21.0361346,
+      "long": 105.8172837
+    },
+    "full_address": "345 Đội Cấn, Ba Đình, Hà Nội, Việt Nam"
+  },
+  {
+    "id": 1208,
+    "pu_city": "Hồ Chí Minh",
+    "name": "Xưởng rang TCH",
+    "open_time": "07:00 - 22:00",
+    "image": "https://minio.thecoffeehouse.com/image/admin/5fe922d860fd1541d13e5ce5_Big_20C_20Go_20Nha_20trang_070327.jpg",
+    "phone": "02871087088",
+    "location": {
+      "lat": 10.738235329682329,
+      "long": 106.71518244008845
+    },
+    "full_address": "313 Nguyễn Thị Thập, Quận 7, Hồ Chí Minh, Việt Nam"
+  }
+]

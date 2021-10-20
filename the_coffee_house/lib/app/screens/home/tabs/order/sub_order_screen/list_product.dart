@@ -5,8 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
-import 'package:the_coffee_house/app/screens/product_detail/product_detail_screen.dart';
 import 'package:the_coffee_house/app/widgets/content/content_empty.dart';
+import 'package:the_coffee_house/app/widgets/function_widget/show_product_detail_popup.dart';
 import 'package:the_coffee_house/domain/entities/entities.dart';
 
 class ListProduct extends StatelessWidget {
@@ -70,8 +70,12 @@ class ListProduct extends StatelessWidget {
                 itemCount: products.length,
                 itemBuilder: (context, index) {
                   return InkWell(
-                    onTap: () =>
-                        _showProductDetailPopup(context, products[index]),
+                    onTap: () => showProductDetailPopup(
+                        context,
+                        OrderEntity(
+                            orderId: DateTime.now().millisecondsSinceEpoch,
+                            product: products[index]),
+                        false),
                     child: _buildProductItems(
                       context,
                       products[index],
@@ -88,7 +92,6 @@ class ListProduct extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     return Slidable(
       actionPane: SlidableBehindActionPane(),
-      closeOnScroll: true,
       secondaryActions: [
         Padding(
           padding: const EdgeInsets.fromLTRB(12.0, 25.0, 5.0, 25.0),
@@ -171,47 +174,6 @@ class ListProduct extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Future _showProductDetailPopup(
-      BuildContext context, ProductEntity contentScreen) {
-    var topPadding = 1 -
-        (MediaQueryData.fromWindow(WidgetsBinding.instance!.window)
-                .padding
-                .top /
-            MediaQuery.of(context).size.height);
-    return showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: const BorderRadius.vertical(
-          top: const Radius.circular(20.0),
-        ),
-      ),
-      builder: (context) => DraggableScrollableSheet(
-        initialChildSize: topPadding,
-        maxChildSize: topPadding,
-        minChildSize: 0,
-        expand: false,
-        builder: (BuildContext context, ScrollController scrollController) {
-          return Container(
-            clipBehavior: Clip.hardEdge,
-            decoration: const BoxDecoration(
-              borderRadius: const BorderRadius.vertical(
-                top: const Radius.circular(20.0),
-              ),
-            ),
-            child: ProductDetailScreen(
-              orderEntity: OrderEntity(
-                  orderId: DateTime.now().millisecondsSinceEpoch,
-                  product: contentScreen),
-              scrollControl: scrollController,
-              isOrder: false,
-            ),
-          );
-        },
       ),
     );
   }

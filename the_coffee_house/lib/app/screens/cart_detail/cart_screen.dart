@@ -6,7 +6,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_state.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart';
+import 'package:the_coffee_house/app/screens/cart_detail/sub_cart_screen/cart_payment.dart';
 import 'package:the_coffee_house/app/screens/cart_detail/sub_cart_screen/cart_product.dart';
+import 'package:the_coffee_house/app/screens/cart_detail/sub_cart_screen/cart_total_payment.dart';
 
 import 'sub_cart_screen/order_method.dart';
 
@@ -67,28 +69,53 @@ class _CartScreenState
           Flexible(
             flex: 9,
             fit: FlexFit.tight,
-            child: NotificationListener<OverscrollIndicatorNotification>(
-              onNotification: (overScroll) {
-                overScroll.disallowGlow();
-                return true;
-              },
-              child: BlocProvider<CartBloc>.value(
-                value: bloc!,
-                child: ListView(
-                  shrinkWrap: true,
-                  controller: scrollControl,
-                  children: [
-                    Container(
-                      color: theme.splashColor,
-                      height: 16.0,
-                    ),
-                    OrderMethod(),
-                    CartProduct(),
-                    Container(
-                      color: theme.splashColor,
-                      height: 20.0,
-                    ),
-                  ],
+            child: Container(
+              color: theme.splashColor,
+              child: NotificationListener<OverscrollIndicatorNotification>(
+                onNotification: (overScroll) {
+                  overScroll.disallowGlow();
+                  return true;
+                },
+                child: BlocProvider<CartBloc>.value(
+                  value: bloc!,
+                  child: ListView(
+                    shrinkWrap: true,
+                    controller: scrollControl,
+                    children: [
+                      Padding(padding: const EdgeInsets.only(top: 16.0)),
+                      OrderMethod(),
+                      CartProduct(),
+                      CartTotalPayment(),
+                      CartPayment(),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 16.0),
+                        child: InkWell(
+                          onTap: () => bloc?.deleteAllBill(),
+                          child: Container(
+                            color: theme.colorScheme.background,
+                            padding: const EdgeInsets.all(15.0),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.delete_rounded,
+                                  color: Colors.red,
+                                ),
+                                Padding(
+                                    padding: const EdgeInsets.only(left: 15.0)),
+                                Text(
+                                  'Xoá đơn hàng',
+                                  style: theme.textTheme.bodyText2?.copyWith(
+                                    color: Colors.red,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(padding: const EdgeInsets.only(top: 25.0)),
+                    ],
+                  ),
                 ),
               ),
             ),

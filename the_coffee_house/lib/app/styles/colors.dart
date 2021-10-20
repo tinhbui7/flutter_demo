@@ -16,6 +16,7 @@ const kColorBlueLightest = const Color(0xFFD6F1FF);
 const kColorBlueBare = const Color(0xFFDBF1Fa);
 const kColorFountainBlue = const Color(0xFF1EA4DC);
 const kColorOceanBlue = const Color(0xFF0033ff);
+const kColorBlueFace = const Color(0xFF1771E6);
 
 const kColorTeal = const Color(0xFF50B8BF);
 const kColorTealLight = const Color(0xFF7EE5DD);
