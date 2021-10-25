@@ -9,6 +9,8 @@ import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart'
 import 'package:the_coffee_house/app/screens/cart_detail/sub_cart_screen/cart_payment.dart';
 import 'package:the_coffee_house/app/screens/cart_detail/sub_cart_screen/cart_product.dart';
 import 'package:the_coffee_house/app/screens/cart_detail/sub_cart_screen/cart_total_payment.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
 import 'sub_cart_screen/order_method.dart';
 
@@ -39,7 +41,7 @@ class _CartScreenState
       toolbarHeight: MediaQuery.of(context).size.height * .056,
       automaticallyImplyLeading: false,
       title: Text(
-        'Xác nhận đơn hàng',
+        LocaleKeys.title_orderConfirmation.tr(),
         style: theme.textTheme.subtitle1,
       ),
       centerTitle: true,
@@ -103,7 +105,7 @@ class _CartScreenState
                                 Padding(
                                     padding: const EdgeInsets.only(left: 15.0)),
                                 Text(
-                                  'Xoá đơn hàng',
+                                  LocaleKeys.button_btnDeleteOrder.tr(),
                                   style: theme.textTheme.bodyText2?.copyWith(
                                     color: Colors.red,
                                   ),
@@ -146,7 +148,9 @@ class _CartScreenState
                 Row(
                   children: [
                     Text(
-                      'Tự đến lấy ',
+                      (state?.activeOrder == OrderTab.Delivery)
+                          ? '${LocaleKeys.button_btnDelivery.tr()} '
+                          : '${LocaleKeys.button_btnPickup.tr()} ',
                       style: theme.textTheme.bodyText2?.copyWith(
                         color: theme.colorScheme.background,
                         fontSize: 16.0,
@@ -158,7 +162,7 @@ class _CartScreenState
                       color: theme.colorScheme.background,
                     ),
                     Text(
-                      ' ${bloc?.totalQuantity} sản phẩm',
+                      ' ${bloc?.totalQuantity} ${LocaleKeys.text_product.tr()}',
                       style: theme.textTheme.bodyText2?.copyWith(
                         color: theme.colorScheme.background,
                         fontSize: 16.0,
@@ -181,7 +185,7 @@ class _CartScreenState
             ElevatedButton(
               onPressed: () {},
               child: Text(
-                'ĐẶT HÀNG',
+                LocaleKeys.button_btnOrder.tr().toUpperCase(),
                 style: theme.textTheme.bodyText2?.copyWith(
                   color: theme.colorScheme.primary,
                   fontWeight: FontWeight.bold,

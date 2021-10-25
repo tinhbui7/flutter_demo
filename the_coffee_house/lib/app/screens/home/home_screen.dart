@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_state.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart';
 import 'package:the_coffee_house/app/screens/home/home_bloc.dart';
@@ -12,7 +15,6 @@ import 'package:the_coffee_house/app/screens/home/tabs/other/other_tab_screen.da
 import 'package:the_coffee_house/app/screens/home/tabs/point/point_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/store/store_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/login/login_dialog_screen.dart';
-import 'package:the_coffee_house/app/widgets/icons/custom_icon.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -42,45 +44,22 @@ class _HomeScreenState
               onTap: () {
                 showPopupSelectOrder(context);
               },
-              child: Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    CustomIcon(
-                      3,
-                      Color(0xffd8f0f8),
-                      Icons.delivery_dining,
-                      Color(0xff79cce9),
-                    ),
-                    Padding(padding: const EdgeInsets.only(right: 12)),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Giao đến',
-                              style: theme.textTheme.subtitle1
-                                  ?.copyWith(fontSize: 13.0),
-                            ),
-                            Icon(Icons.arrow_drop_down),
-                          ],
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 1.5)),
-                        Container(
-                          width: MediaQuery.of(context).size.width * .8,
-                          child: Text(
-                            'Các sản phẩm sẽ được giao đến địa chỉ của bạn',
-                            style: theme.primaryTextTheme.caption,
-                            overflow: TextOverflow.ellipsis,
+              child: BlocBuilder<CartBloc, CartState>(
+                builder: (context, state) {
+                  return Container(
+                    child: (state.activeOrder == OrderTab.Delivery)
+                        ? _buildSelectOrder(
+                            Assets.deliveryIcon,
+                            LocaleKeys.title_deliveredTo.tr(),
+                            '${state.deliveryEntity?.address ?? LocaleKeys.text_deliveryContent.tr()}',
+                          )
+                        : _buildSelectOrder(
+                            Assets.pickupIcon,
+                            LocaleKeys.title_comePickupAt.tr(),
+                            '${state.storeEntity?.name ?? LocaleKeys.text_pickupContent.tr()}',
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                  );
+                },
               ),
             ),
           )
@@ -187,6 +166,50 @@ class _HomeScreenState
           pageController.jumpToPage(index);
         });
       },
+    );
+  }
+
+  Widget _buildSelectOrder(
+      String imageIcon, String titleOrder, String contentOrder) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Image.asset(
+          imageIcon,
+          fit: BoxFit.cover,
+          width: 30.0,
+        ),
+        Padding(padding: const EdgeInsets.only(right: 12)),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text(
+                  titleOrder,
+                  style: theme.textTheme.subtitle1?.copyWith(fontSize: 13.0),
+                ),
+                Icon(
+                  Icons.expand_more,
+                  size: 17.0,
+                  color: theme.colorScheme.onBackground,
+                ),
+              ],
+            ),
+            Padding(padding: EdgeInsets.only(top: 1.5)),
+            Container(
+              width: MediaQuery.of(context).size.width * .8,
+              child: Text(
+                contentOrder,
+                style: theme.primaryTextTheme.caption,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

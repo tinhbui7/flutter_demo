@@ -7,6 +7,8 @@ import 'package:the_coffee_house/app/screens/base_layout/base_dialog/base_dialog
 import 'package:the_coffee_house/app/screens/store_detail/store_detail_bloc.dart';
 import 'package:the_coffee_house/app/screens/store_detail/store_detail_state.dart';
 import 'package:the_coffee_house/domain/entities/store_entity.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class StoreDetailScreen extends StatefulWidget {
   const StoreDetailScreen({
@@ -73,7 +75,7 @@ class _StoreDetailScreenState extends BaseDialogState<StoreDetailScreen,
                   ),
                 ),
                 Text(
-                  'Giờ mở cửa: ${storeEntity.openTime}',
+                  '${LocaleKeys.title_openTime.tr()}: ${storeEntity.openTime}',
                   style: theme.primaryTextTheme.caption,
                 ),
               ],
@@ -86,9 +88,11 @@ class _StoreDetailScreenState extends BaseDialogState<StoreDetailScreen,
                 _showFunctionStore(
                     Icons.near_me_outlined, '${storeEntity.fullAddress}'),
                 _showFunctionStore(Icons.favorite_border_rounded,
-                    'Thêm vào danh sách yêu thích'),
-                _showFunctionStore(Icons.ios_share, 'Chia sẻ địa chỉ'),
-                _showFunctionStore(Icons.call, 'Liên hệ: ${storeEntity.phone}')
+                    LocaleKeys.title_addFavourite.tr()),
+                _showFunctionStore(
+                    Icons.ios_share, LocaleKeys.title_shareAddress.tr()),
+                _showFunctionStore(Icons.call,
+                    '${LocaleKeys.title_contact.tr()}: ${storeEntity.phone}')
               ],
             ),
           ),
@@ -129,18 +133,21 @@ class _StoreDetailScreenState extends BaseDialogState<StoreDetailScreen,
           Padding(
             padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 30.0),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                cartBloc?.addStoreAddress(storeEntity);
+                Navigator.pop(context);
+              },
               child: Column(
                 children: [
                   Text(
-                    'Đặt sản phẩm',
+                    LocaleKeys.button_btnOrderProducts.tr(),
                     style: theme.textTheme.subtitle2?.copyWith(
                       color: theme.colorScheme.background,
                       fontSize: 16.0,
                     ),
                   ),
                   Text(
-                    'Tự đến lấy tại cửa hàng này',
+                    LocaleKeys.text_textPickup.tr(),
                     style: theme.textTheme.bodyText2
                         ?.copyWith(color: theme.colorScheme.background),
                   )
@@ -186,12 +193,15 @@ class _StoreDetailScreenState extends BaseDialogState<StoreDetailScreen,
                   height: MediaQuery.of(context).size.height * .09,
                   child: Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(
-                      contentFunction,
-                      style:
-                          theme.textTheme.bodyText2?.copyWith(fontSize: 14.0),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 10.0),
+                      child: Text(
+                        contentFunction,
+                        style:
+                            theme.textTheme.bodyText2?.copyWith(fontSize: 14.0),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                      ),
                     ),
                   ),
                 ),

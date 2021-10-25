@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_dialog/base_dialog_state.dart';
@@ -10,8 +9,8 @@ import 'package:the_coffee_house/app/screens/product_detail/product_detail_state
 import 'package:the_coffee_house/app/screens/product_detail/sub_product_detail/body_product_detail.dart';
 import 'package:the_coffee_house/app/screens/product_detail/sub_product_detail/footer_product_detail.dart';
 import 'package:the_coffee_house/app/screens/product_detail/sub_product_detail/header_product_detail.dart';
-import 'package:the_coffee_house/app/styles/app_theme.dart';
 import 'package:the_coffee_house/domain/entities/entities.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({
@@ -47,11 +46,11 @@ class _ProductDetailScreenState extends BaseDialogState<ProductDetailScreen,
 
   @override
   Widget buildDialogContent(BuildContext context) {
-    if (appTheme == ThemeType.Dark) {
-      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-    } else {
-      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
-    }
+    // if (appTheme == ThemeType.Dark) {
+    //   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+    // } else {
+    //   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+    // }
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -151,13 +150,13 @@ class _ProductDetailScreenState extends BaseDialogState<ProductDetailScreen,
                         },
                         child: (isOrder == true && _quantity == 0)
                             ? Text(
-                                'Bỏ chọn sản phẩm này',
+                                LocaleKeys.text_uncheckProduct.tr(),
                                 style: theme.textTheme.subtitle2?.copyWith(
                                     color: theme.backgroundColor,
                                     fontSize: 16.0),
                               )
                             : Text(
-                                'Chọn sản phẩm - ${NumberFormat.currency(
+                                '${LocaleKeys.text_chooseProduct.tr()} - ${NumberFormat.currency(
                                   locale: 'vi',
                                   symbol: 'đ',
                                 ).format(bloc?.orderItem.totalPayment)}',

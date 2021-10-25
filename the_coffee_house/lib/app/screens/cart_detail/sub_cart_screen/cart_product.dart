@@ -10,6 +10,7 @@ import 'package:the_coffee_house/app/widgets/buttons/dynamic_button.dart';
 import 'package:the_coffee_house/app/widgets/buttons/slide_button.dart';
 import 'package:the_coffee_house/app/widgets/function_widget/show_product_detail_popup.dart';
 import 'package:the_coffee_house/domain/entities/entities.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
 class CartProduct extends StatelessWidget {
   const CartProduct({Key? key}) : super(key: key);
@@ -32,14 +33,14 @@ class CartProduct extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Các sản phẩm đã chọn',
+                        LocaleKeys.title_selectedProducts.tr(),
                         style: theme.textTheme.subtitle2?.copyWith(
                           fontSize: 17.0,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                       DynamicButton(
-                        contentButton: '+ Thêm',
+                        contentButton: '+ ${LocaleKeys.button_btnAdd.tr()}',
                         onPressed: () => Navigator.pop(context),
                       ),
                     ],
@@ -92,8 +93,12 @@ class CartProduct extends StatelessWidget {
                                         children: [
                                           Text(
                                             controller!.expanded
-                                                ? 'Rút gọn đơn hàng'
-                                                : 'Xem đầy đủ đơn hàng',
+                                                ? LocaleKeys
+                                                    .button_btnViewLessOrder
+                                                    .tr()
+                                                : LocaleKeys
+                                                    .button_btnViewMoreOrder
+                                                    .tr(),
                                             style: theme.textTheme.subtitle2
                                                 ?.copyWith(
                                               fontSize: 15.0,
@@ -136,7 +141,7 @@ class CartProduct extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 3.0, 8.0, 3.0),
           child: SlideButton(
-            contentButton: 'THAY ĐỔI',
+            contentButton: LocaleKeys.button_btnChange.tr().toUpperCase(),
             colorButton: theme.unselectedWidgetColor,
             iconButton: Icons.border_color,
             onPressed: () => showProductDetailPopup(context, orderItem, true),
@@ -145,7 +150,7 @@ class CartProduct extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(8.0, 3.0, 16.0, 3.0),
           child: SlideButton(
-            contentButton: 'BỎ CHỌN',
+            contentButton: LocaleKeys.button_btnRemove.tr(),
             colorButton: Color(0xFFE40000),
             iconButton: Icons.delete_rounded,
             onPressed: () => cartBloc.deleteOrderItem(orderItem),

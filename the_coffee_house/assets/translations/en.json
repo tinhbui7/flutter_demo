@@ -1,12 +1,47 @@
 {
   "text": {
     "noContent": "No content",
-    "inputPhoneNumber": "Enter your phone number"
+    "inputPhoneNumber": "Enter your phone number",
+    "deliveryContent": "Products will be delivered to your address",
+    "pickupContent": "You will go to the counter to receive your order at the store",
+    "menuSelect": "Menu",
+    "streetName": "Enter street name, district",
+    "otherStores": "Other Stores",
+    "away": "away",
+    "uncheckProduct": "Uncheck this product",
+    "chooseProduct": "Choose this product",
+    "chooseTypes": "Choose up to 2 types",
+    "chooseSize": "Choose 1 size",
+    "otherOptions": "Other options",
+    "addNotes": "Add notes",
+    "search": "Search",
+    "textPickup": "Come and pick up yourself at this store",
+    "product": "product",
+    "moreShippingInstructions": "More shipping instructions"
+
   },
   "title": {
     "homeScreen": "Home Page",
     "tittleLogin": "Welcome to",
-    "orLine": "OR"
+    "orLine": "OR",
+    "chooseOrderMethod": "Choose an order method",
+    "currentCart": "Current Cart",
+    "deliveredTo": "Delivered To",
+    "comePickupAt": "Come pickup at",
+    "otherRequirements": "Other requirements",
+    "productNotes": "Product notes",
+    "chooseAddress": "Choose an address",
+    "selectMap": "Select on the map",
+    "openTime": "Open time",
+    "addFavourite": "Add to favorites",
+    "shareAddress": "Share address",
+    "contact": "Contact",
+    "orderConfirmation": "Order confirmation",
+    "payment": "Payment",
+    "selectedProducts": "Selected products",
+    "total": "Total",
+    "intoMoney": "Into money",
+    "paymentAmount": "Payment amount"
   },
   "button": {
     "btnHome": "Home",
@@ -18,6 +53,24 @@
     "btnFacebook": "Continue by Facebook",
     "btnGoogle": "Continue by Google",
     "btnDelivery": "Delivery",
-    "btnPickup": "Pickup"
+    "btnPickup": "Pickup",
+    "btnFavourite": "FAVOURITE",
+    "btnEdit": "Edit",
+    "btnDelete": "Delete",
+    "btnMap": "Map",
+    "btnStoreList": "Store List",
+    "btnShowMore": "Show more",
+    "btnShowLess": "Show less",
+    "btnDone": "Done",
+    "btnOrderProducts": "Order products",
+    "btnDeleteOrder": "Delete Order",
+    "btnPaymentMethod": "Click to choose a payment method",
+    "btnAdd": "Add",
+    "btnViewLessOrder": "View less order",
+    "btnViewMoreOrder": "View more order",
+    "btnChange": "Change",
+    "btnRemove": "REMOVE",
+    "btnChoosePromotion": "Choose a promotion",
+    "btnSaveShipping": "Save shipping information for next time"
   }
 }

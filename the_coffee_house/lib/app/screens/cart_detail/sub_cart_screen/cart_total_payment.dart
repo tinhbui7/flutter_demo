@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
 class CartTotalPayment extends StatelessWidget {
   const CartTotalPayment({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class CartTotalPayment extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Tổng cộng',
+              LocaleKeys.title_total.tr(),
               style: theme.textTheme.subtitle2
                   ?.copyWith(fontSize: 17.0, fontWeight: FontWeight.w500),
             ),
@@ -29,7 +30,7 @@ class CartTotalPayment extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Thành tiền'),
+                  Text(LocaleKeys.title_intoMoney.tr()),
                   Text('${NumberFormat.currency(
                     locale: 'vi',
                     symbol: 'đ',
@@ -47,7 +48,7 @@ class CartTotalPayment extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Chọn khuyến mãi',
+                    LocaleKeys.button_btnChoosePromotion.tr(),
                     style: theme.textTheme.bodyText2
                         ?.copyWith(color: theme.accentColor),
                   ),
@@ -68,7 +69,7 @@ class CartTotalPayment extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Số tiền thanh toán',
+                    LocaleKeys.title_paymentAmount.tr(),
                     style: theme.textTheme.subtitle2?.copyWith(fontSize: 15.0),
                   ),
                   Text(

@@ -6,3 +6,4 @@ export 'order_entity.dart';
 export 'topping_payment_entity.dart';
 export 'location_entity.dart';
 export 'store_entity.dart';
+export 'delivery_entity.dart';

@@ -7,6 +7,7 @@ import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_state.dart';
 import 'package:the_coffee_house/app/screens/cart_detail/cart_screen.dart';
 import 'package:the_coffee_house/app/widgets/icons/custom_icon.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
 class CartCard extends StatelessWidget {
   const CartCard({Key? key}) : super(key: key);
@@ -44,7 +45,7 @@ class CartCard extends StatelessWidget {
                                 size: 23.0,
                               ),
                               Text(
-                                'XOÁ',
+                                LocaleKeys.button_btnDelete.tr(),
                                 style: TextStyle(
                                     color: theme.backgroundColor,
                                     fontSize: 9.0,
@@ -82,7 +83,7 @@ class CartCard extends StatelessWidget {
                           title: Row(
                             children: [
                               Text(
-                                'Giỏ hàng hiện tại ',
+                                '${LocaleKeys.title_currentCart.tr()} ',
                                 style:
                                     theme.primaryTextTheme.subtitle2?.copyWith(
                                   fontSize: 16.0,
@@ -99,7 +100,7 @@ class CartCard extends StatelessWidget {
                             '${NumberFormat.currency(
                               locale: 'vi',
                               symbol: 'đ',
-                            ).format(cartBloc.totalPayment)} . ${cartBloc.productOrders}',
+                            ).format(cartBloc.totalPayment)} \u00b7 ${cartBloc.productOrders}',
                             style: theme.primaryTextTheme.caption?.copyWith(
                               fontWeight: FontWeight.w500,
                               fontSize: 12.0,

@@ -16,6 +16,10 @@ class Assets {
 
   static final markerIcon = '$_iconsDir/marker-icon.png';
 
+  static final deliveryIcon = '$_iconsDir/delivery_icon.png';
+
+  static final pickupIcon = '$_iconsDir/pickup_icon.png';
+
   /// Backgrounds
   static final _backgroundsDir = 'assets/images/backgrounds';
 

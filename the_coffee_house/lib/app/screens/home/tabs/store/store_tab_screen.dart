@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -9,29 +11,36 @@ import 'package:the_coffee_house/app/screens/home/tabs/store/store_tab_state.dar
 import 'package:the_coffee_house/app/screens/store_detail/store_detail_screen.dart';
 import 'package:the_coffee_house/app/widgets/content/content_empty.dart';
 import 'package:the_coffee_house/domain/entities/store_entity.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class StoreTabScreen extends StatefulWidget {
-  const StoreTabScreen({Key? key}) : super(key: key);
+  const StoreTabScreen({Key? key, this.controller}) : super(key: key);
+
+  final ScrollController? controller;
 
   @override
-  _StoreTabScreenState createState() => _StoreTabScreenState();
+  _StoreTabScreenState createState() => _StoreTabScreenState(controller);
 }
 
 class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
     StoreTabBloc, StoreTabState> {
-  _StoreTabScreenState() {
+  _StoreTabScreenState(this.controller) {
     bloc = StoreTabBloc();
     bloc?.loadStores();
   }
 
+  ScrollController? controller;
   List<StoreEntity>? get stores => state?.stores ?? [];
   bool? get isMapStore => state?.isMapStore ?? false;
+  final random = Random();
 
   @override
   AppBar? buildAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: theme.colorScheme.background,
       elevation: 1,
+      automaticallyImplyLeading: false,
       title: TextField(
         maxLines: 1,
         style: theme.textTheme.bodyText2?.copyWith(
@@ -39,7 +48,7 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
           color: theme.unselectedWidgetColor,
         ),
         decoration: InputDecoration(
-          hintText: 'Nhập tên đường, quận huyện',
+          hintText: LocaleKeys.text_streetName.tr(),
           prefixIcon: Icon(
             Icons.search,
             color: theme.unselectedWidgetColor,
@@ -68,7 +77,7 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Text(
-                    'Bản đồ',
+                    LocaleKeys.button_btnMap.tr(),
                     style: theme.textTheme.subtitle2?.copyWith(
                       fontSize: 14.0,
                     ),
@@ -83,7 +92,7 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Text(
-                    'Danh sách',
+                    LocaleKeys.button_btnStoreList.tr(),
                     style: theme.textTheme.subtitle2?.copyWith(
                       fontSize: 14.0,
                     ),
@@ -104,6 +113,7 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
             ? Container(
                 color: theme.splashColor,
                 child: SingleChildScrollView(
+                  controller: controller,
                   padding: const EdgeInsets.symmetric(
                       vertical: 20.0, horizontal: 15.0),
                   physics: const AlwaysScrollableScrollPhysics(),
@@ -111,7 +121,7 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Các cửa hàng khác',
+                        LocaleKeys.text_otherStores.tr(),
                         style:
                             theme.textTheme.subtitle2?.copyWith(fontSize: 18.0),
                       ),
@@ -122,8 +132,17 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
                         itemCount: stores?.length,
                         itemBuilder: (context, index) {
                           return InkWell(
-                            onTap: () =>
-                                _showStoreDetailPopup(context, stores![index]),
+                            onTap: () {
+                              if (controller == null) {
+                                _showStoreDetailPopup(context, stores![index]);
+                              } else {
+                                cartBloc?.addStoreAddress(stores?[index]);
+                                Navigator.popUntil(
+                                  context,
+                                  ModalRoute.withName('/Home'),
+                                );
+                              }
+                            },
                             child: _buildItemStore(
                               context,
                               stores![index],
@@ -138,6 +157,7 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
             : ContentEmpty())
         : GoogleMap(
             mapToolbarEnabled: false,
+            myLocationEnabled: true,
             initialCameraPosition: CameraPosition(
               target: LatLng(10.778412107359799, 106.67931869488008),
               zoom: 14,
@@ -147,7 +167,17 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
   }
 
   Marker _marker(StoreEntity item) => Marker(
-        onTap: () => _showStoreDetailPopup(context, item),
+        onTap: () {
+          if (controller == null) {
+            _showStoreDetailPopup(context, item);
+          } else {
+            cartBloc?.addStoreAddress(item);
+            Navigator.popUntil(
+              context,
+              ModalRoute.withName('/Home'),
+            );
+          }
+        },
         markerId: MarkerId('${item.name}'),
         position: LatLng(
           item.location?.latitude ?? 0,
@@ -204,7 +234,9 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
                     maxLines: 2,
                   ),
                   Text(
-                    'cách đây 0,7 km',
+                    context.locale.languageCode == 'en'
+                        ? '${random.nextInt(100) + random.nextInt(100) / 100.0} km ${LocaleKeys.text_away.tr()}'
+                        : '${LocaleKeys.text_away.tr()} ${random.nextInt(100) + random.nextInt(100) / 100.0} km',
                     style: theme.primaryTextTheme.caption,
                   ),
                 ],

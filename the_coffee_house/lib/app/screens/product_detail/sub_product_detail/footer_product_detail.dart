@@ -3,6 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/screens/product_detail/product_detail_bloc.dart';
 import 'package:the_coffee_house/app/screens/product_detail/product_detail_state.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class FooterProductDetail extends StatelessWidget {
   const FooterProductDetail({Key? key}) : super(key: key);
@@ -26,12 +28,12 @@ class FooterProductDetail extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Yều cầu khác',
+                LocaleKeys.title_otherRequirements.tr(),
                 style: theme.textTheme.subtitle2,
               ),
               Padding(padding: const EdgeInsets.only(top: 3.0)),
               Text(
-                'Những tuỳ chọn khác',
+                LocaleKeys.text_otherOptions.tr(),
                 style: theme.primaryTextTheme.caption,
               ),
               Padding(
@@ -40,7 +42,7 @@ class FooterProductDetail extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: BlocBuilder<ProductDetailBloc, ProductDetailState>(
-                    builder: (context, state) {
+                    builder: (_context, state) {
                   return OutlinedButton(
                     onPressed: () => _showPopupNote(context, state.noteProduct),
                     child: Align(
@@ -51,7 +53,7 @@ class FooterProductDetail extends StatelessWidget {
                               style: theme.primaryTextTheme.caption,
                             )
                           : Text(
-                              'Thêm ghi chú',
+                              LocaleKeys.text_addNotes.tr(),
                               style: theme.primaryTextTheme.caption,
                             ),
                     ),
@@ -98,7 +100,7 @@ class FooterProductDetail extends StatelessWidget {
                 children: [
                   Align(
                     child: Text(
-                      'Ghi chú sản phẩm',
+                      LocaleKeys.title_productNotes.tr(),
                       style:
                           theme.textTheme.subtitle2?.copyWith(fontSize: 16.0),
                     ),
@@ -121,7 +123,11 @@ class FooterProductDetail extends StatelessWidget {
               height: 0,
             ),
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: EdgeInsets.only(
+                  top: 15.0,
+                  left: 15.0,
+                  right: 15.0,
+                  bottom: MediaQuery.of(context).viewInsets.bottom),
               child: TextField(
                 controller: note,
                 cursorHeight: 20,
@@ -129,7 +135,7 @@ class FooterProductDetail extends StatelessWidget {
                 maxLength: 50,
                 maxLines: 2,
                 decoration: InputDecoration(
-                  hintText: 'Thêm ghi chú',
+                  hintText: LocaleKeys.text_addNotes.tr(),
                   hintStyle: theme.primaryTextTheme.caption,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
@@ -161,7 +167,7 @@ class FooterProductDetail extends StatelessWidget {
                     primary: theme.backgroundColor,
                   ),
                   child: Text(
-                    'Xong',
+                    LocaleKeys.button_btnDone.tr(),
                     style: theme.textTheme.subtitle2?.copyWith(
                       fontSize: 15.0,
                       color: theme.colorScheme.secondary,

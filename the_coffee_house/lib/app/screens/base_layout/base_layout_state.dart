@@ -60,6 +60,7 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
+        systemNavigationBarColor: Color(0xFF5C3002),
       ),
     );
     return buildBase(context);
@@ -135,13 +136,13 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
     return AppBar(
       actions: buildHeaderActions(context),
       title: buildTitle(context),
-      brightness: theme.brightness,
+      // brightness: theme.brightness,
       leading: buildLeadingWidget(context),
       elevation: appBarLayoutElevation,
       backgroundColor: theme.backgroundColor,
       actionsIconTheme: IconThemeData(color: theme.colorScheme.onBackground),
       iconTheme: IconThemeData(color: theme.colorScheme.onBackground),
-      textTheme: theme.textTheme,
+      // textTheme: theme.textTheme,
       titleSpacing: 0.0,
       centerTitle: true,
       toolbarHeight: MediaQuery.of(context).size.height * .075,

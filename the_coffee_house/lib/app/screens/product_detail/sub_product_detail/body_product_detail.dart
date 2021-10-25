@@ -6,6 +6,7 @@ import 'package:the_coffee_house/app/screens/product_detail/product_detail_bloc.
 import 'package:the_coffee_house/app/screens/product_detail/product_detail_state.dart';
 import 'package:the_coffee_house/domain/entities/entities.dart';
 import 'package:collection/collection.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
 class BodyProductDetail extends StatelessWidget {
   const BodyProductDetail({
@@ -53,7 +54,7 @@ class BodyProductDetail extends StatelessWidget {
                     ),
                     Padding(padding: const EdgeInsets.only(top: 3.0)),
                     Text(
-                      'Chọn 1 loại size',
+                      LocaleKeys.text_chooseSize.tr(),
                       style: theme.primaryTextTheme.caption,
                     ),
                   ],
@@ -84,7 +85,7 @@ class BodyProductDetail extends StatelessWidget {
                     ),
                     Padding(padding: const EdgeInsets.only(top: 3.0)),
                     Text(
-                      'Chọn tối đa 2 loại',
+                      LocaleKeys.text_chooseTypes.tr(),
                       style: theme.primaryTextTheme.caption,
                     ),
                   ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
 class CartPayment extends StatelessWidget {
   const CartPayment({Key? key}) : super(key: key);
@@ -16,7 +18,7 @@ class CartPayment extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Thanh toán',
+              LocaleKeys.title_payment.tr(),
               style: theme.textTheme.subtitle2
                   ?.copyWith(fontSize: 17.0, fontWeight: FontWeight.w500),
             ),
@@ -26,7 +28,7 @@ class CartPayment extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Bấm để chọn phương thức thanh toán',
+                    LocaleKeys.button_btnPaymentMethod.tr(),
                     style: theme.textTheme.bodyText2
                         ?.copyWith(color: theme.accentColor),
                   ),

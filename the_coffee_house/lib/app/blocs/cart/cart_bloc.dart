@@ -10,7 +10,12 @@ class CartBloc extends BaseBloc<CartState> {
   @override
   String get tag => 'CartBloc';
 
-  CartBloc() : super(CartState(isLoading: false));
+  CartBloc()
+      : super(CartState(
+          isLoading: false,
+          activeOrder: OrderTab.Delivery,
+          isSaveAddress: false,
+        ));
 
   int get totalPayment {
     return (state.orderEntities != null)
@@ -51,6 +56,14 @@ class CartBloc extends BaseBloc<CartState> {
       yield* _updateOrderItemState(event);
     } else if (event is DeleteOrderItemEvent) {
       yield* _deleteOrderItemState(event);
+    } else if (event is AddAddressEvent) {
+      yield* _addAddressState(event);
+    } else if (event is AddStoreAddressEvent) {
+      yield* _addStoreAddressState(event);
+    } else if (event is ChangeOrderMethodEvent) {
+      yield* _changeOrderMethodState(event);
+    } else if (event is ChangeSaveAddressEvent) {
+      yield* _changeSaveAddressState(event);
     } else {
       yield* mapEventToState(event);
     }
@@ -60,7 +73,7 @@ class CartBloc extends BaseBloc<CartState> {
     List<OrderEntity> _result;
     _result = state.orderEntities ?? [];
     bool isUpdate = false;
-    Function eq = const ListEquality().equals;
+    Function equal = const ListEquality().equals;
     try {
       if (event.orderEntity != null) {
         if (_result.isEmpty == true) {
@@ -69,7 +82,7 @@ class CartBloc extends BaseBloc<CartState> {
           for (var element in _result) {
             if ((event.orderEntity?.product?.name == element.product?.name) &&
                 (event.orderEntity?.size?.name == element.size?.name) &&
-                eq(event.orderEntity?.topping, element.topping) &&
+                equal(event.orderEntity?.topping, element.topping) &&
                 (event.orderEntity?.note == element.note)) {
               element.quantity =
                   (element.quantity ?? 0) + (event.orderEntity!.quantity ?? 0);
@@ -87,7 +100,6 @@ class CartBloc extends BaseBloc<CartState> {
     }
     yield CartState(
       state: state,
-      isLoading: false,
       orderEntities: _result,
     );
   }
@@ -95,7 +107,6 @@ class CartBloc extends BaseBloc<CartState> {
   Stream<CartState> _deleteAllBillState(DeleteAllBillEvent event) async* {
     yield CartState(
       state: state,
-      isLoading: false,
       orderEntities: [],
     );
   }
@@ -112,7 +123,6 @@ class CartBloc extends BaseBloc<CartState> {
     }
     yield CartState(
       state: state,
-      isLoading: false,
       orderEntities: _result,
     );
   }
@@ -129,8 +139,42 @@ class CartBloc extends BaseBloc<CartState> {
     }
     yield CartState(
       state: state,
-      isLoading: false,
       orderEntities: _result,
+    );
+  }
+
+  Stream<CartState> _addAddressState(AddAddressEvent event) async* {
+    yield CartState(
+      state: state,
+      deliveryEntity: DeliveryEntity(
+        address: event.address,
+        street: event.nameStreet,
+      ),
+      activeOrder: OrderTab.Delivery,
+    );
+  }
+
+  Stream<CartState> _addStoreAddressState(AddStoreAddressEvent event) async* {
+    yield CartState(
+      state: state,
+      storeEntity: event.storeEntity,
+      activeOrder: OrderTab.Pickup,
+    );
+  }
+
+  Stream<CartState> _changeOrderMethodState(
+      ChangeOrderMethodEvent event) async* {
+    yield CartState(
+      state: state,
+      activeOrder: event.activeOrder,
+    );
+  }
+
+  Stream<CartState> _changeSaveAddressState(
+      ChangeSaveAddressEvent event) async* {
+    yield CartState(
+      state: state,
+      isSaveAddress: event.value,
     );
   }
 
@@ -148,5 +192,21 @@ class CartBloc extends BaseBloc<CartState> {
 
   void deleteOrderItem(OrderEntity? orderEntity) {
     add(DeleteOrderItemEvent(orderEntity));
+  }
+
+  void addAddress(String? address, String? nameStreet) {
+    add(AddAddressEvent(address, nameStreet));
+  }
+
+  void addStoreAddress(StoreEntity? storeEntity) {
+    add(AddStoreAddressEvent(storeEntity));
+  }
+
+  void changeOrderMethod(OrderTab? activeOrder) {
+    add(ChangeOrderMethodEvent(activeOrder));
+  }
+
+  void changeSaveAddress(bool value) {
+    add(ChangeSaveAddressEvent(value));
   }
 }

@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:readmore/readmore.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/domain/entities/product_entity.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
 class HeaderProductDetail extends StatelessWidget {
   const HeaderProductDetail({
@@ -70,8 +71,8 @@ class HeaderProductDetail extends StatelessWidget {
                 trimLines: 3,
                 trimMode: TrimMode.Line,
                 colorClickableText: theme.primaryColor,
-                trimCollapsedText: 'Xem thêm',
-                trimExpandedText: 'Rút gọn',
+                trimCollapsedText: LocaleKeys.button_btnShowMore.tr(),
+                trimExpandedText: LocaleKeys.button_btnShowLess.tr(),
                 style: theme.primaryTextTheme.caption,
               ),
             ],

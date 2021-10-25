@@ -4,6 +4,8 @@ import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart';
 import 'package:the_coffee_house/app/screens/delivery_address/delivery_address_bloc.dart';
 import 'package:the_coffee_house/app/screens/delivery_address/delivery_address_state.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class DeliveryAddressScreen extends StatefulWidget {
   const DeliveryAddressScreen({Key? key}) : super(key: key);
@@ -25,7 +27,7 @@ class _DeliveryAddressScreenState extends BaseLayoutState<DeliveryAddressScreen,
       padding: EdgeInsets.only(right: MediaQuery.of(context).size.width * .035),
       child: TextField(
         decoration: InputDecoration(
-          hintText: 'Tìm kiếm',
+          hintText: LocaleKeys.text_search.tr(),
           prefixIcon: Icon(Icons.search),
           contentPadding: const EdgeInsets.all(10),
           border: OutlineInputBorder(
@@ -52,7 +54,7 @@ class _DeliveryAddressScreenState extends BaseLayoutState<DeliveryAddressScreen,
             child: ListTile(
               leading: Icon(Icons.map),
               title: Text(
-                'Chọn trên bản đồ',
+                LocaleKeys.title_selectMap.tr(),
                 style: theme.textTheme.bodyText1,
               ),
               trailing: Icon(

@@ -6,6 +6,8 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_cubit.dart';
 import 'package:the_coffee_house/domain/entities/section_entity.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ProductToolbar extends StatelessWidget {
   ProductToolbar({
@@ -50,7 +52,7 @@ class ProductToolbar extends StatelessWidget {
                       return BlocBuilder<OrderTabCubit, int>(
                         bloc: orderTabCubit,
                         builder: (context, index) => Text(
-                          '${listSection.isNotEmpty == true ? listSection[index].name : 'Thực đơn'}',
+                          '${listSection.isNotEmpty == true ? listSection[index].name : LocaleKeys.text_menuSelect.tr()}',
                           style: theme.primaryTextTheme.caption
                               ?.copyWith(fontSize: 12.0),
                           overflow: TextOverflow.ellipsis,
@@ -115,7 +117,7 @@ class ProductToolbar extends StatelessWidget {
           decoration: BoxDecoration(
             color: theme.backgroundColor,
             borderRadius: const BorderRadius.vertical(
-              top: const Radius.circular(15),
+              top: const Radius.circular(15.0),
             ),
           ),
           child: Column(
@@ -127,7 +129,7 @@ class ProductToolbar extends StatelessWidget {
                   Align(
                     heightFactor: 2.7,
                     child: Text(
-                      'Thực đơn',
+                      LocaleKeys.text_menuSelect.tr(),
                       style: theme.textTheme.subtitle1,
                     ),
                   ),

@@ -8,6 +8,7 @@ import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/widgets/content/content_empty.dart';
 import 'package:the_coffee_house/app/widgets/function_widget/show_product_detail_popup.dart';
 import 'package:the_coffee_house/domain/entities/entities.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
 class ListProduct extends StatelessWidget {
   ListProduct({
@@ -107,7 +108,7 @@ class ListProduct extends StatelessWidget {
                 ),
                 Padding(padding: const EdgeInsets.only(top: 10.0)),
                 Text(
-                  'YÊU THÍCH',
+                  LocaleKeys.button_btnFavourite.tr(),
                   style: TextStyle(
                       color: theme.backgroundColor,
                       fontSize: 9.0,
