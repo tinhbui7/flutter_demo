@@ -65,8 +65,10 @@ class CartCard extends StatelessWidget {
                     onTap: () => _showCartDetail(context),
                     child: Card(
                       elevation: 3,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(9.0),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: const BorderRadius.all(
+                          const Radius.circular(9.0),
+                        ),
                       ),
                       color: Color(0xFFFFF7E6),
                       clipBehavior: Clip.antiAlias,

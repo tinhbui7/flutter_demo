@@ -9,7 +9,6 @@ import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart'
 import 'package:the_coffee_house/app/screens/cart_detail/sub_cart_screen/cart_payment.dart';
 import 'package:the_coffee_house/app/screens/cart_detail/sub_cart_screen/cart_product.dart';
 import 'package:the_coffee_house/app/screens/cart_detail/sub_cart_screen/cart_total_payment.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
 import 'sub_cart_screen/order_method.dart';
@@ -40,11 +39,11 @@ class _CartScreenState
       elevation: 1.0,
       toolbarHeight: MediaQuery.of(context).size.height * .056,
       automaticallyImplyLeading: false,
+      centerTitle: true,
       title: Text(
         LocaleKeys.title_orderConfirmation.tr(),
         style: theme.textTheme.subtitle1,
       ),
-      centerTitle: true,
       actions: [
         IconButton(
           icon: Icon(
@@ -196,8 +195,10 @@ class _CartScreenState
                 elevation: 1.5,
                 primary: theme.colorScheme.background,
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: const BorderRadius.all(
+                    const Radius.circular(20.0),
+                  ),
                 ),
               ),
             ),

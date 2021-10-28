@@ -15,7 +15,7 @@ void showPopupSelectOrder(context) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
-    shape: RoundedRectangleBorder(
+    shape: const RoundedRectangleBorder(
       borderRadius: const BorderRadius.vertical(
         top: const Radius.circular(10.0),
       ),
@@ -116,8 +116,10 @@ void showPopupSelectOrder(context) {
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
                       primary: theme.colorScheme.primary,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: const BorderRadius.all(
+                          const Radius.circular(20.0),
+                        ),
                       ),
                     ),
                     child: Text(
@@ -186,8 +188,10 @@ void showPopupSelectOrder(context) {
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
                       primary: theme.colorScheme.primary,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: const BorderRadius.all(
+                          const Radius.circular(20.0),
+                        ),
                       ),
                     ),
                     child: Text(

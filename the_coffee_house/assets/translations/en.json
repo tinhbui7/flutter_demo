@@ -41,7 +41,22 @@
     "selectedProducts": "Selected products",
     "total": "Total",
     "intoMoney": "Into money",
-    "paymentAmount": "Payment amount"
+    "paymentAmount": "Payment amount",
+    "utilities": "Utilities",
+    "orderHistory": "Order history",
+    "musicPlay": "Music is play",
+    "rules": "Rules",
+    "support": "Support",
+    "orderEvaluation": "Order evaluation",
+    "contactComment": "Contact and comment",
+    "account": "Account",
+    "personalInformation": "Personal information",
+    "savedAddress": "Saved address",
+    "setting": "Setting",
+    "logOut": "Log out",
+    "notificationSetting": "Notification setting",
+    "accountLink": "Account link",
+    "aboutUs": "About us"
   },
   "button": {
     "btnHome": "Home",
@@ -71,6 +86,10 @@
     "btnChange": "Change",
     "btnRemove": "REMOVE",
     "btnChoosePromotion": "Choose a promotion",
-    "btnSaveShipping": "Save shipping information for next time"
+    "btnSaveShipping": "Save shipping information for next time",
+    "btnLanguage": "Language: English",
+    "btnDarkTheme": "Dark theme",
+    "btnDeliHome": "Delivery",
+    "btnPickHome": "Pickup"
   }
 }

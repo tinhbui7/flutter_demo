@@ -44,8 +44,10 @@ class AppElevatedButton extends StatelessWidget {
       ),
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+        shape: const RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(
+            const Radius.circular(8.0),
+          ),
         ),
         backgroundColor: theme.backgroundColor,
         side: borderSide,

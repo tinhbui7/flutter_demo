@@ -41,6 +41,21 @@ abstract class  LocaleKeys {
   static const title_total = 'title.total';
   static const title_intoMoney = 'title.intoMoney';
   static const title_paymentAmount = 'title.paymentAmount';
+  static const title_utilities = 'title.utilities';
+  static const title_orderHistory = 'title.orderHistory';
+  static const title_musicPlay = 'title.musicPlay';
+  static const title_rules = 'title.rules';
+  static const title_support = 'title.support';
+  static const title_orderEvaluation = 'title.orderEvaluation';
+  static const title_contactComment = 'title.contactComment';
+  static const title_account = 'title.account';
+  static const title_personalInformation = 'title.personalInformation';
+  static const title_savedAddress = 'title.savedAddress';
+  static const title_setting = 'title.setting';
+  static const title_logOut = 'title.logOut';
+  static const title_notificationSetting = 'title.notificationSetting';
+  static const title_accountLink = 'title.accountLink';
+  static const title_aboutUs = 'title.aboutUs';
   static const title = 'title';
   static const button_btnHome = 'button.btnHome';
   static const button_btnOrder = 'button.btnOrder';
@@ -70,6 +85,10 @@ abstract class  LocaleKeys {
   static const button_btnRemove = 'button.btnRemove';
   static const button_btnChoosePromotion = 'button.btnChoosePromotion';
   static const button_btnSaveShipping = 'button.btnSaveShipping';
+  static const button_btnLanguage = 'button.btnLanguage';
+  static const button_btnDarkTheme = 'button.btnDarkTheme';
+  static const button_btnDeliHome = 'button.btnDeliHome';
+  static const button_btnPickHome = 'button.btnPickHome';
   static const button = 'button';
 
 }

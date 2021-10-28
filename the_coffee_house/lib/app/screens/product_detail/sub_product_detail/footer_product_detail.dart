@@ -60,8 +60,10 @@ class FooterProductDetail extends StatelessWidget {
                     style: OutlinedButton.styleFrom(
                       padding: const EdgeInsets.all(13.0),
                       primary: theme.selectedRowColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: const BorderRadius.all(
+                          const Radius.circular(8.0),
+                        ),
                       ),
                     ),
                   );
@@ -83,9 +85,9 @@ class FooterProductDetail extends StatelessWidget {
     return showModalBottomSheet(
       context: context,
       backgroundColor: theme.colorScheme.background,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: const BorderRadius.vertical(
-          top: Radius.circular(15.0),
+          top: const Radius.circular(15.0),
         ),
       ),
       isScrollControlled: true,

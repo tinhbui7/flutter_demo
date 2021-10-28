@@ -26,15 +26,23 @@ class _DeliveryAddressScreenState extends BaseLayoutState<DeliveryAddressScreen,
     return Padding(
       padding: EdgeInsets.only(right: MediaQuery.of(context).size.width * .035),
       child: TextField(
+        maxLines: 1,
+        style: theme.textTheme.bodyText2?.copyWith(
+          fontSize: 17.0,
+          color: theme.unselectedWidgetColor,
+        ),
         decoration: InputDecoration(
           hintText: LocaleKeys.text_search.tr(),
-          prefixIcon: Icon(Icons.search),
+          prefixIcon: Icon(
+            Icons.search,
+            color: theme.unselectedWidgetColor,
+          ),
           contentPadding: const EdgeInsets.all(10),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
             borderSide: BorderSide.none,
           ),
-          fillColor: theme.focusColor,
+          fillColor: theme.disabledColor,
           filled: true,
         ),
       ),
@@ -44,7 +52,7 @@ class _DeliveryAddressScreenState extends BaseLayoutState<DeliveryAddressScreen,
   @override
   Widget buildContent(BuildContext context) {
     return Container(
-      color: theme.selectedRowColor,
+      color: theme.splashColor,
       child: Column(
         children: [
           Padding(padding: const EdgeInsets.only(top: 15)),
@@ -52,7 +60,10 @@ class _DeliveryAddressScreenState extends BaseLayoutState<DeliveryAddressScreen,
             height: MediaQuery.of(context).size.height * .065,
             color: theme.backgroundColor,
             child: ListTile(
-              leading: Icon(Icons.map),
+              leading: Icon(
+                Icons.map,
+                color: theme.colorScheme.onBackground,
+              ),
               title: Text(
                 LocaleKeys.title_selectMap.tr(),
                 style: theme.textTheme.bodyText1,
@@ -60,6 +71,7 @@ class _DeliveryAddressScreenState extends BaseLayoutState<DeliveryAddressScreen,
               trailing: Icon(
                 Icons.navigate_next,
                 size: 35,
+                color: theme.colorScheme.onBackground,
               ),
               minLeadingWidth: 10,
               onTap: () {

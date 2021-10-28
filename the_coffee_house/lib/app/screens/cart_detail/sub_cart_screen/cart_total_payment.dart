@@ -55,6 +55,7 @@ class CartTotalPayment extends StatelessWidget {
                   Icon(
                     Icons.arrow_forward_ios,
                     size: 17.0,
+                    color: theme.colorScheme.onBackground,
                   ),
                 ],
               ),

@@ -189,8 +189,10 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
   Widget _buildItemStore(BuildContext context, StoreEntity store) {
     return Card(
       elevation: 0.3,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(9.0),
+      shape: const RoundedRectangleBorder(
+        borderRadius: const BorderRadius.all(
+          const Radius.circular(9.0),
+        ),
       ),
       color: theme.colorScheme.background,
       clipBehavior: Clip.antiAlias,

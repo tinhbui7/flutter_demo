@@ -168,8 +168,10 @@ class _ProductDetailScreenState extends BaseDialogState<ProductDetailScreen,
                           elevation: 0,
                           padding: const EdgeInsets.all(15.0),
                           primary: theme.primaryColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: const BorderRadius.all(
+                              const Radius.circular(8.0),
+                            ),
                           ),
                         ),
                       ),

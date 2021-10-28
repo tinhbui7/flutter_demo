@@ -113,8 +113,10 @@ class _SelectMapScreenState
               onPressed: bloc?.getUserLocation,
               backgroundColor: theme.colorScheme.background,
               elevation: 2.0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(7.0),
+              shape: const RoundedRectangleBorder(
+                borderRadius: const BorderRadius.all(
+                  const Radius.circular(7.0),
+                ),
               ),
               child: Icon(
                 Icons.near_me,

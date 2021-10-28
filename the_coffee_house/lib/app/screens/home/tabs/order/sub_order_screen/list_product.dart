@@ -125,8 +125,10 @@ class ListProduct extends StatelessWidget {
       ],
       child: Card(
         elevation: 0.3,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(9.0),
+        shape: const RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(
+            const Radius.circular(9.0),
+          ),
         ),
         color: theme.backgroundColor,
         clipBehavior: Clip.antiAlias,

@@ -20,12 +20,25 @@ class Assets {
 
   static final pickupIcon = '$_iconsDir/pickup_icon.png';
 
+  static final iconVietnam = '$_iconsDir/icon_vietnam.png';
+
+  static final iconEnglish = '$_iconsDir/icon_english.png';
+
   /// Backgrounds
   static final _backgroundsDir = 'assets/images/backgrounds';
 
   static final backgroundLogin = '$_backgroundsDir/img_background_login.jpg';
 
   static final bannerHome = '$_backgroundsDir/banner_home.png';
+
+  static final homeBackground =
+      '$_backgroundsDir/img_default_home_background.png';
+
+  static final membershipCardGold =
+      '$_backgroundsDir/img_background_membership_card_gold.png';
+
+  static final membershipCard =
+      '$_backgroundsDir/img_background_membership_card.png';
 
   /// Sliders
   static final _slidersDir = 'assets/images/slider';

@@ -3,12 +3,12 @@ import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/app/screens/delivery_address/delivery_address_screen.dart';
 import 'package:the_coffee_house/app/screens/delivery_address/select_map/select_map_screen.dart';
 import 'package:the_coffee_house/app/screens/home/home_screen.dart';
-import 'package:the_coffee_house/app/screens/product/product_sceen.dart';
+import 'package:the_coffee_house/app/screens/setting/setting_screen.dart';
 
 class RouteNames {
   static const SPLASH = '/Splash';
   static const HOME = '/Home';
-  static const PRODUCT = '/Product';
+  static const SETTING = '/Setting';
   static const DELIVERY = '/Delivery';
   static const MAP = '/MapDelivery';
 }
@@ -25,8 +25,8 @@ Route onAppGenerateRoute(RouteSettings routeSettings) {
     case RouteNames.SPLASH:
       builder = (BuildContext context) => HomeScreen();
       break;
-    case RouteNames.PRODUCT:
-      builder = (BuildContext context) => ProductScreen();
+    case RouteNames.SETTING:
+      builder = (BuildContext context) => SettingScreen();
       break;
     case RouteNames.DELIVERY:
       builder = (BuildContext context) => DeliveryAddressScreen();

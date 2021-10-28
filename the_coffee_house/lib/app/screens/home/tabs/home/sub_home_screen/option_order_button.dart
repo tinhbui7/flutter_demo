@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:the_coffee_house/app/widgets/icons/custom_icon.dart';
+import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -11,10 +11,12 @@ class OptionOrderButton extends StatelessWidget {
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Container(
-      height: MediaQuery.of(context).size.height * .12,
+      margin: const EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 15.0),
+      height: MediaQuery.of(context).size.height * .11,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: theme.backgroundColor,
+        border: Border.all(color: theme.disabledColor),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -26,16 +28,15 @@ class OptionOrderButton extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomIcon(
-                    5,
-                    Color(0xffd8f0f8),
-                    Icons.delivery_dining,
-                    Color(0xff79cce9),
+                  Image.asset(
+                    Assets.deliveryIcon,
+                    fit: BoxFit.cover,
+                    width: 45.0,
                   ),
-                  Padding(padding: const EdgeInsets.only(top: 15)),
+                  Padding(padding: const EdgeInsets.only(top: 7)),
                   Text(
-                    LocaleKeys.button_btnDelivery.tr(),
-                    style: theme.textTheme.subtitle2,
+                    LocaleKeys.button_btnDeliHome.tr(),
+                    style: theme.textTheme.bodyText2?.copyWith(fontSize: 13.0),
                   ),
                 ],
               ),
@@ -53,16 +54,15 @@ class OptionOrderButton extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomIcon(
-                    5,
-                    Color(0xffffe2e2),
-                    Icons.wine_bar,
-                    Color(0xffff8484),
+                  Image.asset(
+                    Assets.pickupIcon,
+                    fit: BoxFit.cover,
+                    width: 45.0,
                   ),
-                  Padding(padding: const EdgeInsets.only(top: 15)),
+                  Padding(padding: const EdgeInsets.only(top: 7)),
                   Text(
-                    LocaleKeys.button_btnPickup.tr(),
-                    style: theme.textTheme.subtitle2,
+                    LocaleKeys.button_btnPickHome.tr(),
+                    style: theme.textTheme.bodyText2?.copyWith(fontSize: 13.0),
                   ),
                 ],
               ),

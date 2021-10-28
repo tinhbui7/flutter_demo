@@ -14,7 +14,7 @@ class DarkTheme extends BaseAppTheme {
   Brightness get brightness => Brightness.dark;
 
   @override
-  Color? get backgroundColor => kColorBlackLight;
+  Color? get backgroundColor => kColorBlack;
 
   @override
   Color? get onBackgroundColor => kColorWhite;

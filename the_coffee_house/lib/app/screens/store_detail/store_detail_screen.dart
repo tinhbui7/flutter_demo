@@ -156,8 +156,10 @@ class _StoreDetailScreenState extends BaseDialogState<StoreDetailScreen,
               style: OutlinedButton.styleFrom(
                 padding: const EdgeInsets.all(15.0),
                 primary: theme.colorScheme.primary,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: const BorderRadius.all(
+                    const Radius.circular(10.0),
+                  ),
                 ),
               ),
             ),

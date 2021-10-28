@@ -20,8 +20,10 @@ class DynamicButton extends StatelessWidget {
         elevation: 0,
         primary: Color(0xFFFFF7E6),
         padding: const EdgeInsets.symmetric(horizontal: 15.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0),
+        shape: const RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(
+            const Radius.circular(20.0),
+          ),
         ),
       ),
       child: Text(

@@ -40,7 +40,22 @@
     "selectedProducts": "Các sản phẩm đã chọn",
     "total": "Tổng cộng",
     "intoMoney": "Thành tiền",
-    "paymentAmount": "Số tiền thanh toán"
+    "paymentAmount": "Số tiền thanh toán",
+    "utilities": "Tiện ích",
+    "orderHistory": "Lịch sử đơn hàng",
+    "musicPlay": "Nhạc đang phát",
+    "rules": "Điều khoản",
+    "support": "Hỗ trợ",
+    "orderEvaluation": "Đánh giá đơn hàng",
+    "contactComment": "Liên hệ và góp ý",
+    "account": "Tài khoản",
+    "personalInformation": "Thông tin cá nhân",
+    "savedAddress": "Địa chỉ đã lưu",
+    "setting": "Cài đặt",
+    "logOut": "Đăng xuất",
+    "notificationSetting": "Cài đặt thông báo",
+    "accountLink": "Liên kết tài khoản",
+    "aboutUs": "Về chúng tôi"
   },
   "button": {
     "btnHome": "Trang chủ",
@@ -70,6 +85,10 @@
     "btnChange": "Thay đổi",
     "btnRemove": "BỎ CHỌN",
     "btnChoosePromotion": "Chọn khuyến mãi",
-    "btnSaveShipping": "Lưu thông tin giao hàng cho lần sau"
+    "btnSaveShipping": "Lưu thông tin giao hàng cho lần sau",
+    "btnLanguage": "Ngôn ngữ: Tiếng Việt",
+    "btnDarkTheme": "Chủ đề tối",
+    "btnDeliHome": "Giao hàng",
+    "btnPickHome": "Mang đi"
   }
 }

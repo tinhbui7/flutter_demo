@@ -132,7 +132,7 @@ class _HomeScreenState
           label: LocaleKeys.button_btnHome.tr(),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.emoji_food_beverage),
+          icon: Icon(Icons.emoji_food_beverage_outlined),
           label: LocaleKeys.button_btnOrder.tr(),
         ),
         BottomNavigationBarItem(
@@ -140,7 +140,7 @@ class _HomeScreenState
           label: LocaleKeys.button_btnStore.tr(),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.local_play),
+          icon: Icon(Icons.confirmation_number_outlined),
           label: LocaleKeys.button_btnPoint.tr(),
         ),
         BottomNavigationBarItem(
