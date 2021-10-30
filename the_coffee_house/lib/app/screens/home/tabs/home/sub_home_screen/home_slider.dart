@@ -5,10 +5,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
-import 'package:the_coffee_house/app/screens/home/tabs/home/home_tab_cubit.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/home/home_tab_slide_cubit.dart';
 
 class HomeSlider extends StatelessWidget {
-  final HomeTabCubit homeTabCubit = HomeTabCubit(0);
+  final HomeTabSlideCubit homeTabCubit = HomeTabSlideCubit(0);
 
   final _urlImage = [
     'https://minio.thecoffeehouse.com/image/admin/banner-web-KETNOI-1200X480(1)_280533.jpg',
@@ -31,7 +31,7 @@ class HomeSlider extends StatelessWidget {
               viewportFraction: 1.0,
               enlargeCenterPage: true,
               enableInfiniteScroll: false,
-              autoPlayInterval: Duration(seconds: 7),
+              autoPlayInterval: Duration(seconds: 5),
               onPageChanged: (index, reason) => homeTabCubit.pageChange(index),
             ),
           ),
@@ -64,7 +64,7 @@ class HomeSlider extends StatelessWidget {
 
   Widget _buildIndicator(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return BlocBuilder<HomeTabCubit, int>(
+    return BlocBuilder<HomeTabSlideCubit, int>(
       bloc: homeTabCubit,
       builder: (context, index) => AnimatedSmoothIndicator(
         activeIndex: index,

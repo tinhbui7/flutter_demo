@@ -34,6 +34,7 @@ Route onAppGenerateRoute(RouteSettings routeSettings) {
     case RouteNames.MAP:
       builder = (BuildContext context) => SelectMapScreen();
       break;
+
     default:
       builder = (BuildContext context) => HomeScreen();
       break;
