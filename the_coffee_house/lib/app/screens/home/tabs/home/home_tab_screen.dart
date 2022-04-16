@@ -1,16 +1,16 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_coffee_house/app/blocs/app/app_bloc.dart';
+import 'package:the_coffee_house/app/blocs/app/app_state.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/home/home_tab_bloc.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/home/home_tab_state.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/home/sub_home_screen/home_slider.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/home/sub_home_screen/news_discovery.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/home/sub_home_screen/option_order_button.dart';
-import 'package:the_coffee_house/app/widgets/function_widget/shadow_text.dart';
-import 'package:the_coffee_house/generated/locale_keys.g.dart';
-import 'package:barcode_widget/barcode_widget.dart';
+import 'package:the_coffee_house/app/screens/login/login_dialog_screen.dart';
+import 'package:the_coffee_house/app/widgets/content/member_card.dart';
 
 import '../../../base_layout/base_content/home_base_content_layout.dart';
 
@@ -41,162 +41,164 @@ class _HomeTabScreenState extends HomeBaseContentLayoutState<HomeTabScreen,
         slivers: [
           SliverAppBar(
             expandedHeight: MediaQuery.of(context).size.height * .44,
-            flexibleSpace: Stack(
-              fit: StackFit.expand,
-              children: [
-                Container(
-                  color: Color(0xFFFFF7E6),
-                ),
-                Positioned(
-                  child: Image.asset(
-                    Assets.homeBackground,
-                    fit: BoxFit.cover,
-                  ),
-                  left: 0,
-                  right: 0,
-                  bottom: -65,
-                ),
-                Positioned(
-                  top: 10,
-                  left: 12,
-                  right: 12,
-                  child: Card(
-                    clipBehavior: Clip.antiAlias,
-                    elevation: 5,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(12.0),
-                      ),
+            flexibleSpace: BlocBuilder<AppBloc, AppState>(
+              builder: (context, state) {
+                return Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Container(
+                      color: Color(0xFFFFF7E6),
                     ),
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: MediaQuery.of(context).size.height * .27,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              stops: [0.1, 0.3, 0.8, 1],
-                              colors: [
-                                Color(0xFFEED787),
-                                Color(0xFFE8AD52),
-                                Color(0xFFEDC77A),
-                                Color(0xFFC48844)
-                              ],
+                    if (state.isLogin == true) ...[
+                      Positioned(
+                        child: Image.asset(
+                          Assets.homeBackground,
+                          fit: BoxFit.cover,
+                        ),
+                        left: 0,
+                        right: 0,
+                        bottom: -65,
+                      ),
+                      Positioned(
+                        top: 10,
+                        left: 12,
+                        right: 12,
+                        child: MemberCard(),
+                      ),
+                    ] else ...[
+                      Positioned(
+                        top: 10,
+                        left: 12,
+                        right: 12,
+                        child: Card(
+                          clipBehavior: Clip.antiAlias,
+                          elevation: 5,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: const BorderRadius.all(
+                              const Radius.circular(12.0),
                             ),
                           ),
-                        ),
-                        Positioned(
-                          top: 0,
-                          bottom: 0,
-                          right: 0,
-                          child: Image.asset(
-                            Assets.membershipCard,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Positioned(
-                          top: 0,
-                          right: 15.0,
-                          child: Container(
-                            width: MediaQuery.of(context).size.width * .25,
-                            height: MediaQuery.of(context).size.height * .037,
-                            padding: const EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [Color(0xFFCA9761), Color(0xFFBF8140)],
+                          child: Stack(
+                            children: [
+                              SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * .38,
                               ),
-                              borderRadius: const BorderRadius.only(
-                                bottomLeft: const Radius.circular(8.0),
-                                bottomRight: const Radius.circular(8.0),
-                              ),
-                              border: Border.all(
-                                color: Color(0xFFD8AE7C),
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Icon(
-                                  FontAwesomeIcons.angleDoubleDown,
-                                  size: 14.0,
-                                  color: Color(0xFFF1E3D5),
+                              Positioned(
+                                child: Image.asset(
+                                  Assets.homeBackground,
+                                  fit: BoxFit.cover,
                                 ),
-                                Text(
-                                  LocaleKeys.button_btnPoint.tr(),
-                                  style: theme.textTheme.subtitle2?.copyWith(
-                                    color: theme.colorScheme.background,
-                                    fontSize: 12.0,
+                                left: 0,
+                                right: 0,
+                                bottom: 0,
+                              ),
+                              Positioned(
+                                top: 30,
+                                left: 20,
+                                right: 20,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Đăng nhập',
+                                      style: theme.textTheme.subtitle2
+                                          ?.copyWith(fontSize: 19.0),
+                                    ),
+                                    Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 15.0)),
+                                    Text(
+                                      'Sử dụng app để tích điểm và đổi những ưu đãi chỉ \n dành riêng cho thành viên bạn nhé !',
+                                      textAlign: TextAlign.center,
+                                      style: theme.textTheme.bodyText2
+                                          ?.copyWith(fontSize: 13.5),
+                                    ),
+                                    Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 15.0)),
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        showGeneralDialog(
+                                            context: context,
+                                            barrierDismissible: true,
+                                            barrierLabel:
+                                                MaterialLocalizations.of(
+                                                        context)
+                                                    .modalBarrierDismissLabel,
+                                            pageBuilder:
+                                                (BuildContext buildContext,
+                                                    Animation first,
+                                                    Animation second) {
+                                              return LoginDialogScreen();
+                                            });
+                                      },
+                                      child: Text('Đăng nhập'),
+                                      style: ElevatedButton.styleFrom(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 42.0),
+                                        shape: const RoundedRectangleBorder(
+                                          borderRadius: const BorderRadius.all(
+                                            const Radius.circular(8.0),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Positioned(
+                                left: 12,
+                                right: 12,
+                                bottom: 12,
+                                child: Card(
+                                  clipBehavior: Clip.antiAlias,
+                                  elevation: 2,
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: const BorderRadius.all(
+                                      const Radius.circular(9.0),
+                                    ),
+                                  ),
+                                  child: Container(
+                                    height:
+                                        MediaQuery.of(context).size.width * .13,
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text('The Coffee House`s Reward'),
+                                        Icon(
+                                          Icons.arrow_forward_ios,
+                                          size: 16.0,
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          top: 22.0,
-                          left: 17.0,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ShadowText(
-                                data: 'Tính Bùi',
-                                style: theme.textTheme.subtitle2?.copyWith(
-                                    fontSize: 17.0,
-                                    color: theme.colorScheme.background),
-                                color: theme.colorScheme.onBackground,
-                              ),
-                              ShadowText(
-                                data: '678 BEAN - Vàng',
-                                style: theme.textTheme.subtitle2?.copyWith(
-                                    fontSize: 15.0,
-                                    color: theme.colorScheme.background),
-                                color: theme.colorScheme.onBackground,
                               ),
                             ],
                           ),
                         ),
-                        Positioned(
-                          left: 17.0,
-                          right: 17.0,
-                          bottom: 17.0,
-                          child: Container(
-                            width: double.infinity,
-                            height: MediaQuery.of(context).size.height * .13,
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 13.0, horizontal: 45.0),
-                            decoration: BoxDecoration(
-                              color: theme.colorScheme.background,
-                              borderRadius: BorderRadius.circular(7.0),
-                            ),
-                            child: BarcodeWidget(
-                              barcode: Barcode.code128(),
-                              data: 'M161465476',
-                              color: theme.colorScheme.onBackground,
-                            ),
+                      )
+                    ],
+                    Positioned(
+                      child: Container(
+                        height: 10,
+                        decoration: BoxDecoration(
+                          color: theme.colorScheme.background,
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(20),
                           ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Positioned(
-                  child: Container(
-                    height: 10,
-                    decoration: BoxDecoration(
-                      color: theme.colorScheme.background,
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(20),
+                        ),
                       ),
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
                     ),
-                  ),
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                ),
-              ],
+                  ],
+                );
+              },
             ),
           ),
           SliverToBoxAdapter(
@@ -227,7 +229,7 @@ class _HomeTabScreenState extends HomeBaseContentLayoutState<HomeTabScreen,
     );
   }
 
-  List<Widget> test() {
+  /*List<Widget> test() {
     return [
       Text(
         LocaleKeys.title_homeScreen.tr(),
@@ -248,5 +250,5 @@ class _HomeTabScreenState extends HomeBaseContentLayoutState<HomeTabScreen,
         },
       ),
     ];
-  }
+  }*/
 }

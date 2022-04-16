@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/home/home_tab_news_cubit.dart';
 import 'package:the_coffee_house/app/screens/news/news_detail_screen.dart';
+import 'package:the_coffee_house/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class NewsDiscovery extends StatelessWidget {
   final HomeTabNewsCubit homeTabNewsCubit = HomeTabNewsCubit(0);
@@ -167,7 +169,7 @@ class NewsDiscovery extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Khám phá thêm',
+              LocaleKeys.title_discoverMore.tr(),
               style: theme.textTheme.subtitle2,
             ),
             Padding(
@@ -178,47 +180,41 @@ class NewsDiscovery extends StatelessWidget {
                   (index == 0)
                       ? _buildItemNews(
                           context,
-                          'Ưu đãi đặc biệt',
+                          LocaleKeys.button_btnOffer.tr(),
                           0,
-                          theme.splashColor,
-                          theme.colorScheme.primary,
+                          true,
                         )
                       : _buildItemNews(
                           context,
-                          'Ưu đãi đặc biệt',
+                          LocaleKeys.button_btnOffer.tr(),
                           0,
-                          theme.colorScheme.background,
-                          theme.colorScheme.onBackground,
+                          false,
                         ),
                   (index == 1)
                       ? _buildItemNews(
                           context,
-                          'Cập nhật từ Nhà',
+                          LocaleKeys.button_btnHomeUpdate.tr(),
                           1,
-                          theme.splashColor,
-                          theme.colorScheme.primary,
+                          true,
                         )
                       : _buildItemNews(
                           context,
-                          'Cập nhật từ Nhà',
+                          LocaleKeys.button_btnHomeUpdate.tr(),
                           1,
-                          theme.colorScheme.background,
-                          theme.colorScheme.onBackground,
+                          false,
                         ),
                   (index == 2)
                       ? _buildItemNews(
                           context,
-                          'CoffeeLover',
+                          LocaleKeys.button_btnCoffee.tr(),
                           2,
-                          theme.splashColor,
-                          theme.colorScheme.primary,
+                          true,
                         )
                       : _buildItemNews(
                           context,
-                          'CoffeeLover',
+                          LocaleKeys.button_btnCoffee.tr(),
                           2,
-                          theme.colorScheme.background,
-                          theme.colorScheme.onBackground,
+                          false,
                         ),
                 ],
               ),
@@ -244,15 +240,19 @@ class NewsDiscovery extends StatelessWidget {
     );
   }
 
-  Widget _buildItemNews(BuildContext context, String content, int index,
-      Color colorBG, Color colorText) {
+  Widget _buildItemNews(
+      BuildContext context, String content, int index, bool isActive) {
     ThemeData theme = Theme.of(context);
     return InkWell(
       onTap: () => homeTabNewsCubit.pageChange(index),
       child: Container(
         padding: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
-          color: colorBG,
+          border: Border.all(
+            color: isActive
+                ? theme.colorScheme.primary
+                : theme.colorScheme.background,
+          ),
           borderRadius: BorderRadius.all(
             Radius.circular(25.0),
           ),
@@ -260,7 +260,9 @@ class NewsDiscovery extends StatelessWidget {
         child: Text(content,
             style: theme.textTheme.subtitle2?.copyWith(
               fontSize: 14.0,
-              color: colorText,
+              color: isActive
+                  ? theme.colorScheme.primary
+                  : theme.colorScheme.onBackground,
             )),
       ),
     );

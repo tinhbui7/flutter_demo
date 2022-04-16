@@ -26,7 +26,9 @@ class _SplashScreenState
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 2000)).then((value) {
+    orderBloc?.loadProduct();
+    storeBloc?.loadStores();
+    Future.delayed(const Duration(milliseconds: 3000)).then((value) {
       Navigator.of(context).pushReplacementNamed(RouteNames.HOME);
     });
   }

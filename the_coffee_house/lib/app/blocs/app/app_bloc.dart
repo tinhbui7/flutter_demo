@@ -13,12 +13,15 @@ class AppBloc extends BaseBloc<AppState> {
       : super(AppState(
           isLoading: false,
           appTheme: ThemeType.Light,
+          isLogin: false,
         ));
 
   @override
   Stream<AppState> mapEventToState(BaseBlocEvent event) async* {
     if (event is ChangeAppThemeEvent) {
       yield* _changeAppThemeState(event);
+    } else if (event is ChangeLoginStatusEvent) {
+      yield* _changeLoginStatusState(event);
     } else {
       yield* super.mapEventToState(event);
     }
@@ -28,6 +31,14 @@ class AppBloc extends BaseBloc<AppState> {
     yield AppState(
       state: state,
       appTheme: event.type,
+    );
+  }
+
+  Stream<AppState> _changeLoginStatusState(
+      ChangeLoginStatusEvent event) async* {
+    yield AppState(
+      state: state,
+      isLogin: event.isLogin,
     );
   }
 
@@ -49,5 +60,9 @@ class AppBloc extends BaseBloc<AppState> {
 
   changeAppTheme(ThemeType type) {
     add(ChangeAppThemeEvent(type));
+  }
+
+  changeLoginStatus(bool isLogin) {
+    add(ChangeLoginStatusEvent(isLogin));
   }
 }

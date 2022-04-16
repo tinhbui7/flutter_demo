@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_coffee_house/app/blocs/app/app_bloc.dart';
 import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/widgets/buttons/tab_other_button.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
@@ -10,6 +12,7 @@ class AccountSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppBloc appBloc = BlocProvider.of<AppBloc>(context);
     ThemeData theme = Theme.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,6 +71,10 @@ class AccountSection extends StatelessWidget {
                 TabOtherButton(
                   iconButton: Icons.logout,
                   contentButton: LocaleKeys.title_logOut.tr(),
+                  onPressed: () {
+                    appBloc.changeLoginStatus(false);
+                    Navigator.of(context).pop(RouteNames.HOME);
+                  },
                 ),
               ],
             ),

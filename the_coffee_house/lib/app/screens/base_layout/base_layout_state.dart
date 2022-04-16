@@ -11,6 +11,8 @@ import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
 import 'package:the_coffee_house/app/blocs/notify/notify_app_bloc.dart';
 import 'package:the_coffee_house/app/constants/global.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_state.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_bloc.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/store/store_tab_bloc.dart';
 import 'package:the_coffee_house/app/styles/app_theme.dart';
 import 'package:the_coffee_house/app/views/errors/empty_view.dart';
 import 'package:the_coffee_house/app/views/errors/network_connection_error.dart';
@@ -42,6 +44,8 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
   NotifyAppBloc get notifyAppBloc => BlocProvider.of<NotifyAppBloc>(context);
 
   CartBloc? get cartBloc => BlocProvider.of<CartBloc>(context);
+  OrderTabBloc? get orderBloc => BlocProvider.of<OrderTabBloc>(context);
+  StoreTabBloc? get storeBloc => BlocProvider.of<StoreTabBloc>(context);
 
   @override
   void initState() {

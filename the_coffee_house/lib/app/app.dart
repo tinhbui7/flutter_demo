@@ -8,6 +8,8 @@ import 'package:the_coffee_house/app/blocs/notify/notify_app_bloc.dart';
 import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_state.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_bloc.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/store/store_tab_bloc.dart';
 import 'package:the_coffee_house/app/screens/splash/splash_screen.dart';
 import 'package:the_coffee_house/app/styles/app_theme.dart';
 
@@ -24,6 +26,8 @@ class _TchAppState extends BaseState<TchApp> {
   AppBloc get _appBloc => getIt.get<AppBloc>();
   NotifyAppBloc get _notifyAppBloc => getIt.get<NotifyAppBloc>();
   CartBloc get _cartBloc => getIt.get<CartBloc>();
+  OrderTabBloc get _orderTabBloc => getIt.get<OrderTabBloc>();
+  StoreTabBloc get _storeTabBloc => getIt.get<StoreTabBloc>();
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +39,8 @@ class _TchAppState extends BaseState<TchApp> {
             BlocProvider<AppBloc>.value(value: _appBloc),
             BlocProvider<NotifyAppBloc>.value(value: _notifyAppBloc),
             BlocProvider<CartBloc>.value(value: _cartBloc),
+            BlocProvider<OrderTabBloc>.value(value: _orderTabBloc),
+            BlocProvider<StoreTabBloc>.value(value: _storeTabBloc),
           ],
           child: MaterialApp(
             title: 'The Coffee House',

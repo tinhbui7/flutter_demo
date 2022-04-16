@@ -35,6 +35,7 @@
     "openTime": "Giờ mở cửa",
     "addFavourite": "Thêm vào danh sách yêu thích",
     "shareAddress": "Chia sẻ địa chỉ",
+    "contact": "Liên hệ",
     "orderConfirmation": "Xác nhận đơn hàng",
     "payment": "Thanh toán",
     "selectedProducts": "Các sản phẩm đã chọn",
@@ -55,7 +56,8 @@
     "logOut": "Đăng xuất",
     "notificationSetting": "Cài đặt thông báo",
     "accountLink": "Liên kết tài khoản",
-    "aboutUs": "Về chúng tôi"
+    "aboutUs": "Về chúng tôi",
+    "discoverMore": "Khám phá thêm"
   },
   "button": {
     "btnHome": "Trang chủ",
@@ -89,6 +91,9 @@
     "btnLanguage": "Ngôn ngữ: Tiếng Việt",
     "btnDarkTheme": "Chủ đề tối",
     "btnDeliHome": "Giao hàng",
-    "btnPickHome": "Mang đi"
+    "btnPickHome": "Mang đi",
+    "btnOffer": "Ưu đãi đặc biệt",
+    "btnHomeUpdate": "Cập nhật từ Nhà",
+    "btnCoffee": "CoffeeLover"
   }
 }

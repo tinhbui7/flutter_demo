@@ -56,6 +56,7 @@ abstract class  LocaleKeys {
   static const title_notificationSetting = 'title.notificationSetting';
   static const title_accountLink = 'title.accountLink';
   static const title_aboutUs = 'title.aboutUs';
+  static const title_discoverMore = 'title.discoverMore';
   static const title = 'title';
   static const button_btnHome = 'button.btnHome';
   static const button_btnOrder = 'button.btnOrder';
@@ -89,6 +90,9 @@ abstract class  LocaleKeys {
   static const button_btnDarkTheme = 'button.btnDarkTheme';
   static const button_btnDeliHome = 'button.btnDeliHome';
   static const button_btnPickHome = 'button.btnPickHome';
+  static const button_btnOffer = 'button.btnOffer';
+  static const button_btnHomeUpdate = 'button.btnHomeUpdate';
+  static const button_btnCoffee = 'button.btnCoffee';
   static const button = 'button';
 
 }

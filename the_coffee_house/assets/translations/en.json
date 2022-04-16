@@ -56,7 +56,9 @@
     "logOut": "Log out",
     "notificationSetting": "Notification setting",
     "accountLink": "Account link",
-    "aboutUs": "About us"
+    "aboutUs": "About us",
+    "discoverMore": "Discover more"
+
   },
   "button": {
     "btnHome": "Home",
@@ -90,6 +92,9 @@
     "btnLanguage": "Language: English",
     "btnDarkTheme": "Dark theme",
     "btnDeliHome": "Delivery",
-    "btnPickHome": "Pickup"
+    "btnPickHome": "Pickup",
+    "btnOffer": "Special offer",
+    "btnHomeUpdate": "Update from Home",
+    "btnCoffee": "CoffeeLover"
   }
 }

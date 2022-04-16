@@ -86,6 +86,7 @@ class _LoginDialogState extends BaseDialogState<LoginDialogScreen,
                       contentButton: LocaleKeys.button_btnLogin.tr(),
                       onPressed: () {
                         if (isCheckInput) {
+                          appBloc?.changeLoginStatus(true);
                           Navigator.of(context).pop(RouteNames.HOME);
                         }
                       },

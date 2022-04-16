@@ -18,10 +18,9 @@ class OrderTabScreen extends StatefulWidget {
 
 class _OrderTabScreenState extends HomeBaseContentLayoutState<OrderTabScreen,
     OrderTabBloc, OrderTabState> {
-  _OrderTabScreenState() {
-    bloc = OrderTabBloc();
-    bloc?.loadProduct();
-  }
+  _OrderTabScreenState();
+
+  OrderTabBloc? get bloc => orderBloc;
 
   List<SectionEntity> get products => state?.products ?? [];
   final ItemScrollController itemScrollController = ItemScrollController();

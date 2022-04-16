@@ -99,14 +99,14 @@ void showPopupSelectOrder(context) {
                                 ?.copyWith(fontSize: 13.5),
                         overflow: TextOverflow.ellipsis,
                       ),
-                      Text(
+                      /*Text(
                         'Sun Life 19001001',
                         style: (state.activeOrder == OrderTab.Delivery)
                             ? theme.textTheme.bodyText2
                                 ?.copyWith(fontSize: 13.5, color: Colors.black)
                             : theme.textTheme.bodyText2
                                 ?.copyWith(fontSize: 13.5),
-                      ),
+                      ),*/
                     ],
                   ),
                   trailing: ElevatedButton(

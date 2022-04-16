@@ -6,3 +6,9 @@ class ChangeAppThemeEvent extends BaseBlocEvent {
 
   ChangeAppThemeEvent(this.type);
 }
+
+class ChangeLoginStatusEvent extends BaseBlocEvent {
+  final bool isLogin;
+
+  ChangeLoginStatusEvent(this.isLogin);
+}

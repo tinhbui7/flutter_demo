@@ -26,6 +26,8 @@ class Assets {
 
   static final iconShare = '$_iconsDir/resources_images_icons_ic_share.png';
 
+  static final iconNight = '$_iconsDir/icon_night.png';
+
   /// Backgrounds
   static final _backgroundsDir = 'assets/images/backgrounds';
 

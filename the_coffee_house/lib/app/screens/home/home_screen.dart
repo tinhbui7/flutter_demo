@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_coffee_house/app/blocs/app/app_bloc.dart';
+import 'package:the_coffee_house/app/blocs/app/app_state.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_state.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
@@ -14,7 +16,6 @@ import 'package:the_coffee_house/app/screens/home/tabs/order/sub_order_screen/po
 import 'package:the_coffee_house/app/screens/home/tabs/other/other_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/point/point_tab_screen.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/store/store_tab_screen.dart';
-import 'package:the_coffee_house/app/screens/login/login_dialog_screen.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -36,68 +37,115 @@ class _HomeScreenState
 
   @override
   AppBar? buildAppBar(BuildContext context) {
-    return (activeTab == HomeTab.Order)
+    return (activeTab == HomeTab.Home)
         ? AppBar(
-            backgroundColor: theme.colorScheme.background,
+            backgroundColor: Color(0xFFFFF7E6),
             elevation: 0,
-            title: InkWell(
-              onTap: () {
-                showPopupSelectOrder(context);
-              },
-              child: BlocBuilder<CartBloc, CartState>(
-                builder: (context, state) {
-                  return Container(
-                    child: (state.activeOrder == OrderTab.Delivery)
-                        ? _buildSelectOrder(
-                            Assets.deliveryIcon,
-                            LocaleKeys.title_deliveredTo.tr(),
-                            '${state.deliveryEntity?.address ?? LocaleKeys.text_deliveryContent.tr()}',
-                          )
-                        : _buildSelectOrder(
-                            Assets.pickupIcon,
-                            LocaleKeys.title_comePickupAt.tr(),
-                            '${state.storeEntity?.name ?? LocaleKeys.text_pickupContent.tr()}',
-                          ),
-                  );
-                },
-              ),
+            actions: buildHeaderActions(context),
+            title: Row(
+              children: [
+                Image.asset(
+                  Assets.iconNight,
+                  fit: BoxFit.cover,
+                  scale: 2.5,
+                ),
+                Padding(padding: const EdgeInsets.only(left: 10.0)),
+                BlocBuilder<AppBloc, AppState>(
+                  builder: (context, state) {
+                    return Text(
+                      state.isLogin == true
+                          ? 'Chào buổi tối, Tính'
+                          : 'Chào bạn mới',
+                      style: theme.textTheme.subtitle2
+                          ?.copyWith(fontSize: 15.0, color: Colors.black),
+                    );
+                  },
+                ),
+              ],
             ),
           )
-        : AppBar(
-            backgroundColor: theme.backgroundColor,
-            elevation: 0,
-            title: Image(
-              width: 150,
-              fit: BoxFit.contain,
-              color: theme.colorScheme.onBackground,
-              image: AssetImage(Assets.logoHorizontal),
-            ),
-            actions: buildHeaderActions(context),
-          );
+        : (activeTab == HomeTab.Order)
+            ? AppBar(
+                backgroundColor: theme.colorScheme.background,
+                elevation: 0,
+                title: InkWell(
+                  onTap: () {
+                    showPopupSelectOrder(context);
+                  },
+                  child: BlocBuilder<CartBloc, CartState>(
+                    builder: (context, state) {
+                      return Container(
+                        child: (state.activeOrder == OrderTab.Delivery)
+                            ? _buildSelectOrder(
+                                Assets.deliveryIcon,
+                                LocaleKeys.title_deliveredTo.tr(),
+                                '${state.deliveryEntity?.address ?? LocaleKeys.text_deliveryContent.tr()}',
+                              )
+                            : _buildSelectOrder(
+                                Assets.pickupIcon,
+                                LocaleKeys.title_comePickupAt.tr(),
+                                '${state.storeEntity?.name ?? LocaleKeys.text_pickupContent.tr()}',
+                              ),
+                      );
+                    },
+                  ),
+                ),
+              )
+            : AppBar(
+                backgroundColor: theme.backgroundColor,
+                elevation: 0,
+                title: Text(
+                  activeTab == HomeTab.Store
+                      ? LocaleKeys.button_btnStore.tr()
+                      : activeTab == HomeTab.Point
+                          ? LocaleKeys.button_btnPoint.tr()
+                          : LocaleKeys.button_btnOther.tr(),
+                  style: theme.textTheme.subtitle2?.copyWith(fontSize: 20.0),
+                ),
+                actions: buildHeaderActions(context),
+              );
   }
 
   @override
   List<Widget> buildHeaderActions(BuildContext context) {
     return [
       Padding(
-        padding: const EdgeInsets.only(right: 13),
-        child: IconButton(
-          icon: Image.asset(
-            Assets.logoPointCard,
-            width: 35,
-            height: 15,
+        padding: const EdgeInsets.only(right: 8.0),
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * .1,
+          height: MediaQuery.of(context).size.width * .1,
+          child: FloatingActionButton(
+            onPressed: () {},
+            heroTag: 'voucher',
+            backgroundColor: theme.colorScheme.background,
+            elevation: 2,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(
+                  Icons.confirmation_number_outlined,
+                  color: theme.colorScheme.onBackground,
+                ),
+              ],
+            ),
           ),
-          onPressed: () {
-            showGeneralDialog(
-                context: context,
-                barrierDismissible: true,
-                barrierLabel:
-                    MaterialLocalizations.of(context).modalBarrierDismissLabel,
-                pageBuilder: (BuildContext buildContext, Animation first,
-                    Animation second) {
-                  return LoginDialogScreen();
-                });
-          },
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.only(right: 15.0),
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * .1,
+          height: MediaQuery.of(context).size.width * .1,
+          child: FloatingActionButton(
+            heroTag: 'alert',
+            onPressed: () {},
+            backgroundColor: theme.colorScheme.background,
+            elevation: 2,
+            child: Icon(
+              Icons.notifications_outlined,
+              color: theme.colorScheme.onBackground,
+            ),
+          ),
         ),
       ),
     ];

@@ -25,10 +25,9 @@ class StoreTabScreen extends StatefulWidget {
 
 class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
     StoreTabBloc, StoreTabState> {
-  _StoreTabScreenState(this.controller) {
-    bloc = StoreTabBloc();
-    bloc?.loadStores();
-  }
+  _StoreTabScreenState(this.controller);
+
+  StoreTabBloc? get bloc => storeBloc;
 
   ScrollController? controller;
   List<StoreEntity>? get stores => state?.stores ?? [];

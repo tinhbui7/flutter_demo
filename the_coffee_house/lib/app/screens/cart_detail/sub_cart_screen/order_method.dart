@@ -96,7 +96,7 @@ class OrderMethod extends StatelessWidget {
                                 children: [
                                   Text('Tính Bùi'),
                                   Text(
-                                    '0331231231',
+                                    '0123456789',
                                     style: theme.primaryTextTheme.caption,
                                   ),
                                   SeparatorLine(
