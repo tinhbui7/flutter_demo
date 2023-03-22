@@ -6,12 +6,10 @@ part of 'topping_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ToppingModel _$ToppingModelFromJson(Map<String, dynamic> json) {
-  return ToppingModel(
-    json['name'] as String?,
-    json['extra_pay'] as int?,
-  );
-}
+ToppingModel _$ToppingModelFromJson(Map<String, dynamic> json) => ToppingModel(
+      json['name'] as String?,
+      json['extra_pay'] as int?,
+    );
 
 Map<String, dynamic> _$ToppingModelToJson(ToppingModel instance) =>
     <String, dynamic>{
