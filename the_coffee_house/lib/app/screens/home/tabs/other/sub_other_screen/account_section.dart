@@ -13,9 +13,6 @@ class AccountSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppBloc appBloc = BlocProvider.of<AppBloc>(context);
-    HomeScreenBloc homeBloc = BlocProvider.of<HomeScreenBloc>(context);
-
     ThemeData theme = Theme.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,10 +72,10 @@ class AccountSection extends StatelessWidget {
                   iconButton: Icons.logout,
                   contentButton: LocaleKeys.title_logOut.tr(),
                   onPressed: () {
+                    AppBloc appBloc = BlocProvider.of<AppBloc>(context);
+                    HomeScreenBloc homeBloc = BlocProvider.of<HomeScreenBloc>(context);
                     appBloc.changeLoginStatus(false);
                     homeBloc.onItemTab();
-                    // Navigator.of(context).pop(RouteNames.HOME);
-
                   },
                 ),
               ],
