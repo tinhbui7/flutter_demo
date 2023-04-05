@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/blocs/app/app_bloc.dart';
 import 'package:the_coffee_house/app/routing/app_route.dart';
+import 'package:the_coffee_house/app/screens/home/home_bloc.dart';
 import 'package:the_coffee_house/app/widgets/buttons/tab_other_button.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
-import '../../../home_bloc.dart';
 
 class AccountSection extends StatelessWidget {
   const AccountSection({Key? key}) : super(key: key);
