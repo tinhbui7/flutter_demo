@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/blocs/app/app_bloc.dart';
 import 'package:the_coffee_house/app/blocs/app/app_state.dart';
@@ -28,12 +27,18 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState
     extends BaseLayoutState<HomeScreen, HomeScreenBloc, HomeScreenState> {
-  _HomeScreenState() {
-    bloc = HomeScreenBloc();
-  }
+  _HomeScreenState();
+  HomeScreenBloc? get bloc => homeBloc;
 
   HomeTab get activeTab => state?.activeTab ?? HomeTab.Home;
-  PageController pageController = PageController();
+
+  static const screens = [
+    HomeTabScreen(),
+    OrderTabScreen(),
+    StoreTabScreen(),
+    PointTabScreen(),
+    OtherTabScreen(),
+  ];
 
   @override
   AppBar? buildAppBar(BuildContext context) {
@@ -155,16 +160,9 @@ class _HomeScreenState
   Widget buildContent(BuildContext context) {
     return Stack(
       children: [
-        PageView(
-          physics: NeverScrollableScrollPhysics(),
-          controller: pageController,
-          children: const [
-            HomeTabScreen(),
-            OrderTabScreen(),
-            StoreTabScreen(),
-            PointTabScreen(),
-            OtherTabScreen(),
-          ],
+        IndexedStack(
+          index: activeTab.index,
+          children: screens,
         ),
         if (activeTab == HomeTab.Home || activeTab == HomeTab.Order) CartCard(),
       ],
@@ -209,10 +207,7 @@ class _HomeScreenState
       ),
       currentIndex: activeTab.index,
       onTap: (index) {
-        bloc?.onItemTab(index);
-        Future.delayed(const Duration(milliseconds: 200)).then((value) {
-          pageController.jumpToPage(index);
-        });
+        bloc?.onItemTab(index: index);
       },
     );
   }

@@ -7,12 +7,16 @@ import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/widgets/buttons/tab_other_button.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
+import '../../../home_bloc.dart';
+
 class AccountSection extends StatelessWidget {
   const AccountSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     AppBloc appBloc = BlocProvider.of<AppBloc>(context);
+    HomeScreenBloc homeBloc = BlocProvider.of<HomeScreenBloc>(context);
+
     ThemeData theme = Theme.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +77,9 @@ class AccountSection extends StatelessWidget {
                   contentButton: LocaleKeys.title_logOut.tr(),
                   onPressed: () {
                     appBloc.changeLoginStatus(false);
-                    Navigator.of(context).pop(RouteNames.HOME);
+                    homeBloc.onItemTab();
+                    // Navigator.of(context).pop(RouteNames.HOME);
+
                   },
                 ),
               ],

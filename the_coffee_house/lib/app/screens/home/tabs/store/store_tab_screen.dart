@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_content/home_base_content_layout.dart';
@@ -236,9 +235,11 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
                   ),
                   Text(
                     context.locale.languageCode == 'en'
-                        ? '${random.nextInt(100) + random.nextInt(100) / 100.0} km ${LocaleKeys.text_away.tr()}'
-                        : '${LocaleKeys.text_away.tr()} ${random.nextInt(100) + random.nextInt(100) / 100.0} km',
-                    style: theme.primaryTextTheme.caption,
+                        ? '${random.nextInt(100) + random.nextInt(100) / 100.0} km ${LocaleKeys.away.tr()}'
+                        : '${LocaleKeys.away.tr()} ${random.nextInt(100) + random.nextInt(100) / 100.0} km',
+                    style: theme.primaryTextTheme.caption?.copyWith(
+                      fontSize: 12.0,
+                    ),
                   ),
                 ],
               ),
@@ -251,7 +252,7 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
 
   Future _showStoreDetailPopup(BuildContext context, StoreEntity store) {
     var topPadding = 1 -
-        (MediaQueryData.fromWindow(WidgetsBinding.instance!.window)
+        (MediaQueryData.fromWindow(WidgetsBinding.instance.window)
                 .padding
                 .top /
             MediaQuery.of(context).size.height);

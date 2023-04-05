@@ -8,6 +8,7 @@ import 'package:the_coffee_house/app/blocs/notify/notify_app_bloc.dart';
 import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_state.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:the_coffee_house/app/screens/home/home_bloc.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/order/order_tab_bloc.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/store/store_tab_bloc.dart';
 import 'package:the_coffee_house/app/screens/splash/splash_screen.dart';
@@ -25,6 +26,7 @@ class _TchAppState extends BaseState<TchApp> {
   GetIt get getIt => GetIt.instance;
   AppBloc get _appBloc => getIt.get<AppBloc>();
   NotifyAppBloc get _notifyAppBloc => getIt.get<NotifyAppBloc>();
+  HomeScreenBloc get _homeBloc => getIt.get<HomeScreenBloc>();
   CartBloc get _cartBloc => getIt.get<CartBloc>();
   OrderTabBloc get _orderTabBloc => getIt.get<OrderTabBloc>();
   StoreTabBloc get _storeTabBloc => getIt.get<StoreTabBloc>();
@@ -38,6 +40,7 @@ class _TchAppState extends BaseState<TchApp> {
           providers: [
             BlocProvider<AppBloc>.value(value: _appBloc),
             BlocProvider<NotifyAppBloc>.value(value: _notifyAppBloc),
+            BlocProvider<HomeScreenBloc>.value(value: _homeBloc),
             BlocProvider<CartBloc>.value(value: _cartBloc),
             BlocProvider<OrderTabBloc>.value(value: _orderTabBloc),
             BlocProvider<StoreTabBloc>.value(value: _storeTabBloc),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 

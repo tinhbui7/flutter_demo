@@ -8,7 +8,7 @@ abstract class  LocaleKeys {
   static const text_menuSelect = 'text.menuSelect';
   static const text_streetName = 'text.streetName';
   static const text_otherStores = 'text.otherStores';
-  static const text_away = 'text.away';
+  static const away = 'text.away';
   static const text_uncheckProduct = 'text.uncheckProduct';
   static const text_chooseProduct = 'text.chooseProduct';
   static const text_chooseTypes = 'text.chooseTypes';

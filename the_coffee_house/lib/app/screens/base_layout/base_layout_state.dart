@@ -19,6 +19,8 @@ import 'package:the_coffee_house/app/views/errors/network_connection_error.dart'
 import 'package:the_coffee_house/app/widgets/progress/content_loading_indicator.dart';
 import 'package:flutter/services.dart';
 
+import '../home/home_bloc.dart';
+
 abstract class BaseLayoutState<Sf extends StatefulWidget,
     B extends BaseBloc<St>, St extends BaseBlocState> extends BaseState<Sf> {
   B? bloc;
@@ -43,6 +45,7 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
 
   NotifyAppBloc get notifyAppBloc => BlocProvider.of<NotifyAppBloc>(context);
 
+  HomeScreenBloc? get homeBloc => BlocProvider.of<HomeScreenBloc>(context);
   CartBloc? get cartBloc => BlocProvider.of<CartBloc>(context);
   OrderTabBloc? get orderBloc => BlocProvider.of<OrderTabBloc>(context);
   StoreTabBloc? get storeBloc => BlocProvider.of<StoreTabBloc>(context);

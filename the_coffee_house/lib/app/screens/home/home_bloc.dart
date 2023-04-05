@@ -28,7 +28,7 @@ class HomeScreenBloc extends BaseBloc<HomeScreenState> {
     );
   }
 
-  void onItemTab(int index) {
+  void onItemTab({int? index}) {
     switch (index) {
       case 1:
         updateTab(HomeTab.Order);
