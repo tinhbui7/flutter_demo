@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_events.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_state.dart';
 import 'package:the_coffee_house/app/widgets/buttons/dynamic_button.dart';
 import 'package:the_coffee_house/app/widgets/buttons/slide_button.dart';
@@ -75,8 +75,9 @@ class CartProduct extends StatelessWidget {
                             Builder(
                               builder: (context) {
                                 var controller = ExpandableController.of(
-                                    context,
-                                    required: true);
+                                  context,
+                                  required: true,
+                                );
                                 return InkWell(
                                   onTap: () => controller?.toggle(),
                                   splashColor: Colors.transparent,
@@ -135,28 +136,33 @@ class CartProduct extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     CartBloc cartBloc = BlocProvider.of<CartBloc>(context);
     return Slidable(
-      actionPane: SlidableBehindActionPane(),
-      actionExtentRatio: .2,
-      secondaryActions: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16.0, 3.0, 8.0, 3.0),
-          child: SlideButton(
-            contentButton: LocaleKeys.button_btnChange.tr().toUpperCase(),
-            colorButton: theme.unselectedWidgetColor,
-            iconButton: Icons.border_color,
-            onPressed: () => showProductDetailPopup(context, orderItem, true),
+      endActionPane: ActionPane(
+        motion: const BehindMotion(),
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16.0, 3.0, 8.0, 3.0),
+            child: SlideButton(
+              contentButton: LocaleKeys.button_btnChange.tr().toUpperCase(),
+              colorButton: theme.unselectedWidgetColor,
+              iconButton: Icons.border_color,
+              onPressed: () => showProductDetailPopup(
+                context,
+                orderItem,
+                true,
+              ),
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(8.0, 3.0, 16.0, 3.0),
-          child: SlideButton(
-            contentButton: LocaleKeys.button_btnRemove.tr(),
-            colorButton: Color(0xFFE40000),
-            iconButton: Icons.delete_rounded,
-            onPressed: () => cartBloc.deleteOrderItem(orderItem),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8.0, 3.0, 16.0, 3.0),
+            child: SlideButton(
+              contentButton: LocaleKeys.button_btnRemove.tr(),
+              colorButton: Color(0xFFE40000),
+              iconButton: Icons.delete_rounded,
+              onPressed: () => cartBloc.add(DeleteOrderItemEvent(orderItem)),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
       child: Container(
         color: theme.colorScheme.background,
         child: Column(

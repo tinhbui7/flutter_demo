@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_events.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_state.dart';
 import 'package:the_coffee_house/app/screens/cart_detail/cart_screen.dart';
 import 'package:the_coffee_house/app/widgets/icons/custom_icon.dart';
@@ -24,17 +25,16 @@ class CartCard extends StatelessWidget {
                 left: 10,
                 bottom: 15,
                 child: Slidable(
-                  actionPane: SlidableBehindActionPane(),
-                  closeOnScroll: true,
-                  secondaryActions: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 10.0,
-                        horizontal: 15.0,
-                      ),
-                      child: SlideAction(
+                  endActionPane: ActionPane(
+                    motion: const BehindMotion(),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 10.0,
+                          horizontal: 15.0,
+                        ),
                         child: InkWell(
-                          onTap: () => cartBloc.deleteAllBill(),
+                          onTap: () => cartBloc.add(DeleteAllBillEvent()),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -54,13 +54,9 @@ class CartCard extends StatelessWidget {
                             ],
                           ),
                         ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.red,
-                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                   child: InkWell(
                     onTap: () => _showCartDetail(context),
                     child: Card(

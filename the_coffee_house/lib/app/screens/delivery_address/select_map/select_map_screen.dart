@@ -1,13 +1,15 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:the_coffee_house/app/base/base_bloc_events.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_events.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart';
 import 'package:the_coffee_house/app/screens/delivery_address/select_map/select_map_bloc.dart';
+import 'package:the_coffee_house/app/screens/delivery_address/select_map/select_map_events.dart';
 import 'package:the_coffee_house/app/screens/delivery_address/select_map/select_map_state.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
@@ -25,7 +27,7 @@ class _SelectMapScreenState
   _SelectMapScreenState() {
     bloc = SelectMapBloc();
     bloc?.getUserLocation();
-    bloc?.fetchData();
+    bloc?.add(FetchDataEvent());
   }
 
   SelectMapBloc get mapBloc => BlocProvider.of<SelectMapBloc>(context);
@@ -71,7 +73,7 @@ class _SelectMapScreenState
           ),
           onMapCreated: bloc?.onCreated,
           onCameraIdle: () async {
-            bloc?.getMoveCamera();
+            bloc?.add(ChangeListLocationEvent());
           },
         ),
         Positioned(
@@ -143,7 +145,12 @@ class _SelectMapScreenState
 
     return InkWell(
       onTap: () {
-        cartBloc?.addAddress(address, itemMark?.street);
+        cartBloc?.add(
+          AddAddressEvent(
+            address,
+            itemMark?.street ?? '',
+          ),
+        );
         Navigator.popUntil(
           context,
           ModalRoute.withName(RouteNames.HOME),

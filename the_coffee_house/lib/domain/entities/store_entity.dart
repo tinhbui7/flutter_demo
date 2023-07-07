@@ -1,16 +1,16 @@
 import 'package:the_coffee_house/domain/entities/location_entity.dart';
 
 class StoreEntity {
-  int? id;
-  String? puCity;
-  String? name;
-  String? openTime;
-  String? image;
-  String? phone;
-  LocationEntity? location;
-  String? fullAddress;
+  final int? id;
+  final String? puCity;
+  final String? name;
+  final String? openTime;
+  final String? image;
+  final String? phone;
+  final LocationEntity? location;
+  final String? fullAddress;
 
-  StoreEntity({
+  const StoreEntity({
     this.id,
     this.puCity,
     this.name,

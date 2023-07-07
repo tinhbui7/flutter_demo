@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_events.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_dialog/base_dialog_state.dart';
 import 'package:the_coffee_house/app/screens/store_detail/store_detail_bloc.dart';
@@ -29,7 +30,6 @@ class _StoreDetailScreenState extends BaseDialogState<StoreDetailScreen,
     StoreDetailBloc, StoreDetailState> {
   _StoreDetailScreenState(this.controller, this.storeEntity) {
     bloc = StoreDetailBloc();
-    bloc?.fetchData();
   }
 
   final ScrollController controller;
@@ -134,7 +134,7 @@ class _StoreDetailScreenState extends BaseDialogState<StoreDetailScreen,
             padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 30.0),
             child: ElevatedButton(
               onPressed: () {
-                cartBloc?.addStoreAddress(storeEntity);
+                cartBloc?.add(AddStoreAddressEvent(storeEntity));
                 Navigator.pop(context);
               },
               child: Column(

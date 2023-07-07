@@ -1,15 +1,24 @@
 import 'package:the_coffee_house/app/base/base_bloc_state.dart';
 
 class HomeTabState extends BaseBlocState {
-  final String? message;
+  const HomeTabState({
+    this.message = '',
+  });
 
-  HomeTabState({
-    HomeTabState? state,
-    bool? isLoading,
+  final String message;
+
+  @override
+  List<Object> get props {
+    return [
+      message,
+    ];
+  }
+
+  HomeTabState copyWith({
     String? message,
-  })  : message = message ?? state?.message,
-        super(
-          isLoading: isLoading ?? state?.isLoading,
-          timeStamp: DateTime.now().millisecondsSinceEpoch,
-        );
+  }) {
+    return HomeTabState(
+      message: message ?? this.message,
+    );
+  }
 }

@@ -4,46 +4,113 @@ import 'package:the_coffee_house/domain/entities/order_entity.dart';
 import 'package:the_coffee_house/domain/entities/store_entity.dart';
 
 class AddNewBillEvent extends BaseBlocEvent {
-  final OrderEntity? orderEntity;
+  const AddNewBillEvent(
+    this.orderEntity,
+  );
 
-  AddNewBillEvent(this.orderEntity);
+  final OrderEntity orderEntity;
+
+  @override
+  List<Object> get props {
+    return [
+      orderEntity,
+    ];
+  }
 }
 
 class DeleteAllBillEvent extends BaseBlocEvent {}
 
+// @tinh-bui optimize code, there is a sign of the same code as AddNewBillEvent
 class UpdateOrderItemEvent extends BaseBlocEvent {
-  final OrderEntity? orderEntity;
+  const UpdateOrderItemEvent(
+    this.orderEntity,
+  );
 
-  UpdateOrderItemEvent(this.orderEntity);
+  final OrderEntity orderEntity;
+
+  @override
+  List<Object> get props {
+    return [
+      orderEntity,
+    ];
+  }
 }
 
+// @tinh-bui optimize code, there is a sign of the same code as AddNewBillEvent
 class DeleteOrderItemEvent extends BaseBlocEvent {
-  final OrderEntity? orderEntity;
+  const DeleteOrderItemEvent(
+    this.orderEntity,
+  );
 
-  DeleteOrderItemEvent(this.orderEntity);
+  final OrderEntity orderEntity;
+
+  @override
+  List<Object> get props {
+    return [
+      orderEntity,
+    ];
+  }
 }
 
 class AddAddressEvent extends BaseBlocEvent {
-  final String? address;
-  final String? nameStreet;
+  const AddAddressEvent(
+    this.address,
+    this.nameStreet,
+  );
 
-  AddAddressEvent(this.address, this.nameStreet);
+  final String address;
+  final String nameStreet;
+
+  @override
+  List<Object> get props {
+    return [
+      address,
+      nameStreet,
+    ];
+  }
 }
 
 class AddStoreAddressEvent extends BaseBlocEvent {
-  final StoreEntity? storeEntity;
+  const AddStoreAddressEvent(
+    this.storeEntity,
+  );
 
-  AddStoreAddressEvent(this.storeEntity);
+  final StoreEntity storeEntity;
+
+  @override
+  List<Object> get props {
+    return [
+      storeEntity,
+    ];
+  }
 }
 
 class ChangeOrderMethodEvent extends BaseBlocEvent {
-  final OrderTab? activeOrder;
+  final OrderType orderType;
 
-  ChangeOrderMethodEvent(this.activeOrder);
+  const ChangeOrderMethodEvent(
+    this.orderType,
+  );
+
+  @override
+  List<Object> get props {
+    return [
+      orderType,
+    ];
+  }
 }
 
 class ChangeSaveAddressEvent extends BaseBlocEvent {
-  final bool? value;
+  const ChangeSaveAddressEvent(
+    this.value,
+  );
 
-  ChangeSaveAddressEvent(this.value);
+  final bool value;
+
+  @override
+  List<Object> get props {
+    return [
+      value,
+    ];
+  }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/blocs/app/app_bloc.dart';
 import 'package:the_coffee_house/app/blocs/app/app_state.dart';
@@ -25,7 +24,7 @@ class _HomeTabScreenState extends HomeBaseContentLayoutState<HomeTabScreen,
     HomeTabBloc, HomeTabState> {
   _HomeTabScreenState() {
     bloc = HomeTabBloc();
-    bloc?.fetchData();
+    // bloc?.fetchData();
   }
 
   String? get message => state?.message;

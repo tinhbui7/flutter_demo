@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/screens/product_detail/product_detail_bloc.dart';
+import 'package:the_coffee_house/app/screens/product_detail/product_detail_events.dart';
 import 'package:the_coffee_house/app/screens/product_detail/product_detail_state.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -161,7 +162,11 @@ class FooterProductDetail extends StatelessWidget {
                 child: TextButton(
                   onPressed: () {
                     if (note.text != noteProduct) {
-                      productDetailBloc.setNoteProduct(note.text);
+                      productDetailBloc.add(
+                        NoteProductEvent(
+                          note.text,
+                        ),
+                      );
                     }
                     Navigator.of(context).pop();
                   },

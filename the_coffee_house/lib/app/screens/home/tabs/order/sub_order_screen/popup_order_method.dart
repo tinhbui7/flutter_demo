@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_events.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_state.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/routing/app_route.dart';
@@ -59,7 +60,7 @@ void showPopupSelectOrder(context) {
                 height: 0,
               ),
               Container(
-                color: (state.activeOrder == OrderTab.Delivery)
+                color: (state.orderType == OrderType.DELIVERY)
                     ? Color(0xFFFFF7E6)
                     : theme.colorScheme.background,
                 padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -69,9 +70,8 @@ void showPopupSelectOrder(context) {
                     if (state.deliveryEntity == null) {
                       Navigator.of(context).pushNamed(RouteNames.DELIVERY);
                     }
-                    if (state.deliveryEntity != null &&
-                        state.activeOrder != OrderTab.Delivery) {
-                      cartBloc.changeOrderMethod(OrderTab.Delivery);
+                    if (state.orderType != OrderType.DELIVERY) {
+                      cartBloc.add(ChangeOrderMethodEvent(OrderType.DELIVERY));
                       Navigator.pop(context);
                     }
                   },
@@ -82,7 +82,7 @@ void showPopupSelectOrder(context) {
                   ),
                   title: Text(
                     LocaleKeys.button_btnDelivery.tr(),
-                    style: (state.activeOrder == OrderTab.Delivery)
+                    style: (state.orderType == OrderType.DELIVERY)
                         ? theme.textTheme.bodyText2
                             ?.copyWith(color: Colors.black)
                         : theme.textTheme.bodyText2,
@@ -92,7 +92,7 @@ void showPopupSelectOrder(context) {
                     children: [
                       Text(
                         '${state.deliveryEntity?.address ?? LocaleKeys.text_deliveryContent.tr()}',
-                        style: (state.activeOrder == OrderTab.Delivery)
+                        style: (state.orderType == OrderType.DELIVERY)
                             ? theme.textTheme.bodyText2
                                 ?.copyWith(fontSize: 13.5, color: Colors.black)
                             : theme.textTheme.bodyText2
@@ -133,7 +133,7 @@ void showPopupSelectOrder(context) {
                 ),
               ),
               Container(
-                color: (state.activeOrder == OrderTab.Pickup)
+                color: (state.orderType == OrderType.PICKUP)
                     ? Color(0xFFFFF7E6)
                     : theme.colorScheme.background,
                 padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -143,9 +143,11 @@ void showPopupSelectOrder(context) {
                     if (state.storeEntity == null) {
                       _showStoreDetailPopup(context);
                     }
-                    if (state.storeEntity != null &&
-                        state.activeOrder != OrderTab.Pickup) {
-                      cartBloc.changeOrderMethod(OrderTab.Pickup);
+                    if (
+                        state.orderType != OrderType.PICKUP) {
+                      cartBloc.add(
+                        ChangeOrderMethodEvent(OrderType.PICKUP),
+                      );
                       Navigator.pop(context);
                     }
                   },
@@ -156,7 +158,7 @@ void showPopupSelectOrder(context) {
                   ),
                   title: Text(
                     LocaleKeys.button_btnPickup.tr(),
-                    style: (state.activeOrder == OrderTab.Pickup)
+                    style: (state.orderType == OrderType.PICKUP)
                         ? theme.textTheme.bodyText2
                             ?.copyWith(color: Colors.black)
                         : theme.textTheme.bodyText2,
@@ -165,8 +167,8 @@ void showPopupSelectOrder(context) {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '${state.storeEntity?.name ?? LocaleKeys.text_pickupContent.tr()}',
-                        style: (state.activeOrder == OrderTab.Pickup)
+                        '${state.storeEntity.name ?? LocaleKeys.text_pickupContent.tr()}',
+                        style: (state.orderType == OrderType.PICKUP)
                             ? theme.textTheme.bodyText2
                                 ?.copyWith(fontSize: 13.5, color: Colors.black)
                             : theme.textTheme.bodyText2
@@ -175,7 +177,7 @@ void showPopupSelectOrder(context) {
                       ),
                       Text(
                         '0.00 km',
-                        style: (state.activeOrder == OrderTab.Pickup)
+                        style: (state.orderType == OrderType.PICKUP)
                             ? theme.textTheme.bodyText2
                                 ?.copyWith(fontSize: 13.5, color: Colors.black)
                             : theme.textTheme.bodyText2

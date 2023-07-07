@@ -1,9 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_events.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_state.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart';
 import 'package:the_coffee_house/app/screens/cart_detail/sub_cart_screen/cart_payment.dart';
@@ -35,14 +34,14 @@ class _CartScreenState
   @override
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: theme.backgroundColor,
+      backgroundColor: theme.colorScheme.background,
       elevation: 1.0,
       toolbarHeight: MediaQuery.of(context).size.height * .056,
       automaticallyImplyLeading: false,
       centerTitle: true,
       title: Text(
         LocaleKeys.title_orderConfirmation.tr(),
-        style: theme.textTheme.subtitle1,
+        style: theme.textTheme.titleMedium,
       ),
       actions: [
         IconButton(
@@ -60,7 +59,7 @@ class _CartScreenState
   Widget buildContent(BuildContext context) {
     return BlocListener<CartBloc, CartState>(
       listener: (context, state) {
-        if (state.orderEntities?.isEmpty == true) {
+        if (state.orderEntities.isEmpty == true) {
           Navigator.pop(context);
         }
       },
@@ -74,7 +73,7 @@ class _CartScreenState
               color: theme.splashColor,
               child: NotificationListener<OverscrollIndicatorNotification>(
                 onNotification: (overScroll) {
-                  overScroll.disallowGlow();
+                  overScroll.disallowIndicator();
                   return true;
                 },
                 child: BlocProvider<CartBloc>.value(
@@ -91,7 +90,7 @@ class _CartScreenState
                       Padding(
                         padding: const EdgeInsets.only(top: 16.0),
                         child: InkWell(
-                          onTap: () => bloc?.deleteAllBill(),
+                          onTap: () => bloc?.add(DeleteAllBillEvent()),
                           child: Container(
                             color: theme.colorScheme.background,
                             padding: const EdgeInsets.all(15.0),
@@ -105,7 +104,7 @@ class _CartScreenState
                                     padding: const EdgeInsets.only(left: 15.0)),
                                 Text(
                                   LocaleKeys.button_btnDeleteOrder.tr(),
-                                  style: theme.textTheme.bodyText2?.copyWith(
+                                  style: theme.textTheme.bodyMedium?.copyWith(
                                     color: Colors.red,
                                   ),
                                 ),
@@ -147,10 +146,10 @@ class _CartScreenState
                 Row(
                   children: [
                     Text(
-                      (state?.activeOrder == OrderTab.Delivery)
+                      (state?.orderType == OrderType.DELIVERY)
                           ? '${LocaleKeys.button_btnDelivery.tr()} '
                           : '${LocaleKeys.button_btnPickup.tr()} ',
-                      style: theme.textTheme.bodyText2?.copyWith(
+                      style: theme.textTheme.bodyMedium?.copyWith(
                         color: theme.colorScheme.background,
                         fontSize: 16.0,
                       ),
@@ -162,7 +161,7 @@ class _CartScreenState
                     ),
                     Text(
                       ' ${bloc?.totalQuantity} ${LocaleKeys.text_product.tr()}',
-                      style: theme.textTheme.bodyText2?.copyWith(
+                      style: theme.textTheme.bodyMedium?.copyWith(
                         color: theme.colorScheme.background,
                         fontSize: 16.0,
                       ),
@@ -174,7 +173,7 @@ class _CartScreenState
                     locale: 'vi',
                     symbol: 'đ',
                   ).format(bloc?.totalPayment)}',
-                  style: theme.textTheme.subtitle1?.copyWith(
+                  style: theme.textTheme.titleMedium?.copyWith(
                     color: theme.colorScheme.background,
                     fontSize: 16.0,
                   ),
@@ -185,7 +184,7 @@ class _CartScreenState
               onPressed: () {},
               child: Text(
                 LocaleKeys.button_btnOrder.tr().toUpperCase(),
-                style: theme.textTheme.bodyText2?.copyWith(
+                style: theme.textTheme.bodyMedium?.copyWith(
                   color: theme.colorScheme.primary,
                   fontWeight: FontWeight.bold,
                   fontSize: 13.0,

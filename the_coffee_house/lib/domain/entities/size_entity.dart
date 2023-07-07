@@ -1,9 +1,9 @@
 class SizeEntity {
-  String? name;
-  int? extraPay;
-
-  SizeEntity({
+  const SizeEntity({
     this.name,
     this.extraPay,
   });
+
+  final String? name;
+  final int? extraPay;
 }

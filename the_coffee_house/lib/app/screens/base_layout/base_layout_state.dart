@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/base/base_bloc.dart';
+import 'package:the_coffee_house/app/base/base_bloc_events.dart';
 import 'package:the_coffee_house/app/base/base_bloc_state.dart';
 import 'package:the_coffee_house/app/blocs/app/app_bloc.dart';
 import 'package:the_coffee_house/app/blocs/app/app_state.dart';
@@ -125,7 +126,7 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
   Widget buildTitle(BuildContext context) {
     return Text(
       title,
-      style: theme.textTheme.headline6,
+      style: theme.textTheme.titleLarge,
     );
   }
 
@@ -146,7 +147,7 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
       // brightness: theme.brightness,
       leading: buildLeadingWidget(context),
       elevation: appBarLayoutElevation,
-      backgroundColor: theme.backgroundColor,
+      backgroundColor: theme.colorScheme.background,
       actionsIconTheme: IconThemeData(color: theme.colorScheme.onBackground),
       iconTheme: IconThemeData(color: theme.colorScheme.onBackground),
       // textTheme: theme.textTheme,
@@ -207,6 +208,7 @@ abstract class BaseLayoutState<Sf extends StatefulWidget,
   }
 
   refreshData() {
-    bloc?.refreshData();
+    bloc?.add(RefreshEvent());
+
   }
 }

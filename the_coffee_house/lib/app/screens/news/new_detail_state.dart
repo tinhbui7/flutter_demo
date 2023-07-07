@@ -1,10 +1,24 @@
 import 'package:the_coffee_house/app/base/base_bloc_state.dart';
 
 class NewsDetailState extends BaseBlocState {
-  NewsDetailState(
-    NewsDetailState? state,
+  const NewsDetailState({
+    this.isLoading = false,
+  });
+
+  final bool isLoading;
+
+  @override
+  List<Object> get props {
+    return [
+      isLoading,
+    ];
+  }
+
+  NewsDetailState copyWith({
     bool? isLoading,
-  ) : super(
-            isLoading: isLoading ?? state?.isLoading,
-            timeStamp: DateTime.now().millisecondsSinceEpoch);
+  }) {
+    return NewsDetailState(
+      isLoading: isLoading ?? this.isLoading,
+    );
+  }
 }

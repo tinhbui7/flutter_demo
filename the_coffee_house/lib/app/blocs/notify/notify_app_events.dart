@@ -5,5 +5,16 @@ class NotifyAppEvent extends BaseBlocEvent {
   final AppNotifyType type;
   final String message;
 
-  NotifyAppEvent({required this.type, required this.message});
+  const NotifyAppEvent(
+     this.type,
+     this.message,
+  );
+
+  @override
+  List<Object> get props {
+    return [
+      type,
+      message,
+    ];
+  }
 }

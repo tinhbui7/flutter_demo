@@ -3,9 +3,11 @@ import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_events.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_content/home_base_content_layout.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/store/store_tab_bloc.dart';
+import 'package:the_coffee_house/app/screens/home/tabs/store/store_tab_events.dart';
 import 'package:the_coffee_house/app/screens/home/tabs/store/store_tab_state.dart';
 import 'package:the_coffee_house/app/screens/store_detail/store_detail_screen.dart';
 import 'package:the_coffee_house/app/widgets/content/content_empty.dart';
@@ -62,7 +64,7 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
       ),
       actions: [
         InkWell(
-          onTap: () => bloc?.changeMapStore(),
+          onTap: () => bloc?.add(ChangeMapStoreEvent()),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -131,10 +133,17 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
                         itemBuilder: (context, index) {
                           return InkWell(
                             onTap: () {
+                              final item = stores?[index];
+                              if (item == null) {
+                                return;
+                              }
+
                               if (controller == null) {
-                                _showStoreDetailPopup(context, stores![index]);
+                                _showStoreDetailPopup(context, item);
                               } else {
-                                cartBloc?.addStoreAddress(stores?[index]);
+                                cartBloc?.add(
+                                  AddStoreAddressEvent(item),
+                                );
                                 Navigator.popUntil(
                                   context,
                                   ModalRoute.withName('/Home'),
@@ -169,7 +178,7 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
           if (controller == null) {
             _showStoreDetailPopup(context, item);
           } else {
-            cartBloc?.addStoreAddress(item);
+            cartBloc?.add(AddStoreAddressEvent(item));
             Navigator.popUntil(
               context,
               ModalRoute.withName('/Home'),
@@ -252,9 +261,7 @@ class _StoreTabScreenState extends HomeBaseContentLayoutState<StoreTabScreen,
 
   Future _showStoreDetailPopup(BuildContext context, StoreEntity store) {
     var topPadding = 1 -
-        (MediaQueryData.fromWindow(WidgetsBinding.instance.window)
-                .padding
-                .top /
+        (MediaQueryData.fromWindow(WidgetsBinding.instance.window).padding.top /
             MediaQuery.of(context).size.height);
     return showModalBottomSheet(
       context: context,

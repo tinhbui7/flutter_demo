@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/blocs/app/app_bloc.dart';
+import 'package:the_coffee_house/app/blocs/app/app_events.dart';
 import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/screens/home/home_bloc.dart';
 import 'package:the_coffee_house/app/widgets/buttons/tab_other_button.dart';
@@ -74,7 +75,7 @@ class AccountSection extends StatelessWidget {
                   onPressed: () {
                     AppBloc appBloc = BlocProvider.of<AppBloc>(context);
                     HomeScreenBloc homeBloc = BlocProvider.of<HomeScreenBloc>(context);
-                    appBloc.changeLoginStatus(false);
+                    appBloc.add(ChangeLoginStatusEvent(false));
                     homeBloc.onItemTab();
                   },
                 ),

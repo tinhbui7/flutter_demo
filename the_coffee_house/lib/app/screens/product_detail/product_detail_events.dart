@@ -2,27 +2,70 @@ import 'package:the_coffee_house/app/base/base_bloc_events.dart';
 import 'package:the_coffee_house/domain/entities/entities.dart';
 
 class SelectedSizeEvent extends BaseBlocEvent {
-  final SizeEntity? itemSize;
+  const SelectedSizeEvent(
+    this.itemSize,
+  );
 
-  SelectedSizeEvent(this.itemSize);
+  final SizeEntity itemSize;
+
+  @override
+  List<Object> get props {
+    return [
+      itemSize,
+    ];
+  }
 }
 
 class SelectedToppingEvent extends BaseBlocEvent {
-  final ToppingEntity? itemTopping;
+  const SelectedToppingEvent(
+    this.itemTopping,
+  );
 
-  SelectedToppingEvent(this.itemTopping);
+  final ToppingEntity itemTopping;
+
+  @override
+  List<Object> get props {
+    return [
+      itemTopping,
+    ];
+  }
 }
 
 class NoteProductEvent extends BaseBlocEvent {
-  final String? noteProduct;
+  const NoteProductEvent(
+    this.noteProduct,
+  );
 
-  NoteProductEvent(this.noteProduct);
+  final String noteProduct;
+
+  @override
+  List<Object> get props {
+    return [
+      noteProduct,
+    ];
+  }
 }
 
-class IncrementQuantityEvent extends BaseBlocEvent {}
+class IncrementQuantityEvent extends BaseBlocEvent {
+  const IncrementQuantityEvent();
+
+  @override
+  List<Object> get props {
+    return [];
+  }
+}
 
 class DecrementQuantityEvent extends BaseBlocEvent {
+  const DecrementQuantityEvent(
+    this.isOrder,
+  );
+
   final bool isOrder;
 
-  DecrementQuantityEvent(this.isOrder);
+  @override
+  List<Object> get props {
+    return [
+      isOrder,
+    ];
+  }
 }

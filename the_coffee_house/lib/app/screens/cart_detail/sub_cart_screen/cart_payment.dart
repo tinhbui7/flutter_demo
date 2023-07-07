@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 
 class CartPayment extends StatelessWidget {
-  const CartPayment({Key? key}) : super(key: key);
+  const CartPayment({Key? key})
+      : super(
+          key: key,
+        );
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class CartPayment extends StatelessWidget {
           children: [
             Text(
               LocaleKeys.title_payment.tr(),
-              style: theme.textTheme.subtitle2
+              style: theme.textTheme.titleSmall
                   ?.copyWith(fontSize: 17.0, fontWeight: FontWeight.w500),
             ),
             Padding(
@@ -29,8 +31,8 @@ class CartPayment extends StatelessWidget {
                 children: [
                   Text(
                     LocaleKeys.button_btnPaymentMethod.tr(),
-                    style: theme.textTheme.bodyText2
-                        ?.copyWith(color: theme.accentColor),
+                    style: theme.textTheme.bodyMedium
+                        ?.copyWith(color: theme.colorScheme.secondary),
                   ),
                   Icon(
                     Icons.arrow_forward_ios,

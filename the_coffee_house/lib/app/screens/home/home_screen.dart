@@ -42,73 +42,77 @@ class _HomeScreenState
 
   @override
   AppBar? buildAppBar(BuildContext context) {
-    return (activeTab == HomeTab.Home)
-        ? AppBar(
-            backgroundColor: Color(0xFFFFF7E6),
-            elevation: 0,
-            actions: buildHeaderActions(context),
-            title: Row(
-              children: [
-                Image.asset(
-                  Assets.iconNight,
-                  fit: BoxFit.cover,
-                  scale: 2.5,
-                ),
-                Padding(padding: const EdgeInsets.only(left: 10.0)),
-                BlocBuilder<AppBloc, AppState>(
-                  builder: (context, state) {
-                    return Text(
-                      state.isLogin == true
-                          ? 'Chào buổi tối, Tính'
-                          : 'Chào bạn mới',
-                      style: theme.textTheme.subtitle2
-                          ?.copyWith(fontSize: 15.0, color: Colors.black),
-                    );
-                  },
-                ),
-              ],
-            ),
-          )
-        : (activeTab == HomeTab.Order)
-            ? AppBar(
-                backgroundColor: theme.colorScheme.background,
-                elevation: 0,
-                title: InkWell(
-                  onTap: () {
-                    showPopupSelectOrder(context);
-                  },
-                  child: BlocBuilder<CartBloc, CartState>(
-                    builder: (context, state) {
-                      return Container(
-                        child: (state.activeOrder == OrderTab.Delivery)
-                            ? _buildSelectOrder(
-                                Assets.deliveryIcon,
-                                LocaleKeys.title_deliveredTo.tr(),
-                                '${state.deliveryEntity?.address ?? LocaleKeys.text_deliveryContent.tr()}',
-                              )
-                            : _buildSelectOrder(
-                                Assets.pickupIcon,
-                                LocaleKeys.title_comePickupAt.tr(),
-                                '${state.storeEntity?.name ?? LocaleKeys.text_pickupContent.tr()}',
-                              ),
-                      );
-                    },
-                  ),
-                ),
-              )
-            : AppBar(
-                backgroundColor: theme.backgroundColor,
-                elevation: 0,
-                title: Text(
-                  activeTab == HomeTab.Store
-                      ? LocaleKeys.button_btnStore.tr()
-                      : activeTab == HomeTab.Point
-                          ? LocaleKeys.button_btnPoint.tr()
-                          : LocaleKeys.button_btnOther.tr(),
-                  style: theme.textTheme.subtitle2?.copyWith(fontSize: 20.0),
-                ),
-                actions: buildHeaderActions(context),
+    AppBar appBar = AppBar(
+      backgroundColor: Color(0xFFFFF7E6),
+      elevation: 0,
+      actions: buildHeaderActions(context),
+      title: Row(
+        children: [
+          Image.asset(
+            Assets.iconNight,
+            fit: BoxFit.cover,
+            scale: 2.5,
+          ),
+          Padding(padding: const EdgeInsets.only(left: 10.0)),
+          BlocBuilder<AppBloc, AppState>(
+            builder: (context, state) {
+              return Text(
+                state.isLogin == true
+                    ? 'Chào buổi tối, Tính'
+                    : 'Chào bạn mới',
+                style: theme.textTheme.subtitle2
+                    ?.copyWith(fontSize: 15.0, color: Colors.black),
               );
+            },
+          ),
+        ],
+      ),
+    );
+
+    if (activeTab == HomeTab.Order) {
+      appBar = AppBar(
+        backgroundColor: theme.colorScheme.background,
+        elevation: 0,
+        title: InkWell(
+          onTap: () {
+            showPopupSelectOrder(context);
+          },
+          child: BlocBuilder<CartBloc, CartState>(
+            builder: (context, state) {
+              return Container(
+                child: (state.orderType == OrderType.DELIVERY)
+                    ? _buildSelectOrder(
+                  Assets.deliveryIcon,
+                  LocaleKeys.title_deliveredTo.tr(),
+                  '${state.deliveryEntity.address ?? LocaleKeys.text_deliveryContent.tr()}',
+                )
+                    : _buildSelectOrder(
+                  Assets.pickupIcon,
+                  LocaleKeys.title_comePickupAt.tr(),
+                  '${state.storeEntity.name ?? LocaleKeys.text_pickupContent.tr()}',
+                ),
+              );
+            },
+          ),
+        ),
+      );
+    } else if (activeTab != HomeTab.Home) {
+      appBar = AppBar(
+        backgroundColor: theme.backgroundColor,
+        elevation: 0,
+        title: Text(
+          activeTab == HomeTab.Store
+              ? LocaleKeys.button_btnStore.tr()
+              : activeTab == HomeTab.Point
+              ? LocaleKeys.button_btnPoint.tr()
+              : LocaleKeys.button_btnOther.tr(),
+          style: theme.textTheme.subtitle2?.copyWith(fontSize: 20.0),
+        ),
+        actions: buildHeaderActions(context),
+      );
+    }
+
+    return appBar;
   }
 
   @override
@@ -172,7 +176,7 @@ class _HomeScreenState
   @override
   BottomNavigationBar buildBottomBar(BuildContext context) {
     return BottomNavigationBar(
-      items: <BottomNavigationBarItem>[
+      items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.home_outlined),
           label: LocaleKeys.button_btnHome.tr(),

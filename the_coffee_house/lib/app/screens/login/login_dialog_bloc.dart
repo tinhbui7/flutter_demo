@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/base/base_bloc.dart';
-import 'package:the_coffee_house/app/base/base_bloc_events.dart';
 import 'package:the_coffee_house/app/screens/login/login_dialog_events.dart';
 
 import 'login_dialog_state.dart';
@@ -9,49 +8,21 @@ class LoginDialogBloc extends BaseBloc<LoginDialogState> {
   @override
   String get tag => 'LoginDialogBloc';
 
-  LoginDialogBloc()
-      : super(LoginDialogState(
-          isLoading: false,
-          isCheckInput: false,
-        ));
-
-  @override
-  Stream<LoginDialogState> mapEventToState(BaseBlocEvent event) async* {
-    if (event is CheckPhoneNumberEvent) {
-      yield* _checkPhoneNumberState(event);
-    } else {
-      yield* super.mapEventToState(event);
-    }
+  LoginDialogBloc() : super(LoginDialogState()) {
+    on<CheckPhoneNumberEvent>(_checkPhoneNumber);
   }
 
-  Stream<LoginDialogState> _checkPhoneNumberState(
+  void _checkPhoneNumber(
     CheckPhoneNumberEvent event,
-  ) async* {
-    yield LoginDialogState(
-      state: state,
-      isCheckInput: (event.phoneNumber.length == 10 &&
-          int.tryParse(event.phoneNumber) != null),
-    );
-  }
+    Emitter<LoginDialogState> emit,
+  ) {
+    var isCheckInput = false;
 
-  @protected
-  @override
-  Stream<LoginDialogState> fetchDataState(FetchDataEvent event) async* {
-    yield LoginDialogState(
-      state: state,
-      isLoading: false,
-    );
-  }
+    if (event.phoneNumber.length == 10 &&
+        int.tryParse(event.phoneNumber) != null) {
+      isCheckInput = true;
+    }
 
-  @override
-  Stream<LoginDialogState> refreshState(RefreshEvent event) async* {
-    yield LoginDialogState(
-      state: state,
-      isLoading: !(event.refresh == true),
-    );
-  }
-
-  checkPhoneNumber(String text) {
-    add(CheckPhoneNumberEvent(text));
+    emit(state.copyWith(isCheckInput: isCheckInput));
   }
 }

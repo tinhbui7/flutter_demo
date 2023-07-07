@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
@@ -22,7 +21,7 @@ class CartTotalPayment extends StatelessWidget {
           children: [
             Text(
               LocaleKeys.title_total.tr(),
-              style: theme.textTheme.subtitle2
+              style: theme.textTheme.titleSmall
                   ?.copyWith(fontSize: 17.0, fontWeight: FontWeight.w500),
             ),
             Padding(
@@ -49,8 +48,8 @@ class CartTotalPayment extends StatelessWidget {
                 children: [
                   Text(
                     LocaleKeys.button_btnChoosePromotion.tr(),
-                    style: theme.textTheme.bodyText2
-                        ?.copyWith(color: theme.accentColor),
+                    style: theme.textTheme.bodyMedium
+                        ?.copyWith(color: theme.colorScheme.secondary),
                   ),
                   Icon(
                     Icons.arrow_forward_ios,
@@ -71,14 +70,14 @@ class CartTotalPayment extends StatelessWidget {
                 children: [
                   Text(
                     LocaleKeys.title_paymentAmount.tr(),
-                    style: theme.textTheme.subtitle2?.copyWith(fontSize: 15.0),
+                    style: theme.textTheme.titleSmall?.copyWith(fontSize: 15.0),
                   ),
                   Text(
                     '${NumberFormat.currency(
                       locale: 'vi',
                       symbol: 'đ',
                     ).format(cartBloc.totalPayment)}',
-                    style: theme.textTheme.subtitle2?.copyWith(fontSize: 15.0),
+                    style: theme.textTheme.titleSmall?.copyWith(fontSize: 15.0),
                   ),
                 ],
               ),

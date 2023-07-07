@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:the_coffee_house/app/base/base_bloc_events.dart';
 import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart';
 import 'package:the_coffee_house/app/screens/delivery_address/delivery_address_bloc.dart';
@@ -18,7 +18,7 @@ class _DeliveryAddressScreenState extends BaseLayoutState<DeliveryAddressScreen,
     DeliveryAddressBloc, DeliveryAddressState> {
   _DeliveryAddressScreenState() {
     bloc = DeliveryAddressBloc();
-    bloc?.fetchData();
+    bloc?.add(FetchDataEvent());
   }
 
   @override
@@ -27,7 +27,7 @@ class _DeliveryAddressScreenState extends BaseLayoutState<DeliveryAddressScreen,
       padding: EdgeInsets.only(right: MediaQuery.of(context).size.width * .035),
       child: TextField(
         maxLines: 1,
-        style: theme.textTheme.bodyText2?.copyWith(
+        style: theme.textTheme.bodyMedium?.copyWith(
           fontSize: 17.0,
           color: theme.unselectedWidgetColor,
         ),
@@ -58,7 +58,7 @@ class _DeliveryAddressScreenState extends BaseLayoutState<DeliveryAddressScreen,
           Padding(padding: const EdgeInsets.only(top: 15)),
           Container(
             height: MediaQuery.of(context).size.height * .065,
-            color: theme.backgroundColor,
+            color: theme.colorScheme.background,
             child: ListTile(
               leading: Icon(
                 Icons.map,
@@ -66,7 +66,7 @@ class _DeliveryAddressScreenState extends BaseLayoutState<DeliveryAddressScreen,
               ),
               title: Text(
                 LocaleKeys.title_selectMap.tr(),
-                style: theme.textTheme.bodyText1,
+                style: theme.textTheme.bodyLarge,
               ),
               trailing: Icon(
                 Icons.navigate_next,

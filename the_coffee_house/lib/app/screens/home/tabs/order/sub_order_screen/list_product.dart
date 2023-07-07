@@ -65,24 +65,28 @@ class ListProduct extends StatelessWidget {
           ),
         ),
         products.isNotEmpty == true
-            ? ListView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: products.length,
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: () => showProductDetailPopup(
-                        context,
-                        OrderEntity(
+            ? SlidableAutoCloseBehavior(
+                closeWhenOpened: true,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: products.length,
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () => showProductDetailPopup(
+                          context,
+                          OrderEntity(
                             orderId: DateTime.now().millisecondsSinceEpoch,
-                            product: products[index]),
-                        false),
-                    child: _buildProductItems(
-                      context,
-                      products[index],
-                    ),
-                  );
-                },
+                            product: products[index],
+                          ),
+                          false),
+                      child: _buildProductItems(
+                        context,
+                        products[index],
+                      ),
+                    );
+                  },
+                ),
               )
             : ContentEmpty(),
       ],
@@ -92,11 +96,11 @@ class ListProduct extends StatelessWidget {
   Widget _buildProductItems(BuildContext context, ProductEntity item) {
     ThemeData theme = Theme.of(context);
     return Slidable(
-      actionPane: SlidableBehindActionPane(),
-      secondaryActions: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(12.0, 25.0, 5.0, 25.0),
-          child: SlideAction(
+      endActionPane: ActionPane(
+        motion: const BehindMotion(),
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(12.0, 25.0, 5.0, 25.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -116,13 +120,9 @@ class ListProduct extends StatelessWidget {
                 ),
               ],
             ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-              color: Colors.orangeAccent,
-            ),
           ),
-        ),
-      ],
+        ],
+      ),
       child: Card(
         elevation: 0.3,
         shape: const RoundedRectangleBorder(

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart';
 import 'package:the_coffee_house/app/screens/news/new_detail_state.dart';
@@ -68,30 +67,36 @@ class _NewsDetailScreenState
 
   @override
   Widget buildContent(BuildContext context) {
-    return WebView(
-      initialUrl: blogUrl,
-      javascriptMode: JavascriptMode.unrestricted,
-      onWebViewCreated: (WebViewController webViewController) {
-        _webViewController = webViewController;
-        _controller.complete(webViewController);
-      },
-      onPageStarted: (String url) {
-        print('Page started loading: $url');
-      },
-      onPageFinished: (String url) {
-        print('Page finished loading: $url');
-
-        // Removes header and footer from page
-        _webViewController
-            .evaluateJavascript("javascript:(function() { " +
-                "var head = document.getElementsByTagName('header')[0];" +
-                "head.parentNode.removeChild(head);" +
-                "var footer = document.getElementsByTagName('footer')[0];" +
-                "footer.parentNode.removeChild(footer);" +
-                "})()")
-            .then((value) => debugPrint('Page finished loading Javascript'))
-            .catchError((onError) => debugPrint('$onError'));
-      },
+    _loadWebContent();
+    return WebViewWidget(
+      // initialUrl: blogUrl,
+      // javascriptMode: JavascriptMode.unrestricted,
+      // onWebViewCreated: (WebViewController webViewController) {
+      //   _webViewController = webViewController;
+      //   _controller.complete(webViewController);
+      // },
+      // onPageStarted: (String url) {
+      //   print('Page started loading: $url');
+      // },
+      // onPageFinished: (String url) {
+      //   print('Page finished loading: $url');
+      //
+      //   // Removes header and footer from page
+      //   _webViewController
+      //       .evaluateJavascript("javascript:(function() { " +
+      //           "var head = document.getElementsByTagName('header')[0];" +
+      //           "head.parentNode.removeChild(head);" +
+      //           "var footer = document.getElementsByTagName('footer')[0];" +
+      //           "footer.parentNode.removeChild(footer);" +
+      //           "})()")
+      //       .then((value) => debugPrint('Page finished loading Javascript'))
+      //       .catchError((onError) => debugPrint('$onError'));
+      // },
+      controller: _webViewController,
     );
+  }
+
+  _loadWebContent() async {
+    _webViewController.loadRequest(Uri.parse(blogUrl));
   }
 }

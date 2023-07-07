@@ -2,14 +2,24 @@ import 'package:geocoding/geocoding.dart';
 import 'package:the_coffee_house/app/base/base_bloc_state.dart';
 
 class SelectMapState extends BaseBlocState {
-  final List<Placemark>? placeMarks;
-  SelectMapState({
-    SelectMapState? state,
-    bool? isLoading,
+  const SelectMapState({
+    this.placeMarks = const <Placemark>[],
+  });
+
+  final List<Placemark> placeMarks;
+
+  @override
+  List<Object> get props {
+    return [
+      placeMarks,
+    ];
+  }
+
+  SelectMapState copyWith({
     List<Placemark>? placeMarks,
-  })  : placeMarks = placeMarks ?? state?.placeMarks,
-        super(
-          isLoading: isLoading ?? state?.isLoading,
-          timeStamp: DateTime.now().millisecondsSinceEpoch,
-        );
+  }) {
+    return SelectMapState(
+      placeMarks: placeMarks ?? this.placeMarks,
+    );
+  }
 }

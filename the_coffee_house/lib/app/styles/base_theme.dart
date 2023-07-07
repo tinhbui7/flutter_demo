@@ -67,40 +67,24 @@ abstract class BaseAppTheme extends ThemeByViewPort {
       platform: defaultTargetPlatform == TargetPlatform.iOS
           ? TargetPlatform.iOS
           : TargetPlatform.android,
-      accentColor: accentColor1,
-      accentColorBrightness: Brightness.dark,
       scaffoldBackgroundColor: backgroundColor,
-      backgroundColor: backgroundColor,
       primaryColor: primaryColor,
       primaryColorDark: kColorPrimaryDark,
       primaryColorLight: kColorPrimaryLight,
-      errorColor: kColorRed,
-      toggleableActiveColor: kColorPrimary,
       disabledColor: disabledColor,
       unselectedWidgetColor: kColorGray,
       highlightColor: kColorGrayLight3,
-      bottomAppBarColor: kColorWhite,
       hintColor: hintColor,
       splashColor: kColorGrayBareA1,
       cardColor: kColorWhite,
       canvasColor: kColorTransparent,
       dividerColor: kColorGrayLight,
-      buttonColor: buttonColor,
       indicatorColor: kColorGrayLight,
       inputDecorationTheme: theme.inputDecorationTheme,
       iconTheme: theme.iconTheme.copyWith(color: kColorBlack, size: 23),
-      accentIconTheme: theme.accentIconTheme.copyWith(
-        color: kColorWhite,
-        size: 23,
-      ),
       primaryIconTheme: theme.primaryIconTheme.copyWith(
         color: kColorWhite,
         size: 23,
-      ),
-      accentTextTheme: theme.accentTextTheme.copyWith(
-        button: theme.accentTextTheme.button?.copyWith(color: kColorWhite),
-        headline6: theme.accentTextTheme.button?.copyWith(color: kColorWhite),
-        bodyText2: theme.accentTextTheme.button?.copyWith(color: kColorWhite),
       ),
       textTheme: theme.textTheme.copyWith(
         // MD-headline1
@@ -291,7 +275,56 @@ abstract class BaseAppTheme extends ThemeByViewPort {
       ),
       chipTheme: buildChipTheme(theme),
       buttonTheme: buildButtonTheme(theme),
-      colorScheme: buildColorScheme(theme),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
+          if (states.contains(MaterialState.disabled)) {
+            return null;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return kColorPrimary;
+          }
+          return null;
+        }),
+      ),
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
+          if (states.contains(MaterialState.disabled)) {
+            return null;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return kColorPrimary;
+          }
+          return null;
+        }),
+      ),
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
+          if (states.contains(MaterialState.disabled)) {
+            return null;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return kColorPrimary;
+          }
+          return null;
+        }),
+        trackColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
+          if (states.contains(MaterialState.disabled)) {
+            return null;
+          }
+          if (states.contains(MaterialState.selected)) {
+            return kColorPrimary;
+          }
+          return null;
+        }),
+      ),
+      bottomAppBarTheme: BottomAppBarTheme(color: kColorWhite),
+      colorScheme: buildColorScheme(theme)
+          ?.copyWith(background: backgroundColor)
+          .copyWith(error: kColorRed),
     );
   }
 

@@ -1,14 +1,24 @@
 import 'package:the_coffee_house/app/base/base_bloc_state.dart';
 
 class LoginDialogState extends BaseBlocState {
-  final bool? isCheckInput;
-  LoginDialogState({
-    LoginDialogState? state,
-    bool? isLoading,
+  const LoginDialogState({
+    this.isCheckInput = false,
+  });
+
+  final bool isCheckInput;
+
+  @override
+  List<Object> get props {
+    return [
+      isCheckInput,
+    ];
+  }
+
+  LoginDialogState copyWith({
     bool? isCheckInput,
-  })  : isCheckInput = isCheckInput ?? state?.isCheckInput,
-        super(
-          isLoading: isLoading ?? state?.isLoading,
-          timeStamp: DateTime.now().millisecondsSinceEpoch,
-        );
+  }) {
+    return LoginDialogState(
+      isCheckInput: isCheckInput ?? this.isCheckInput,
+    );
+  }
 }

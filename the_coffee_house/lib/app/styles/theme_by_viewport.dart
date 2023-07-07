@@ -92,9 +92,9 @@ abstract class ThemeByViewPort {
       iconTheme: base.iconTheme.copyWith(
         size: 23 * scale,
       ),
-      accentIconTheme: base.accentIconTheme.copyWith(
-        size: 23 * scale,
-      ),
+      // accentIconTheme: base.accentIconTheme.copyWith(
+      //   size: 23 * scale,
+      // ),
       primaryIconTheme: base.primaryIconTheme.copyWith(
         size: 23 * scale,
       ),

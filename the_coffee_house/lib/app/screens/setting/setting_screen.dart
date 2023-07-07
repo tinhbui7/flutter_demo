@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:the_coffee_house/app/base/base_bloc_events.dart';
+import 'package:the_coffee_house/app/blocs/app/app_events.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_layout_state.dart';
 import 'package:the_coffee_house/app/screens/setting/setting_bloc.dart';
@@ -20,7 +21,7 @@ class _SettingScreenState extends BaseLayoutState<SettingScreen,
     SettingScreenBloc, SettingScreenState> {
   _SettingScreenState() {
     bloc = SettingScreenBloc();
-    bloc?.fetchData();
+    bloc?.add(FetchDataEvent());
   }
 
   @override
@@ -123,11 +124,11 @@ class _SettingScreenState extends BaseLayoutState<SettingScreen,
                           theme.textTheme.bodyText2?.copyWith(fontSize: 15.0),
                     ),
                     onChanged: (bool value) {
-                      appBloc?.changeAppTheme(
+                      appBloc?.add(ChangeAppThemeEvent(
                         appTheme == ThemeType.Dark
                             ? ThemeType.Light
                             : ThemeType.Dark,
-                      );
+                      ),);
                     },
                     value: appTheme == ThemeType.Dark ? true : false,
                     activeColor: theme.colorScheme.primary,

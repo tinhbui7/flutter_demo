@@ -1,20 +1,45 @@
-abstract class BaseBlocEvent {
-  BaseBlocEvent();
+import 'package:equatable/equatable.dart';
+
+abstract class BaseBlocEvent extends Equatable {
+  const BaseBlocEvent();
 
   @override
   String toString() => "BaseBlocEvent";
+
+  @override
+  List<Object?> get props {
+    return [];
+  }
 }
 
 class FetchDataEvent extends BaseBlocEvent {
   final bool? refresh;
 
-  FetchDataEvent(this.refresh);
+  const FetchDataEvent({
+    this.refresh,
+  });
+
+  @override
+  List<Object?> get props {
+    return [
+      refresh,
+    ];
+  }
 }
 
 class RefreshEvent extends BaseBlocEvent {
   final bool? refresh;
 
-  RefreshEvent(this.refresh);
+  const RefreshEvent({
+    this.refresh,
+  });
+
+  @override
+  List<Object?> get props {
+    return [
+      refresh,
+    ];
+  }
 }
 
 class LoadNextBatchEvent extends BaseBlocEvent {}

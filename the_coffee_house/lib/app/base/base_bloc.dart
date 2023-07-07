@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:the_coffee_house/app/base/base_bloc_events.dart';
 import 'package:the_coffee_house/app/base/base_bloc_state.dart';
 import 'package:the_coffee_house/app/blocs/notify/notify_app_bloc.dart';
+import 'package:the_coffee_house/app/blocs/notify/notify_app_events.dart';
 import 'package:the_coffee_house/app/blocs/notify/notify_app_state.dart';
 import 'package:the_coffee_house/core/helpers/logger/logger_i.dart';
 import 'package:the_coffee_house/domain/usecases/local_storage/local_storage_service_i.dart';
@@ -12,7 +13,10 @@ abstract class BaseBloc<S extends BaseBlocState>
     extends Bloc<BaseBlocEvent, S> {
   String get tag;
 
-  BaseBloc(S initialState) : super(initialState);
+  BaseBloc(S initialState) : super(initialState) {
+    on<FetchDataEvent>(fetchDataState);
+    on<RefreshEvent>(refreshState);
+  }
 
   bool get isContentEmpty => false;
 
@@ -22,40 +26,43 @@ abstract class BaseBloc<S extends BaseBlocState>
   ILocalStorageService get localStorageService =>
       getIt.get<ILocalStorageService>();
 
-  Stream<S> fetchDataState(FetchDataEvent event) async* {}
+  Stream<S> fetchDataState(
+    FetchDataEvent event,
+    Emitter<S> emit,
+  ) async* {}
 
-  Stream<S> refreshState(RefreshEvent event) async* {}
+  Stream<S> refreshState(
+    RefreshEvent event,
+    Emitter<S> emit,
+  ) async* {}
 
-  @override
-  Stream<S> mapEventToState(BaseBlocEvent event) async* {
-    if (event is FetchDataEvent) {
-      yield* fetchDataState(event);
-    } else if (event is RefreshEvent) {
-      yield* refreshState(event);
-    }
+  log(
+    String tag,
+    dynamic data,
+  ) {
+    _logger?.log(
+      tag,
+      data,
+    );
   }
 
-  fetchData({bool? refresh}) {
-    add(FetchDataEvent(refresh));
-  }
-
-  refreshData({bool? refresh}) {
-    add(RefreshEvent(refresh));
-  }
-
-  log(String tag, dynamic data) {
-    _logger?.log(tag, data);
-  }
-
-  logError(String tag, dynamic data) {
-    _logger?.logError(tag, data);
+  logError(
+    String tag,
+    dynamic data,
+  ) {
+    _logger?.logError(
+      tag,
+      data,
+    );
   }
 
   @protected
   handleException(ex) {
-    notifyAppBloc.notify(
-      type: AppNotifyType.ERROR,
-      message: 'Network timeout',
+    notifyAppBloc.add(
+      NotifyAppEvent(
+        AppNotifyType.ERROR,
+        'Network timeout',
+      ),
     );
   }
 }

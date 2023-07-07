@@ -1,17 +1,26 @@
 import 'package:the_coffee_house/app/base/base_bloc_state.dart';
 
 class HomeScreenState extends BaseBlocState {
-  final HomeTab? activeTab;
+  const HomeScreenState({
+    this.activeTab = HomeTab.Home,
+  });
 
-  HomeScreenState({
-    HomeScreenState? state,
-    bool? isLoading,
+  final HomeTab activeTab;
+
+  @override
+  List<Object> get props {
+    return [
+      activeTab,
+    ];
+  }
+
+  HomeScreenState copyWith({
     HomeTab? activeTab,
-  })  : activeTab = activeTab ?? state?.activeTab,
-        super(
-          isLoading: isLoading ?? state?.isLoading,
-          timeStamp: DateTime.now().millisecondsSinceEpoch,
-        );
+  }) {
+    return HomeScreenState(
+      activeTab: activeTab ?? this.activeTab,
+    );
+  }
 }
 
 enum HomeTab {

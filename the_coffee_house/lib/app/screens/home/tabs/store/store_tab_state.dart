@@ -2,17 +2,29 @@ import 'package:the_coffee_house/app/base/base_bloc_state.dart';
 import 'package:the_coffee_house/domain/entities/store_entity.dart';
 
 class StoreTabState extends BaseBlocState {
-  final List<StoreEntity>? stores;
-  final bool? isMapStore;
-  StoreTabState({
-    StoreTabState? state,
-    bool? isLoading,
+  const StoreTabState({
+    this.stores = const <StoreEntity>[],
+    this.isMapStore = false,
+  });
+
+  final List<StoreEntity> stores;
+  final bool isMapStore;
+
+  @override
+  List<Object> get props {
+    return [
+      stores,
+      isMapStore,
+    ];
+  }
+
+  StoreTabState copyWith({
     List<StoreEntity>? stores,
     bool? isMapStore,
-  })  : stores = stores ?? state?.stores,
-        isMapStore = isMapStore ?? state?.isMapStore,
-        super(
-          isLoading: isLoading ?? state?.isLoading,
-          timeStamp: DateTime.now().millisecondsSinceEpoch,
-        );
+  }) {
+    return StoreTabState(
+      stores: stores ?? this.stores,
+      isMapStore: isMapStore ?? this.isMapStore,
+    );
+  }
 }

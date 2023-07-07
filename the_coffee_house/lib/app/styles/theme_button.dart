@@ -42,7 +42,7 @@ class ThemeButton {
       ),
       iconTheme:
           _theme.iconTheme.copyWith(color: _theme.colorScheme.onSecondary),
-      backgroundColor: _theme.accentColor,
+      backgroundColor: _theme.hintColor,
     );
   }
 
@@ -56,7 +56,7 @@ class ThemeButton {
         ),
       ),
       iconTheme: _theme.iconTheme.copyWith(
-        color: _theme.accentColor,
+        color: _theme.hintColor,
       ),
       backgroundColor: _theme.colorScheme.background,
     );

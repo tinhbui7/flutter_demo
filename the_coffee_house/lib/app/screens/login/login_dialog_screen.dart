@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:the_coffee_house/app/blocs/app/app_events.dart';
 import 'package:the_coffee_house/app/constants/assets.dart';
 import 'package:the_coffee_house/app/routing/app_route.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_dialog/base_dialog_state.dart';
@@ -15,6 +16,8 @@ import 'package:the_coffee_house/app/widgets/buttons/app_elevated_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:the_coffee_house/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
+
+import 'login_dialog_events.dart';
 
 class LoginDialogScreen extends StatefulWidget {
   const LoginDialogScreen({Key? key}) : super(key: key);
@@ -74,7 +77,7 @@ class _LoginDialogState extends BaseDialogState<LoginDialogScreen,
                   ),
                   Padding(padding: const EdgeInsets.only(top: 35)),
                   LoginTextField((text) {
-                    bloc?.checkPhoneNumber(text);
+                    bloc?.add(CheckPhoneNumberEvent(text));
                     textInput = text;
                   }),
                   Padding(padding: const EdgeInsets.only(top: 15)),
@@ -86,7 +89,7 @@ class _LoginDialogState extends BaseDialogState<LoginDialogScreen,
                       contentButton: LocaleKeys.button_btnLogin.tr(),
                       onPressed: () {
                         if (isCheckInput) {
-                          appBloc?.changeLoginStatus(true);
+                          appBloc?.add(ChangeLoginStatusEvent(true));
                           Navigator.of(context).pop(RouteNames.HOME);
                         }
                       },

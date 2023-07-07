@@ -1,8 +1,8 @@
 class DeliveryEntity {
-  String? street;
-  String? address;
+  final String? street;
+  final String? address;
 
-  DeliveryEntity({
+  const DeliveryEntity({
     this.street,
     this.address,
   });

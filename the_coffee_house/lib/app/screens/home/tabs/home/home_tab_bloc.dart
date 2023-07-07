@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/base/base_bloc.dart';
 import 'package:the_coffee_house/app/base/base_bloc_events.dart';
 
@@ -11,53 +12,52 @@ class HomeTabBloc extends BaseBloc<HomeTabState> {
 
   final _messageKey = 'message';
 
-  HomeTabBloc() : super(HomeTabState(isLoading: false));
-
-  @override
-  Stream<HomeTabState> mapEventToState(BaseBlocEvent event) async* {
-    if (event is SaveMessageEvent) {
-      yield* _saveMessageState(event);
-    } else {
-      yield* super.mapEventToState(event);
-    }
+  HomeTabBloc() : super(HomeTabState()) {
+    on<SaveMessageEvent>(_saveMessage);
   }
 
-  Stream<HomeTabState> _saveMessageState(SaveMessageEvent event) async* {
+  Stream<HomeTabState> _saveMessage(
+    SaveMessageEvent event,
+    Emitter<HomeTabState> emit,
+  ) async* {
     try {
       await localStorageService.set(_messageKey, event.message);
     } catch (ex) {
       handleException(ex);
       logError(tag, 'saveMessageState: ${ex.toString()}');
     }
-    fetchData(refresh: true);
+    // fetchData(refresh: true);
   }
 
   @protected
   @override
-  Stream<HomeTabState> fetchDataState(FetchDataEvent event) async* {
-    String? message;
+  Stream<HomeTabState> fetchDataState(
+    FetchDataEvent event,
+    Emitter<HomeTabState> emit,
+  ) async* {
+    String message = '';
     try {
       message = await localStorageService.get(_messageKey);
     } catch (ex) {
       handleException(ex);
       logError(tag, 'fetchDataState getMessage: ${ex.toString()}');
     }
-    yield HomeTabState(
-      state: state,
-      message: message,
-      isLoading: false,
+    emit(
+      HomeTabState(
+        message: message,
+      ),
     );
   }
 
   @override
-  Stream<HomeTabState> refreshState(RefreshEvent event) async* {
-    yield HomeTabState(
-      state: state,
-      isLoading: !(event.refresh == true),
+  Stream<HomeTabState> refreshState(
+    RefreshEvent event,
+    Emitter<HomeTabState> emit,
+  ) async* {
+    emit(
+      HomeTabState(
+        // isLoading: !(event.refresh == true),
+      ),
     );
-  }
-
-  void saveMessage(String message) {
-    add(SaveMessageEvent(message));
   }
 }

@@ -1,10 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_coffee_house/app/blocs/cart/cart_events.dart';
 import 'package:the_coffee_house/app/screens/base_layout/base_dialog/base_dialog_state.dart';
 import 'package:the_coffee_house/app/blocs/cart/cart_bloc.dart';
 import 'package:the_coffee_house/app/screens/product_detail/product_detail_bloc.dart';
+import 'package:the_coffee_house/app/screens/product_detail/product_detail_events.dart';
 import 'package:the_coffee_house/app/screens/product_detail/product_detail_state.dart';
 import 'package:the_coffee_house/app/screens/product_detail/sub_product_detail/body_product_detail.dart';
 import 'package:the_coffee_house/app/screens/product_detail/sub_product_detail/footer_product_detail.dart';
@@ -34,7 +35,7 @@ class _ProductDetailScreenState extends BaseDialogState<ProductDetailScreen,
   _ProductDetailScreenState(
       this.orderEntity, this.scrollControl, this.isOrder) {
     bloc = ProductDetailBloc(orderEntity: orderEntity);
-    bloc?.fetchData();
+    // bloc?.fetchData();
   }
 
   final OrderEntity orderEntity;
@@ -97,7 +98,11 @@ class _ProductDetailScreenState extends BaseDialogState<ProductDetailScreen,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         InkWell(
-                          onTap: () => bloc?.decrementQuantity(isOrder),
+                          onTap: () => bloc?.add(
+                            DecrementQuantityEvent(
+                              isOrder,
+                            ),
+                          ),
                           splashColor: Colors.transparent,
                           child: Container(
                             height: 35,
@@ -118,7 +123,7 @@ class _ProductDetailScreenState extends BaseDialogState<ProductDetailScreen,
                           ),
                         ),
                         InkWell(
-                          onTap: () => bloc?.incrementQuantity(),
+                          onTap: () => bloc?.add(IncrementQuantityEvent()),
                           splashColor: Colors.transparent,
                           child: Container(
                             height: 35,
@@ -139,12 +144,22 @@ class _ProductDetailScreenState extends BaseDialogState<ProductDetailScreen,
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
+                          final orderItem = bloc?.orderItem;
+                          if (orderItem == null) {
+                            return;
+                          }
                           if (isOrder == true && _quantity == 0) {
-                            cartBloc.deleteOrderItem(bloc?.orderItem);
+                            cartBloc.add(
+                              DeleteOrderItemEvent(orderItem),
+                            );
                           } else if (isOrder == true) {
-                            cartBloc.updateOrderItem(bloc?.orderItem);
+                            cartBloc.add(
+                              UpdateOrderItemEvent(orderItem),
+                            );
                           } else {
-                            cartBloc.addNewBillItem(bloc?.orderItem);
+                            cartBloc.add(
+                              AddNewBillEvent(orderItem),
+                            );
                           }
                           Navigator.pop(context);
                         },

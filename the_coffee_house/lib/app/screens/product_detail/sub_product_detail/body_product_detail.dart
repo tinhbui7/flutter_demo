@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_coffee_house/app/screens/product_detail/product_detail_bloc.dart';
+import 'package:the_coffee_house/app/screens/product_detail/product_detail_events.dart';
 import 'package:the_coffee_house/app/screens/product_detail/product_detail_state.dart';
 import 'package:the_coffee_house/domain/entities/entities.dart';
 import 'package:collection/collection.dart';
@@ -113,8 +114,13 @@ class BodyProductDetail extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            if (itemSize != selectedSize)
-              productDetailBloc.setSizeSelected(itemSize);
+            if (itemSize != selectedSize) {
+              productDetailBloc.add(
+                SelectedSizeEvent(
+                  itemSize,
+                ),
+              );
+            }
           },
           splashColor: Colors.transparent,
           child: Row(
@@ -125,7 +131,9 @@ class BodyProductDetail extends StatelessWidget {
                 value: itemSize,
                 groupValue: selectedSize,
                 onChanged: (SizeEntity? newSize) {
-                  productDetailBloc.setSizeSelected(newSize);
+                  if (newSize != null) {
+                    productDetailBloc.add(SelectedSizeEvent(newSize));
+                  }
                 },
                 activeColor: theme.primaryColor,
               ),
@@ -170,7 +178,11 @@ class BodyProductDetail extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            productDetailBloc.setToppingSelected(itemTopping);
+            productDetailBloc.add(
+              SelectedToppingEvent(
+                itemTopping,
+              ),
+            );
           },
           splashColor: Colors.transparent,
           child: Row(
@@ -179,7 +191,11 @@ class BodyProductDetail extends StatelessWidget {
                 activeColor: theme.primaryColor,
                 value: _isChecked,
                 onChanged: (bool? newValue) {
-                  productDetailBloc.setToppingSelected(itemTopping);
+                  productDetailBloc.add(
+                    SelectedToppingEvent(
+                      itemTopping,
+                    ),
+                  );
                 },
               ),
               Text(
